@@ -3,8 +3,7 @@
 
 
 
-
-<footer class="p-3 footer mt-5">
+<footer>
 	<div class="inner">
 		<div class="footer-message">여러분의 안전한 여행을 늘 희망합니다.</div>
 		<div class="footer-contact">컨택: jeonsm6@gmail.com</div>
