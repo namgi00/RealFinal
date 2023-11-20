@@ -87,11 +87,11 @@ out.println("후원자 메세지: " + donateMessage);
 			pg : 'kakaopay', // pg사
 			pay_method : 'card', // 결제 수단
 //			merchant_uid: "ORD20231111-0000002", // 주문번호
-			name : select, // 상품 이름
-			amount : amount, // 총 결제 금액
-			buyer_name : name, // 구매자 이름
-			buyer_tel : phone, // 구매자 전화번호
-			buyer_email : email	// 구매자 이메일
+			name : donateSelect, // 상품 이름
+			amount : donateMoney, // 총 결제 금액
+			buyer_name : donateName, // 구매자 이름
+			buyer_tel : donatePhoneNumber, // 구매자 전화번호
+			buyer_email : donateEmail // 구매자 이메일
 		}, function(rsp) { // callback
 			if (rsp.success) {
 				console.log(rsp);
@@ -106,11 +106,11 @@ out.println("후원자 메세지: " + donateMessage);
 			pg : 'tosspay',
 			pay_method : 'card',
 //			merchant_uid : 'ORD20231114-000003',
-			name : select, // 상품 이름
-			amount : amount, // 총 결제 금액
-			buyer_name : name, // 구매자 이름
-			buyer_tel : phone, // 구매자 전화번호
-			buyer_email : email	// 구매자 이메일
+			name : donateSelect, // 상품 이름
+			amount : donateMoney, // 총 결제 금액
+			buyer_name : donateName, // 구매자 이름
+			buyer_tel : donatePhoneNumber, // 구매자 전화번호
+			buyer_email : donateEmail // 구매자 이메일
 		}, function(rsp) { // callback
 			if (rsp.success) {
 				console.log(rsp);
