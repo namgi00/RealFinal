@@ -49,6 +49,7 @@ public class ExchangeServiceImpl implements ExchangeService {
 		}
 		return lists;
 	}
+	
 	public static ResponseEntity requestApi(String url) {
 
 		HttpEntity<MultiValueMap<String, String>> tokenRequest = new HttpEntity<>(null);
