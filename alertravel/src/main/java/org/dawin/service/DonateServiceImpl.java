@@ -1,5 +1,6 @@
 package org.dawin.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.dawin.domain.DonateVO;
@@ -26,6 +27,11 @@ public class DonateServiceImpl implements DonateService {
 	@Override
 	public List<DonateVO> getDonateAmountList() {
 		return mapper.getDonateAmountList();
+	}
+
+	@Override
+	public void donateRegister(DonateVO donate) throws IOException {
+		mapper.insertDonate(donate);
 	}
 	
 	

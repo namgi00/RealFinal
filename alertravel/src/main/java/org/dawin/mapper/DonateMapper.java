@@ -12,6 +12,6 @@ public interface DonateMapper {
 	
 	public List<DonateVO> getDonateSelectList();
 	
-	public void insert(DonateVO donate);
+	public void insertDonate(DonateVO donate);
 	
 }
