@@ -44,7 +44,7 @@
 							
 							<div class="form-group" id="phoneInput">
 								<label for="donatePhoneNumber">휴대폰 번호</label>
-								<input type="text" name="donatePhoneNumber" class="form-control" placeholder="휴대펀 번호 입력('-' 제외)" required>
+								<input type="text" name="donatePhoneNumber" class="form-control" placeholder="휴대폰 번호 입력('-' 제외)" required>
 							</div>
 							
 							<br>
