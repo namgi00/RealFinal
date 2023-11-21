@@ -25,16 +25,24 @@ public class AlarmServiceImpl implements AlarmService {
 	}
 
 	@Override
-	public AlarmVO get(String countryEngNm) {
+	public AlarmVO get(String countryNm) {
 		
-		log.info("get...." + countryEngNm);
+		log.info("get...." + countryNm);
 		
-		return mapper.read(countryEngNm);
+		return mapper.read(countryNm);
 	}
 
 	@Override
 	public List<AlarmVO> getListLvl(Long alarmLvl) {
+		
 		return mapper.getListLvl(alarmLvl);
+	}
+	
+	@Override
+	public AlarmVO getBasic(String countryNm) {
+		
+		
+		return mapper.getBasic(countryNm);
 	}
 
 }

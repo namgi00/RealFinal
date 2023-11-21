@@ -31,11 +31,16 @@ public class AlarmController {
 		model.addAttribute("list", service.getListLvl(alarmLvl));
 	}
 	
+	
+	
 	@GetMapping("/get")
-	public void get(@RequestParam("countryEngNm") String countryEngNm, Model model) {
+	public void get(@RequestParam("countryNm") String countryNm, Model model) {
 		
 		log.info("/get");
-		model.addAttribute("alarm", service.get(countryEngNm));
+		model.addAttribute("alarm", service.get(countryNm));
+		model.addAttribute("basic", service.getBasic(countryNm));
+		
+		log.info("컨트롤러" + service.getBasic(countryNm));
 		
 	}
 	

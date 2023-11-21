@@ -1,422 +1,541 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0 auto;
-
-  color: #3f464d;
-
-  font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
-}
-
-/* 링크 태그 스타일 초기화 */
-
-a {
-  all: unset;
+	margin: 0 auto;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 }
 
 a:link {
-  text-decoration: none;
-
-  color: #3f464d;
+	text-decoration: none;
+	color: #3f464d;
 }
 
 a:visited {
-  text-decoration: none;
-
-  color: #3f464d;
+	text-decoration: none;
+	color: #3f464d;
 }
 
 a:active {
-  text-decoration: none;
-
-  color: #3f464d;
+	text-decoration: none;
+	color: #3f464d;
 }
 
 a:hover {
-  text-decoration: none;
-
-  color: #3f464d;
+	text-decoration: none;
+	color: #e88335;
 }
 
 .inner {
-  width: 100%;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0rem 2rem;
+	overflow: hidden;
+}
 
-  height: 100%;
-
-  margin: 0 auto;
-
-  padding: 0rem 2rem;
-
-  overflow: hidden;
+.card-banner {
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0rem 2rem;
+	overflow: hidden;
 }
 
 header {
-  width: 100%;
-
-  height: 60px;
-
-  background-color: #fff;
-
-  position: fixed;
-
-  top: 0;
-
-  left: 0;
-
-  z-index: 1000;
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 }
 
 .head-container {
-  width: 100%;
-
-  height: 100%;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.head-container .head-brand {
-  font-weight: bold;
-
-  font-size: 1.2rem;
+.head-logo {
+	width: 47%;
 }
 
 .head-container .head-brand a:hover {
-  color: #2186c4;
-
-  cursor: pointer;
-}
-
-.head-container .head-blog {
-  font-weight: bold;
-
-  font-size: 1.2rem;
+	color: #2186c4;
+	cursor: pointer;
 }
 
 .head-container .head-blog a:hover {
-  color: #2186c4;
+	color: #2186c4;
+	cursor: pointer;
+}
 
-  cursor: pointer;
+nav {
+	position: relative;
+	top: 60px;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-weight: bold;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+	background-color: #15bdb1;
+}
+
+.navbar-nav {
+	width:1280px;
+	padding:0 40px;
+	margin:0 auto;
+    display: flex;
+	justify-content:space-around;
+}
+
+.navbar-color {
+	background-color: #15bdb1;
+}
+
+.dropdown-title {
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 section {
-  width: 100%;
-
-  background-color: #fff;
-
-  position: relative;
+	width: 100%;
+	background-color: #fff;
+	position: relative;
 }
 
 .main {
-  height: 360px;
-
-  background-image: url('../images/travel.png');
-
-  background-size: cover;
-
-  background-position: center 15%;
-
-  background-repeat: no-repeat;
-
-  z-index: 1;
+	height: 360px;
+	background-image: url('../images/travel.png');
+	background-size: cover;
+	background-position: center 15%;
+	background-repeat: no-repeat;
+	z-index: 1;
 }
 
 .main-container {
-  width: 100%;
-
-  height: 100%;
-
-  background-color: rgb(47, 48, 89);
-
-  opacity: 0.8;
-
-  z-index: 2;
-
-  margin-top: 60px;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(47, 48, 89);
+	opacity: 0.8;
+	z-index: 2;
+	margin-top: 60px;
 }
 
 .title-container {
-  padding-top: 100px;
-
-  padding-bottom: 100px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 .title {
-  font-size: 2rem;
-
-  font-weight: bold;
-
-  color: #fff;
-
-  margin-bottom: 0.8rem;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0.8rem;
 }
 
 .message {
-  font-size: 1.4rem;
-
-  font-weight: bold;
-
-  color: #fff;
-
-  line-height: 2rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #fff;
+	line-height: 2rem;
 }
 
 .skill-container {
-  width: 100%;
-
-  height: 100%;
-
-  display: flex;
-
-  justify-content: space-around;
-
-  align-items: center;
-
-  padding: 1rem 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1rem 0;
 }
 
 .roadmap-container {
-  width: 100%;
-
-  margin-top: 2rem;
+	width: 100%;
+	margin-top: 2rem;
 }
 
 .roadmap-title-container {
-  width: 100%;
-
-  height: 10%;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
+	width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .roadmap-title {
-  font-size: 2rem;
-
-  font-weight: bold;
-
-  color: #545e6f;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #545e6f;
 }
 
 .skill {
-  width: 25%;
-
-  background-color: #fff;
-
-  display: flex;
-
-  align-items: center;
-
-  border-radius: 9px;
-
-  padding: 1rem 1rem;
-
-  margin: 0 3rem;
-
-  /* box-shadow: 블럭에 그림자를 적용하는 CSS 기능
+	width: 25%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	padding: 1rem 1rem;
+	margin: 0 3rem;
+	/* box-shadow: 블럭에 그림자를 적용하는 CSS 기능
   
    https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
   
    offset-x | offset-y | blur-radius | spread-radius | color */
-
-  box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
-
-  transition: 0.4s;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	transition: 0.4s;
 }
 
 .skill:hover {
-  transform: translate(0, -5px);
+	transform: translate(0, -5px);
 }
 
 .skill-icon {
-  font-size: 2.5rem;
-
-  margin-left: 0.5rem;
+	font-size: 2.5rem;
+	margin-left: 0.5rem;
 }
 
 .skill-title {
-  margin: 0 1.5rem;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-content: center;
+	margin: 0 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
 }
 
 .skill-name {
-  font-weight: bold;
-
-  color: #545e6f;
-
-  font-size: 1.5rem;
+	font-weight: bold;
+	color: #545e6f;
+	font-size: 1.5rem;
 }
 
 .slide-prev {
-  font-size: 2rem;
-
-  cursor: pointer;
-
-  color: rgb(47, 48, 89);
+	font-size: 2rem;
+	cursor: pointer;
+	color: rgb(47, 48, 89);
 }
 
 .slide-next {
-  font-size: 2rem;
+	font-size: 2rem;
+	cursor: pointer;
+	color: #cfd8dc;
+}
 
-  cursor: pointer;
+.slide-prev-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(-2px);
+}
 
-  color: #cfd8dc;
+.slide-next-hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(2px);
 }
 
 .arrow-container {
-  display: flex;
+	display: flex;
 }
 
 .class-list {
-  display: flex;
-
-  list-style: none;
-
-  padding: 1rem 0;
-
-  margin: 0;
-
-  overflow: hidden;
+	display: flex;
+	list-style: none;
+	padding: 1rem 0;
+	margin: 0;
+	overflow: none;
 }
 
 .class-card {
   width: 240px;
-
   box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
-
   border-radius: 8px;
-
   margin: 0 10px;
-
   transition: 0.4s;
+  flex-shrink: 0;
+}
+
+.class-card img {
+	width: 240px;
+	height: 180px;
+	object-fit: cover;
 }
 
 .class-card:hover {
-  box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
-
-  transform: translate(0, -5px);
+	box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
+	transform: translate(0, -5px);
 }
 
 .class-image {
-  width: 100%;
-
+  max-width: 240px;
   border-radius: 8px 8px 0 0;
-
-  height: 150px;
+  max-height: 180px;
 }
 
 .class-container {
-  width: 100%;
-
-  padding: 0.5rem 1rem 1rem 1rem;
+	width: 100%;
+	padding: 0.5rem 1rem 1rem 1rem;
 }
 
 .class-skill {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .class-type {
-  font-size: 0.9rem;
-
-  color: #949393;
+	font-size: 0.9rem;
+	color: #949393;
 }
 
 .class-format {
-  font-size: 0.9rem;
-
-  color: #fff;
-
-  background-color: #0d47a1;
-
-  padding: 0.2rem;
+	font-size: 0.9rem;
+	color: #fff;
+	background-color: #0d47a1;
+	padding: 0.2rem;
 }
 
 .class-desc {
-  width: 100%;
-
-  margin-top: 1rem;
+	width: 100%;
+	margin-top: 1rem;
 }
 
 .class-title {
-  font-weight: bold;
-
-  color: #545e6f;
-
-  width: 100%;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  margin-bottom: 0.5rem;
+	font-weight: bold;
+	color: #545e6f;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 0.5rem;
 }
 
 .class-detail {
-  font-size: 0.9rem;
-
-  color: #545e6f;
-
-  line-height: 1.5rem;
+	font-size: 0.9rem;
+	color: #545e6f;
+	height:100%
+	line-height: 1.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .roadmap-desc {
-  display: visible;
+	display: visible;
 }
 
 footer {
-  border-top: 1px solid #e4e4e4;
-  background-color: #f8f9fa;
-  padding: 1rem 0;
-  margin: 1rem 0;
+	border-top: 1px solid #e4e4e4;
+	background-color: #f8f9fa;
+	padding: 1rem 0;
+	margin: 1rem 0;
 }
 
 .footer-message {
-  font-weight: bold;
-  color: #545e6f;
-  margin: 0.3rem 0.5rem;
+	font-weight: bold;
+	color: #545e6f;
+	margin: 0.3rem 0.5rem;
 }
 
 .footer-contact {
-  color: #545e6f;
-  margin: 0 0.5rem;
+	color: #545e6f;
+	margin: 0 0.5rem;
 }
 
 .footer-copyright {
-  color: #545e6f;
-  margin: 1rem 0.5rem;
+	color: #545e6f;
+	margin: 1rem 0.5rem;
 }
 
+.alarm-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 4.5rem;
+	cursor: pointer;
+}
+
+.alarm1:hover {
+	transform: translate(0, -5px);
+}
+
+.alarm2:hover {
+	transform: translate(0, -5px);
+}
+
+.alarm3:hover {
+	transform: translate(0, -5px);
+}
+
+.alarm4:hover {
+	transform: translate(0, -5px);
+}
+
+.alarm1 {
+	width: 25%;
+	background-color: #1f65cb;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	transition: 0.4s;
+	border: none;
+}
+
+.alarm2 {
+	width: 25%;
+	background-color: #e57e1a;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	transition: 0.4s;
+	border: none;
+}
+
+.alarm3 {
+	width: 25%;
+	background-color: #e3175e;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	transition: 0.4s;
+	border: none;
+}
+
+.alarm4 {
+	width: 25%;
+	background-color: #1b1507;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	transition: 0.4s;
+	border: none;
+}
+
+.alarm-title {
+	font-weight: bold;
+	color: #fff;
+}
+
+.flag-container {
+	display: flex;
+	justify-content: space-start;
+	margin: 5rem 0;
+}
+
+.flag-info {
+	font-weight: bold;
+	font-size: 2rem;
+	margin-top: 2rem;
+	margin-left: 2rem
+}
+
+.flag-image {
+	width: 298px;
+	height: 198px;
+}
+
+.country-image {
+	height: 31.5rem;
+	width: 61rem;
+}
+
+.alarm-td {
+	width: 20%;
+}
+
+.head-login-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 5rem 0;
+	font-weight: bold;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	color: #3f464d;
+	font-size: 1.1rem;
+}
+
+.head-login {
+	margin-right: 1.5rem;
+}
+
+.head-logout {
+	margin-left: 1.5rem;
+}
+
+.login-container {
+	margin: 10rem 0;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+
+.login-main-title {
+	font-weight: bold;
+	margin: 0 auto;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+
+.leaflet-container {
+    display: block; /* 가로 중앙 정렬을 위해 변경 */
+    justify-content: center;
+    align-item: center;
+    width: 80%;
+    max-width: 1400px; /* 지도의 최대 너비를 설정 */
+    height: 400px;
+    margin: 20px, 50px, 20px, 10px;
+    margin-top: 50px !important; /* 상단과 하단의 여백 제거 */
+    padding: 0; /* 상단과 하단의 여백 제거 */
+}
+
+.leaflet-marker-pane div {
+    font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
+        0 #000;
+}
+
+.leaflet-marker-pane div:hover {
+    text-decoration: underline; /* 호버 상태에서 밑줄 추가 */
+}
+
+.basic-container {
+    font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+    background-color: lightblue;
+    margin : 10px, 20px, 10px, 20px;
+}
+
+
 @media only screen and (min-width: 1400px) {
-  .inner {
-    max-width: 1400px;
-  }
+	.inner {
+		max-width: 1400px;
+	}
 }
 
 @media only screen and (max-width: 980px) {
-  .skill-container {
-    display: none;
-  }
-
-  .roadmap-desc {
-    display: none;
-  }
+	.skill-container {
+		display: none;
+	}
+	.roadmap-desc {
+		display: none;
+	}
 }

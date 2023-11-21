@@ -21,7 +21,13 @@
 	
 	<select id="read" resultType="AlarmVO">
 		select * from alarm
-		where country_eng_nm = #{countryEngNm}
+		where country_nm = #{countryNm}
+	</select>
+	
+	<select id="getBasic" resultType="AlarmVO">
+		select basic
+		from CountryInfo
+		where country_nm = #{countryNm}
 	</select>
 	
 	

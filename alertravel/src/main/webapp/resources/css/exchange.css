@@ -1,0 +1,68 @@
+ @charset "UTF-8";
+
+.item {
+    position: relative;
+}
+
+/* .leaflet-container {
+    display: block; 가로 중앙 정렬을 위해 변경
+    justify-content: center;
+    align-item: center;
+    width: 80%;
+    max-width: 1400px; 지도의 최대 너비를 설정
+    height: 400px;
+    margin: 20px, 50px, 20px, 10px;
+    margin-top: 50px !important; 상단과 하단의 여백 제거
+    padding: 0; 상단과 하단의 여백 제거
+    
+} */
+
+.image-card {
+/* 	width: 100%; */
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	border-radius: 8px;
+	margin: 10px;
+	transition: 0;
+}
+.image-caption {
+    bottom: 0;
+    right: 0;
+    width: 10;
+	height: 0;
+    padding: 0;
+    margin:0;
+    /*border: 2px solid black;
+   /* border-bottom-left-radius: 10px; /* 아래 왼쪽 둥근 모서리 적용 */
+   /* border-bottom-right-radius: 10px; /* 아래 오른쪽 둥근 모서리 적용 */
+}
+
+.small-text{
+    font-size:20px;
+    line-height: 2;
+}
+
+.text-caption {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+    top: 15px;
+    right: 10px;
+    width: 100%;
+    word-break: keep-all;
+    padding: 10px;
+    margin: 0;
+    
+} 
+
+.tts-caption{
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 100%;
+    word-break: keep-all;
+    padding: 10px;
+    margin: 0;
+    line-height:1;
+   padding-top: 2rem
+}
