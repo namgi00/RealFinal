@@ -200,3 +200,19 @@
 <br>
 
 <%@ include file="../views/layouts/footer1.jsp"%>
+
+
+
+<script>
+	$(document).ready(function() {
+		$('.owl-carousel').owlCarousel({
+			items : 6,
+			loop : true,
+			margin : 20,
+			autoplay : false,
+			autoplayTimeout : 3000,
+			autoplayHoverPause : true,
+			mouseDrag : true,
+		});
+	});
+</script>
