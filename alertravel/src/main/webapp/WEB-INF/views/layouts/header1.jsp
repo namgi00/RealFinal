@@ -31,7 +31,8 @@
 <meta name="twitter:title" content="Alertravel" />
 <meta name="twitter:description"
 	content="여러분의 안전한 여행을 응원하는 Alertravel입니다." />
-
+<meta name="google-signin-client_id"
+	content="155152759107-l9l3rvt9bfc4r88di8eo2gq8aep7s2j6.apps.googleusercontent.com">
 
 <!-- 일반적인 fabicon 설정 -->
 <link rel="icon" href="img/alertravelicon.ico" />
@@ -43,10 +44,13 @@
 
 <link rel="stylesheet" href="/resources/css/normalize.css" />
 <link rel="stylesheet" href="/resources/css/style.css" />
+
 <!-- https://fontawesome.com/start -->
 <script src="https://kit.fontawesome.com/f1def33959.js"
 	crossorigin="anonymous"></script>
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <!-- Spoca Han Sans Neo: https://spoqa.github.io/spoqa-han-sans/ko-KR/ -->
 <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
@@ -59,10 +63,8 @@
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 <body>
-
 	<header>
 		<div class="inner">
 			<div class="head-container">
@@ -72,9 +74,11 @@
 				</div>
 				<div class="head-login-container">
 					<sec:authorize access="isAuthenticated()">
-						<sec:authentication property="principal.username" var="username"/>
+						<sec:authentication property="principal.username" var="username" />
 						<!--로그인 된 상태-->
-						<div>${username }</div>
+						<div>
+							<a href="/security/profile"> ${username} </a>
+						</div>
 						<div>
 							<a href="#" class="head-logout"> 로그아웃 </a>
 						</div>
@@ -93,54 +97,53 @@
 	</header>
 
 
-	<nav
-		class="navbar navbar-expand-sm navbar-color justify-content-center">
+	<!-- 메뉴바와 관련된 코드입니다. -->
+	<nav class="navbar navbar-expand-sm navbar-color">
 		<ul class="navbar-nav">
 			<!-- Dropdown -->
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 해외안전정보 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Link 1</a> <a
-						class="dropdown-item" href="#">Link 2</a> <a class="dropdown-item"
-						href="#">Link 3</a>
+					<a class="dropdown-item" href="/alarm/list">단계별 여행 경보</a> <a
+						class="dropdown-item" href="#">공지사항</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 소통마당 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Link 1</a> <a
-						class="dropdown-item" href="#">Link 2</a> <a class="dropdown-item"
-						href="#">Link 3</a>
+					<a class="dropdown-item" href="#">소통 게시판</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 편의기능 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Link 1</a> <a
-						class="dropdown-item" href="#">Link 2</a> <a class="dropdown-item"
-						href="#">Link 3</a>
+					<a class="dropdown-item"
+						href="https://www.passport.go.kr/home/kor/main.do">여권 분실 시 <i
+						class="fa-solid fa-up-right-from-square"></i>
+					</a> <a class="dropdown-item"
+						href="https://www.0404.go.kr/callcenter/callcenter_intro.jsp">영사콜
+						센터 <i class="fa-solid fa-up-right-from-square"></i>
+					</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 후원하기 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Link 1</a> <a
-						class="dropdown-item" href="#">Link 2</a> <a class="dropdown-item"
-						href="#">Link 3</a>
+					<a class="dropdown-item" href="/donate/donate">따뜻한 마음 나누기</a>
 				</div></li>
 		</ul>
 	</nav>
 
-<form id="logoutForm" action="/security/logout" method="post">
-	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
-</form>
-
-<script>
-$(document).ready(function(){
-	$('.head-logout').click(function(e){
-		e.preventDefault();
-		$('#logoutForm').submit();
-	});
-});
-</script>
 
 
+	<!-- 로그아웃과 관련된 코드입니다. -->
+	<form id="logoutForm" action="/security/logout" method="post">
+		<input type="hidden" name="${_csrf.parameterName }"
+			value="${_csrf.token }" />
+	</form>
 
-	
+	<script>
+		$(document).ready(function() {
+			$('.head-logout').click(function(e) {
+				e.preventDefault();
+				$('#logoutForm').submit();
+			});
+		});
+	</script>

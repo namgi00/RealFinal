@@ -23,5 +23,9 @@ public class AlarmVO {
 	   private String regionTy;
 	   private String remark;
 	   private Date writtenDt;
+	   
+	   //countryInfo
+	   
+	   private String basic;
 	
 }
