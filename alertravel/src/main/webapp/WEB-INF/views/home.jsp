@@ -4,10 +4,32 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 <%@ page session="false"%>
-
 <%@ include file="../views/layouts/header1.jsp"%>
 
+<!-- 웹폰트 적용 스포카 한산스-->
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="resources/css/exchange.css">
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<!-- jQuery -->
+<script src="resources/js/exchange/jquery.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="resources/js/exchange/owl.carousel.min.js"></script>
+<script src="resources/js/exchange/jquery.mousewheel.min.js"></script>
+<script src="resources/js/exchange/owl.navigation.js"></script>
+
 <style>
+
+.owl-carousel{
+padding-left: 14rem;
+padding-right: 14rem;
+}
+
 #backtotop {
 	background-color: rgb(47, 48, 89);
 	width: 40px;
