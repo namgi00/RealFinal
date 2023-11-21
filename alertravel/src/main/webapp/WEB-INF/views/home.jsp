@@ -175,4 +175,28 @@
 	</div>
 </div>
 
+<c:set var="krw" value="KRW" />
+<div class="owl-carousel owl-theme">
+    <c:forEach var="unit" items="${lists}">
+    <c:choose>
+        <c:when test="${unit.cur_unit eq krw}">
+        
+        </c:when>
+        <c:otherwise>
+        <div class="item">
+            <div class="image-card">
+            <img src="resources/images/${unit.cur_unit}.png" >
+            <p class="main-container"></p>
+                <p class="image-caption"></p>
+                <p >${unit.cur_nm}<br><span class="small-text"></span></p>
+                <p class="tts-caption" >${unit.tts}<br><span class="small-text"></span></p>
+        </div>
+        </div>
+        </c:otherwise>
+        </c:choose>
+    </c:forEach> 
+</div> 
+<hr>
+<br>
+
 <%@ include file="../views/layouts/footer1.jsp"%>
