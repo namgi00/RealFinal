@@ -36,14 +36,6 @@ a:hover {
 	overflow: hidden;
 }
 
-.card-banner {
-	width: 800px;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0rem 2rem;
-	overflow: hidden;
-}
-
 header {
 	width: 100%;
 	height: 60px;
@@ -81,20 +73,6 @@ nav {
 	top: 60px;
 	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 	font-weight: bold;
-}
-
-.navbar {
-    width: 100%;
-    height: 50px;
-	background-color: #15bdb1;
-}
-
-.navbar-nav {
-	width:1280px;
-	padding:0 40px;
-	margin:0 auto;
-    display: flex;
-	justify-content:space-around;
 }
 
 .navbar-color {
@@ -189,9 +167,9 @@ section {
 	margin: 0 3rem;
 	/* box-shadow: 블럭에 그림자를 적용하는 CSS 기능
   
-   https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
+   https://developer.mozilla.org/ko/docs/Web/CSS/box-shadow
   
-   offset-x | offset-y | blur-radius | spread-radius | color */
+   offset-x | offset-y | blur-radius | spread-radius | color */
 	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
 	transition: 0.4s;
 }
@@ -230,16 +208,6 @@ section {
 	color: #cfd8dc;
 }
 
-.slide-prev-hover:hover {
-  transition: transform 0.5s;
-  transform: translateX(-2px);
-}
-
-.slide-next-hover:hover {
-  transition: transform 0.5s;
-  transform: translateX(2px);
-}
-
 .arrow-container {
 	display: flex;
 }
@@ -249,22 +217,15 @@ section {
 	list-style: none;
 	padding: 1rem 0;
 	margin: 0;
-	overflow: none;
+	overflow: hidden;
 }
 
 .class-card {
-  width: 240px;
-  box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
-  border-radius: 8px;
-  margin: 0 10px;
-  transition: 0.4s;
-  flex-shrink: 0;
-}
-
-.class-card img {
 	width: 240px;
-	height: 180px;
-	object-fit: cover;
+	box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+	border-radius: 8px;
+	margin: 0 10px;
+	transition: 0.4s;
 }
 
 .class-card:hover {
@@ -273,9 +234,9 @@ section {
 }
 
 .class-image {
-  max-width: 240px;
-  border-radius: 8px 8px 0 0;
-  max-height: 180px;
+	width: 100%;
+	border-radius: 8px 8px 0 0;
+	height: 150px;
 }
 
 .class-container {
@@ -319,10 +280,7 @@ section {
 .class-detail {
 	font-size: 0.9rem;
 	color: #545e6f;
-	height:100%
 	line-height: 1.5rem;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .roadmap-desc {
@@ -492,37 +450,6 @@ footer {
 	color: #3f464d;
 	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 }
-
-.leaflet-container {
-    display: block; /* 가로 중앙 정렬을 위해 변경 */
-    justify-content: center;
-    align-item: center;
-    width: 80%;
-    max-width: 1400px; /* 지도의 최대 너비를 설정 */
-    height: 400px;
-    margin: 20px, 50px, 20px, 10px;
-    margin-top: 50px !important; /* 상단과 하단의 여백 제거 */
-    padding: 0; /* 상단과 하단의 여백 제거 */
-    
-}
-.leaflet-marker-pane div {
-    font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
-    font-size: 14px;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
-        0 #000;
-}
-.leaflet-marker-pane div:hover {
-    text-decoration: underline; /* 호버 상태에서 밑줄 추가 */
-}
-.basic-container {
-    font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
-    background-color: lightblue;
-    margin : 10px, 20px, 10px, 20px;
-    
-}
-
 
 @media only screen and (min-width: 1400px) {
 	.inner {
