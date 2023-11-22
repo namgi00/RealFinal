@@ -6,19 +6,11 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 
-<%@ include file="../layouts/header1.jsp"%>
+<%@ include file="../layouts/header.jsp"%>
 
 <br>
 <br>
 <br>
-<!-- <div class="text-center">
-	<h1>후원이 완료되었습니다.</h1>
-	<br>
-	<h3>후원해 주셔서 감사합니다.</h3> 
-	<h3>기부하신 후원금은 선택하신 목적에 맞게 옳바르게 사용하겠습니다.</h3>
-</div> -->
-
-
 
 <h1
 	style="color: #28a745; 
@@ -38,8 +30,8 @@
 	font-family: 'Arial', sans-serif; 
 	margin-top: 20px; 
 	font-size: 1.7em;">
-	후원해 주셔서 대단히 감사합니다.<br>
-	기부하신 후원금은 선택하신 목적에 맞게 올바르게 사용하겠습니다.
+	후원해 주셔서 대단히 감사합니다. 🙏 <br>
+	기부하신 후원금은 선택하신 목적에 맞게 올바르게 사용하겠습니다. 💖
 </p>
 
 <img src='/resources/images/jihyunBW.png' width='1000px' height='500px' />
@@ -65,4 +57,4 @@
 
 
 
-<%@ include file="../layouts/footer.jsp"%>
+<%@ include file="../layouts/footer1.jsp"%>

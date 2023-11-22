@@ -5,11 +5,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 
-<%@ include file="../layouts/header1.jsp"%>
-
-<br>
-<br>
-<br>
+<%@ include file="../layouts/header.jsp"%>
 
 <section class="donate-main">
 	<div class="main-container">
