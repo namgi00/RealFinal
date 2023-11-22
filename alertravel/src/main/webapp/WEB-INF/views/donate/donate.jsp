@@ -11,9 +11,22 @@
 <br>
 <br>
 
-<div class="donate_title">
+<section class="donate-main">
+	<div class="main-container">
+		<div class="inner">
+			<div class="title-container">
+				<div class="title">후원하기</div>
+				<div class="message">
+					당신의 작은 도움이 어려운 이들에겐 큰 도움이 될 수 있습니다.
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- <div class="donate_title">
     <h1>후원하기</h1>
-</div>
+</div> -->
 
 <div class="container mt-5">
 	<div class="row justify-content-center">
@@ -114,6 +127,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <script>
   // 함수를 만들어 후원 목적 및 후원 금액에 대한 요약을 업데이트
@@ -159,16 +174,15 @@
 	};
 </script>
 
-
 <style>
-    .donate_title {
-        padding: 50px 300px 50px; /* 패딩: 위, 좌우, 아래 */
-		background-image: url('/resources/images/donate.png'); 
-/*		background-color: #F0A07B;
-		border-color: #F0A07B; */
-        color: white;
-		opacity: 0.8;
-    }
+    .donate-main {
+	height: 360px;
+	background-image: url('/resources/images/donate.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+	}
 </style>
 
 <style>
