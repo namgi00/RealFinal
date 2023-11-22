@@ -33,7 +33,7 @@ String donateMessage = request.getParameter("donateMessage");
 </div>
 
 <div class="text-center">
-	<button onclick="location.href='index.html'">결제 완료 페이지</button >
+	<button onclick="location.href='paysuccess'">결제 완료 페이지</button >
 </div>
 
 
