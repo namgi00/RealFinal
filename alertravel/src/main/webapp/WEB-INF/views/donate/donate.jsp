@@ -12,7 +12,7 @@
 <br>
 
 <div class="donate_title">
-    <h1>후원하기</h1>
+	<h1><i class="fas fa-money-check skill-icon"> 후원하기</i></h1>
 </div>
 
 <div class="container mt-5">
@@ -124,8 +124,8 @@
     // 선택한 후원 목적 및 후원 금액 가져오기
     var selectedOption = document.getElementById('donateSelect').
     						options[document.getElementById('donateSelect').selectedIndex].text;
-    var selectedAmount = document.getElementById('donateMoney').
-    						options[document.getElementById('donateMoney').selectedIndex].text;
+    var selectedAmount = document.getElementById('donateAmount').
+    						options[document.getElementById('donateAmount').selectedIndex].text;
     
     // 항상 요약을 표시
     summaryContainer.style.display = 'block';
@@ -134,7 +134,7 @@
   }
 
   // 후원 금액 변경 시 이벤트 처리
-  document.getElementById('donateMoney').addEventListener('change', function() {
+  document.getElementById('donateAmount').addEventListener('change', function() {
     updateSummary();
   });
 
@@ -161,14 +161,12 @@
 
 
 <style>
-    .donate_title {
-        padding: 50px 300px 50px; /* 패딩: 위, 좌우, 아래 */
-		background-image: url('/resources/images/donate.png'); 
-/*		background-color: #F0A07B;
-		border-color: #F0A07B; */
-        color: white;
-		opacity: 0.8;
-    }
+	.donate_title {
+		padding: 50px 300px 50px; /* 패딩: 위, 좌우, 아래 */
+	    background-color: #F0A07B;
+    	border-color: #F0A07B;
+		color: white;
+	}
 </style>
 
 <style>
@@ -180,4 +178,4 @@
 </style>
 
 
-<%@ include file="../layouts/footer1.jsp"%>
+<%@ include file="../layouts/footer.jsp"%>
