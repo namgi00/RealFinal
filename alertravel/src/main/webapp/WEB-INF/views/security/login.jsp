@@ -6,6 +6,12 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
+<style>
+.btn-kakao {
+	background-color: #FEE502;
+}
+</style>
+
 <div style="width: 500px" class="mx-auto login-container">
 	<h2 class="my-5 login-main-title">
 		<img src="../resources/images/AlertravelMainLogo.png" />여행자들과 소통하세요
@@ -38,9 +44,11 @@
 			</label>
 		</div>
 
-		<img alt="카카오로그인"
-			src="../resources/images/kakao_login_medium_wide.png"
-			onclick="loginWithKakao()">
+		<button type="button" class="btn btn-kakao btn-block"
+			onClick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=d1d68ccbc76688be2f03c65d1ea07a31&redirect_uri=http://localhost:8080/security/kakao&response_type=code'">
+			<i class="fa-solid fa-comment" style="color: #423630"></i> 카카오 로그인
+		</button>
+
 		<button type="submit" class="btn btn-info btn-block">
 			<i class="fa-solid fa-right-to-bracket"></i> 로그인
 		</button>
@@ -50,20 +58,6 @@
 		</button>
 	</form>
 </div>
-
-<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        Kakao.init('b66fbde391b88480d9050ef5798db4ee');
-        Kakao.isInitialized();
-    });
-
-    function loginWithKakao() {
-        Kakao.Auth.authorize({ 
-        redirectUri: 'http://localhost:8080/security/login'; 
-        }); // 등록한 리다이렉트uri 입력
-    }
-</script>
 
 
 <%@ include file="../layouts/footer1.jsp"%>

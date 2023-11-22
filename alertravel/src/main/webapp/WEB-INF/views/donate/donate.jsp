@@ -7,10 +7,6 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
-<br>
-<br>
-<br>
-
 <section class="donate-main">
 	<div class="main-container">
 		<div class="inner">

@@ -7,6 +7,33 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
+<style>
+.alarmlvl-banner {
+	height: 360px;
+	background-image: url('/resources/images/AlarmListBanner.jpg');
+	background-size: cover;
+	background-position: center 50%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+</style>
+
+<section class="alarmlvl-banner">
+	<div class="main-container">
+		<div class="inner">
+			<div class="title-container">
+				<div class="title">단계별 여행경보</div>
+				<div class="message">
+					1단계 : 신변안전 위험 요인 숙지·대비 <br /> 2단계 : 불필요한 여행 자제<br /> 3단계 : 여행
+					취소·연기<br /> 4단계 : (여행예정자) 여행금지 준수<br />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <div class="inner">
 	<div class="alarm-container">
 		<button type="button"
@@ -56,8 +83,10 @@
 					<td class="alarm-td">${alarm.alarmLvl }</td>
 					<td class="alarm-td">${alarm.continentEngNm }</td>
 					<td class="alarm-td">${alarm.continentNm }</td>
-					<td class="alarm-td"><a href="/alarm/get?countryNm=${alarm.countryNm }">${alarm.countryEngNm }</a></td>
-					<td class="alarm-td"><a href="/alarm/get?countryNm=${alarm.countryNm }">${alarm.countryNm }</a></td>
+					<td class="alarm-td"><a
+						href="/alarm/get?countryNm=${alarm.countryNm }">${alarm.countryEngNm }</a></td>
+					<td class="alarm-td"><a
+						href="/alarm/get?countryNm=${alarm.countryNm }">${alarm.countryNm }</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

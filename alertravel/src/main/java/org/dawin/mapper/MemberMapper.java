@@ -12,4 +12,8 @@ public interface MemberMapper {
 	public void insertAuth(AuthVO auth);
 
 	public void changePassword(ChangePasswordVO member);
+	
+	public void kakaoInsert(MemberVO member);
+	
+	public int hasUsername(String username);
 }

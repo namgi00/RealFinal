@@ -31,14 +31,27 @@
 		values(#{username}, #{password}, #{email})
 	</insert>
 	
+	<insert id="kakaoInsert">
+		insert into tbl_member(username)
+		values(#{username})
+	</insert>
+	
 	<insert id="insertAuth">
 		insert into tbl_member_auth(username, auth)
 		values(#{username}, #{auth})
 	</insert>
 	
 	<update id="changePassword">
-		update tbl_member_auth
+		update tbl_member
 		set password = #{encPassword}
 		where username = #{username}
 	</update>
+	
+	<select id="hasUsername" resultType="int">
+		select EXISTS 
+			(select * from tbl_member 
+			where username = #{username} 
+			limit 1) 
+		as success
+	</select>
 </mapper>
