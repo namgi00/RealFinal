@@ -62,6 +62,10 @@ public class DonateController {
 		service.donateRegister(donate);
 		return "/donate/payment"; // 성공적인 경우의 뷰 페이지
 	}
-
+	
+	@GetMapping("/paysuccess")
+	public void paysuccess() {
+		log.info("=== paysuccess page GetMapping 접속 중 ===");
+	}
 
 }
