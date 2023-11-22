@@ -23,6 +23,9 @@
 <script src="resources/js/exchange/jquery.mousewheel.min.js"></script>
 <script src="resources/js/exchange/owl.navigation.js"></script>
 
+<!-- Map Check box JS -->
+<script src="resources/js/mapcheck.js"></script>
+
 <style>
 
 .owl-carousel{
@@ -81,7 +84,7 @@ padding-right: 14rem;
 
 
 
-<section class="main">
+<section class="main" id="introImgContainer">
 	<div class="main-container">
 		<div class="inner">
 			<div class="title-container">
@@ -94,6 +97,19 @@ padding-right: 14rem;
 		</div>
 	</div>
 </section>
+
+<div class="map-check">
+	여행경보 <br/>
+	<input 
+		type="checkbox" 
+		name= "selectall" 
+		value='selectall'
+		onclick='selectAll(this)'> <b>전체</b> &nbsp; 
+	<input type="checkbox" name="alarm" value="case1" onclick='checkSelectAll()'>1단계(여행유의) &nbsp;
+	<input type="checkbox" name="alarm" value="case2" onclick='checkSelectAll()' >2단계(여행자제) &nbsp;
+	<input type="checkbox" name="alarm" value="case3" onclick='checkSelectAll()' >3단계(출국권고) &nbsp;
+	<input type="checkbox" name="alarm" value="case4" onclick='checkSelectAll()' >4단계(여행금지) <br/>
+</div>
 
 <div id="map" class="inner">
 	<%@ include file="country/map.jsp"%>
@@ -223,6 +239,26 @@ padding-right: 14rem;
 
 <%@ include file="../views/layouts/footer1.jsp"%>
 
+<script>
+  	var imgArray = [
+    "../resources/images/newmain.jpg",
+    "../resources/images/newmain1.png",
+    "../resources/images/newmain2.png",
+    "../resources/images/newmain3.png"
+  ];
+
+  function showImage() {
+    var imgNum = Math.floor(Math.random() * imgArray.length);
+    var imageUrl = imgArray[imgNum];
+
+    // Set the background image of the main container
+    var mainContainer = document.getElementById("introImgContainer");
+    mainContainer.style.backgroundImage = 'url("' + imageUrl + '")';
+  }
+
+  // Call the showImage function to display a random image initially
+  showImage();
+</script>
 
 
 <script>
