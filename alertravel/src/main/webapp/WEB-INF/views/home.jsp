@@ -214,26 +214,37 @@ padding-right: 14rem;
 </div>
 
 <c:set var="krw" value="KRW" />
+<div class=" exchange-title">환율 정보</div>
+
 <div class="owl-carousel owl-theme">
-    <c:forEach var="unit" items="${lists}">
-    <c:choose>
-        <c:when test="${unit.cur_unit eq krw}">
-        
-        </c:when>
-        <c:otherwise>
-        <div class="item">
-            <div class="image-card">
-            <img src="resources/images/${unit.cur_unit}.png" >
-            <p class="main-container"></p>
-                <p class="image-caption"></p>
-                <p >${unit.cur_nm}<br><span class="small-text"></span></p>
-                <p class="tts-caption" >${unit.tts}<br><span class="small-text"></span></p>
-        </div>
-        </div>
-        </c:otherwise>
-        </c:choose>
-    </c:forEach> 
-</div> 
+	<c:forEach var="unit" items="${lists}">
+		<c:choose>
+			<c:when test="${unit.cur_unit eq krw}">
+
+			</c:when>
+			<c:otherwise>
+				<div class="item">
+					<div class="image-caption">
+						<img src="resources/images/${unit.cur_unit}.png" >
+					</div>
+					<div class="nm-text">
+						${unit.cur_nm}
+					</div>
+					<div class="unit-text">
+						${unit.cur_unit}
+					</div>
+					<div class="tts-text">
+						${unit.tts}원	
+					</div>
+				</div>
+			</c:otherwise>
+		</c:choose>
+	</c:forEach>
+</div>
+<div class="ex-text">
+*주말(토요일/일요일)은 전주 금요일의 환율로 측정됩니다.<br>
+*당일 오전 11시 이전까지는 전일 환율로 측정됩니다.
+</div>
 <hr>
 <br>
 
@@ -271,6 +282,17 @@ padding-right: 14rem;
 			autoplayTimeout : 3000,
 			autoplayHoverPause : true,
 			mouseDrag : true,
+			responsive: {
+	            0: {
+	                items: 1 // 뷰포트 폭이 0px 이상일 때, 1개의 아이템을 보여줌
+	            },
+	            1000: {
+	                items: 3 // 뷰포트 폭이 600px 이상일 때, 3개의 아이템을 보여줌
+	            },
+	            1500: {
+	                items: 6 // 뷰포트 폭이 1000px 이상일 때, 6개의 아이템을 보여줌
+	            }
+	        }
 		});
 	});
 </script>
