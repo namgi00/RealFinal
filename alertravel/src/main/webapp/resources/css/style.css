@@ -545,6 +545,59 @@ footer {
     
 }
 
+.owl-carousel{
+padding-left: 14rem;
+padding-right: 14rem;
+}
+
+#backtotop {
+	background-color: rgb(47, 48, 89);
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	border-radius: 20px;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	transition-property: background-color, opacity, visibility;
+	transition-duration: 0.3s, 0.5s, 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 999;
+}
+
+/* 아이콘 적용 방법
+  1. ::after (요소 뒤에 content 추가) 가상 요소에서,
+  2. content: "폰트어썸 유니코드" 를 넣고,
+  3. font-family: FontAwesome 이라고 넣으면 됨
+  */
+#backtotop::after {
+	content: "\f077";
+	font-family: FontAwesome;
+	font-size: 1.5rem;
+	line-height: 40px;
+	color: #fff;
+}
+
+#backtotop.show:hover {
+	cursor: pointer;
+	background-color: #2186c4;
+}
+
+#backtotop.show {
+	opacity: 1;
+	visibility: visible;
+	background-color: rgb(47, 48, 49);
+}
+
+.card-banner {
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0rem 2rem;
+	overflow: hidden;
+}
+
 
 @media only screen and (min-width: 1400px) {
 	.inner {
