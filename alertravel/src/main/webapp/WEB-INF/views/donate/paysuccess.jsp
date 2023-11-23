@@ -6,7 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 
-<%@ include file="../layouts/header.jsp"%>
+<%@ include file="../layouts/header1.jsp"%>
 
 <br>
 <br>
