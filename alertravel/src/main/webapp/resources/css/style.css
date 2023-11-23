@@ -526,10 +526,19 @@ footer {
     text-decoration: underline; /* 호버 상태에서 밑줄 추가 */
 }
 
+#basic-title {
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	margin-top: 30px;
+}
+
 .basic-container {
     font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
-    background-color: lightblue;
-    margin : 10px, 20px, 10px, 20px;
+    background-color: #DDEBF1;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    
 }
 
 

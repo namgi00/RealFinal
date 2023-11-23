@@ -51,10 +51,8 @@
 		<img class="country-image" src="${alarm.mapDownloadUrl }" />
 	</div>
 
-	<div class="basic-container">
-		<h1>기본정보</h1>
-		${basic.basic} 
-	</div>
+	<h1 id="basic-title"><i class="fa-solid fa-circle-info" style="color: #121111;"></i>&nbsp;기본정보</h1>
+	<div class="basic-container">${basic.basic}</div>
 
 </div>
 
