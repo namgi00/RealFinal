@@ -487,9 +487,13 @@ footer {
 
 .login-main-title {
 	font-weight: bold;
-	margin: 0 auto;
+	text-align: center;
 	color: #3f464d;
 	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+.login-airplane-image{
+	max-width: 530px;
+	margin-top: 30px;
 }
 
 .map-check {

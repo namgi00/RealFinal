@@ -12,9 +12,23 @@
 }
 </style>
 
+<section class="login-main">
+  <div class="main-container">
+    <div class="inner">
+      <div class="title-container">
+        <div class="title">로그인</div>
+        <div class="message">
+        여행자들과 소통하세요.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div style="width: 500px" class="mx-auto login-container">
 	<h2 class="my-5 login-main-title">
-		<img src="../resources/images/AlertravelMainLogo.png" />여행자들과 소통하세요
+	여행 가는 중입니다
+		<img src="../resources/images/airplane_dotted.png" class="login-airplane-image"/>
 	</h2>
 
 	<c:if test="${param.error == 'true'}">
@@ -61,3 +75,14 @@
 
 
 <%@ include file="../layouts/footer1.jsp"%>
+
+<style>
+  .login-main {
+    height: 360px;
+    background-image: url('/resources/images/login-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+</style>
