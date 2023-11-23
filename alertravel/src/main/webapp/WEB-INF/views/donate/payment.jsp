@@ -17,33 +17,14 @@ String donateSelect = request.getParameter("donateSelect");
 String donateMessage = request.getParameter("donateMessage");
 %>
 
-<style>
-.payment-banner {
-	height: 360px;
-	background-size: cover;
-	background-image: url("../resources/images/donatepage.png");
-	background-position: center 40%;
-	background-repeat: no-repeat;
-	z-index: 1;
-}
+<br>
+<br>
 
-.text-center {
-	margin: 100px 0px;
-}
-</style>
+<h1 style="margin-left: 100px;">결제 수단을 선택하세요</h1>
 
-<section class="payment-banner">
-	<div class="main-container">
-		<div class="inner">
-			<div class="title-container">
-				<div class="title">결제수단을 선택해주세요</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-
-
+<br>
+<br>
+<br>
 
 <div class="text-center">
 	<button class="rounded-button1" onclick="requestPay1()"></button>
@@ -115,7 +96,7 @@ String donateMessage = request.getParameter("donateMessage");
 		IMP.request_pay({
 			pg : 'kcp', // pg사
 			pay_method : 'card', // 결제 수단
-//			merchant_uid: "ORD20231111-0000001", // 주문번호
+//			merchant_uid: "ORD20231111-0000002", // 주문번호
 			name : donateSelect, // 상품 이름
 			amount : donateMoney, // 총 결제 금액
 			buyer_name : donateName, // 구매자 이름
@@ -124,6 +105,7 @@ String donateMessage = request.getParameter("donateMessage");
 		}, function(rsp) { // callback
 			if (rsp.success) {
 				console.log(rsp);
+	            window.location.href = 'paysuccess'; // 'paysuccess'로 이동
 			} else {
 				console.log(rsp);
 			}
@@ -134,7 +116,6 @@ String donateMessage = request.getParameter("donateMessage");
 		IMP.request_pay({
 			pg : 'kakaopay', // pg사
 			pay_method : 'card', // 결제 수단
-//			merchant_uid: "ORD20231111-0000002", // 주문번호
 			name : donateSelect, // 상품 이름
 			amount : donateMoney, // 총 결제 금액
 			buyer_name : donateName, // 구매자 이름
@@ -143,6 +124,7 @@ String donateMessage = request.getParameter("donateMessage");
 		}, function(rsp) { // callback
 			if (rsp.success) {
 				console.log(rsp);
+	            window.location.href = 'paysuccess'; // 'paysuccess'로 이동
 			} else {
 				console.log(rsp);
 			}
@@ -153,7 +135,6 @@ String donateMessage = request.getParameter("donateMessage");
 		IMP.request_pay({
 			pg : 'tosspay',
 			pay_method : 'card',
-//			merchant_uid : 'ORD20231114-000003',
 			name : donateSelect, // 상품 이름
 			amount : donateMoney, // 총 결제 금액
 			buyer_name : donateName, // 구매자 이름
@@ -162,6 +143,7 @@ String donateMessage = request.getParameter("donateMessage");
 		}, function(rsp) { // callback
 			if (rsp.success) {
 				console.log(rsp);
+	            window.location.href = 'paysuccess'; // 'paysuccess'로 이동
 			} else {
 				console.log(rsp);
 			}
