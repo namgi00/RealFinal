@@ -18,10 +18,6 @@ include file="../layouts/header1.jsp"%>
   </div>
 </section>
 
-<!-- <div class="donate_title">
-    <h1>후원하기</h1>
-</div> -->
-
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
@@ -91,7 +87,7 @@ include file="../layouts/header1.jsp"%>
               </div>
 
               <br />
-              <hr color="#F0A07B" />
+              <hr color="15bdb1" />
               <br />
 
               <!-- 후원 목적 선택창 -->
@@ -147,7 +143,7 @@ include file="../layouts/header1.jsp"%>
             </div>
 
             <br />
-            <hr color="#F0A07B" />
+            <hr color="#15bdb1" />
             <br />
 
             <!-- 후원 요약 정보를 보여줄 컨테이너 -->
@@ -244,8 +240,8 @@ include file="../layouts/header1.jsp"%>
 
 <style>
   .btn {
-    background-color: #f0a07b;
-    border-color: #f0a07b;
+    background-color: #15bdb1;
+    border-color: #15bdb1;
     color: white;
   }
 </style>
