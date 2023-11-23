@@ -225,7 +225,7 @@ padding-right: 14rem;
 			<c:otherwise>
 				<div class="item">
 					<div class="image-caption">
-						<img src="resources/images/${unit.cur_unit}.png" >
+						<img src="resources/images/nation/${unit.cur_unit}.png" >
 					</div>
 					<div class="nm-text">
 						${unit.cur_nm}
@@ -276,23 +276,20 @@ padding-right: 14rem;
 	$(document).ready(function() {
 		$('.owl-carousel').owlCarousel({
 			items : 6,
+			responsive: {
+	            0: { items: 1 },// 뷰포트 폭이 0px 이상일 때, 1개의 아이템을 보여줌
+	            860: { items: 2 },
+	            1060: { items: 3 },
+	            1300: { items: 4 },
+	            1550: { items: 5 },
+	            1720: { items: 6 },
+	        },
 			loop : true,
 			margin : 20,
 			autoplay : false,
 			autoplayTimeout : 3000,
 			autoplayHoverPause : true,
-			mouseDrag : true,
-			responsive: {
-	            0: {
-	                items: 1 // 뷰포트 폭이 0px 이상일 때, 1개의 아이템을 보여줌
-	            },
-	            1000: {
-	                items: 3 // 뷰포트 폭이 600px 이상일 때, 3개의 아이템을 보여줌
-	            },
-	            1500: {
-	                items: 6 // 뷰포트 폭이 1000px 이상일 때, 6개의 아이템을 보여줌
-	            }
-	        }
+			mouseDrag : true
 		});
 	});
 </script>

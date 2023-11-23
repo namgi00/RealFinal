@@ -21,7 +21,7 @@
 }
 
 .item {
-	position: fixed; max-width : 300px;
+	max-width : 300px;
 	max-height: 200px;
 	position: relative;
 	padding-top: 5px;
@@ -51,7 +51,9 @@
 }
 
 .image-caption {
-	position: fixed;
+	position: absolute;
+	top:0px;
+	right:5px;
 	width: 40px;
 	height: 20px;
 	object-fit: cover;
@@ -69,7 +71,7 @@
 
 .unit-text {
 	padding-left: 1rem;
-	padding-bottom: 5rem;
+	padding-bottom: 1rem;
 }
 
 .tts-text {
