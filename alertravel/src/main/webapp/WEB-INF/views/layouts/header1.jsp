@@ -69,8 +69,10 @@
 		<div class="inner">
 			<div class="head-container">
 				<div class="head-brand">
-					<a href="/"><img class="head-logo"
-						src="../resources/images/AlertravelLogo.png" alt="Alertravel" /></a>
+					<a href="/">
+						<img class="head-logo" src="../resources/images/AlertravelLogo.png" alt="Alertravel" 
+						style="margin-left: 0px; margin-top: 0px; margin-right: 0px;">
+					</a>
 				</div>
 				<div class="head-login-container">
 					<sec:authorize access="isAuthenticated()">
