@@ -4,40 +4,111 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<%@ include file="../layouts/header.jsp"%>
+<%@ include file="../layouts/header1.jsp"%>
 
+<style>
+.sign-banner {
+	height: 360px;
+	background-size: cover;
+	background-image: url("/resources/images/signupbanner.png");
+	background-position: center 70%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
 
-<h1><i class="fa-solid fa-user-plus"></i> 회원가입</h1>
-<div>
+.signup {
+	margin-top: 7rem;
+	margin-bottom: 10rem;
+}
+
+.signup-container {
+	display: flex;
+	justify-content: center;
+}
+
+.signup-image {
+	width: 200px;
+	height: 200px;
+}
+
+.signup-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	color: #008DD0;
+  	filter: opacity(0.5) drop-shadow(0 0 0 #008DD0);
+}
+
+.signup-text {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	margin: 2rem 0rem;
+	font-size: 28px;
+}
+
+.form-group label {
+	font-size: 20px;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+</style>
+
+<section class="sign-banner">
+	<div class="main-container">
+		<div class="inner">
+			<div class="title-container">
+				<div class="title">회원가입</div>
+				<div class="message">
+					여러분과 함께 추억을 나누고 싶습니다.<br />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="signup">
+
+	<div class="signup-container">
+		<div class="signup-image">
+			<img src="/resources/images/signupwelcome.png" />
+		</div>
+	</div>
+	<div class="signup-text">🎉Alertravel에 오신 것을 환영합니다.🎉</div>
+
 	<form:form modelAttribute="member"
 		action="/security/signup?_csrf=${_csrf.token}"
 		enctype="multipart/form-data" style="width:500px" class="mx-auto">
-	
-		<hr>
-		
+
 		<div class="form-group">
-			<form:label path="username"><i class="fa-solid fa-user"></i> 아이디</form:label>
+			<form:label path="username">
+				<i class="fa-solid fa-user"></i> 아이디</form:label>
 			<form:input path="username" class="form-control" />
 			<form:errors path="username" cssClass="error"></form:errors>
 		</div>
 		<div class="form-group">
-			<form:label path="password"><i class="fa-solid fa-lock"></i> 비밀번호</form:label> 
+			<form:label path="password">
+				<i class="fa-solid fa-lock"></i> 비밀번호</form:label>
 			<form:password path="password" class="form-control" />
-			<form:errors path="password" cssClass="error"/>
-		</div>	
+			<form:errors path="password" cssClass="error" />
+		</div>
 		<div class="form-group">
-			<form:label path="password2"><i class="fa-solid fa-lock"></i> 비밀번호 확인</form:label>
+			<form:label path="password2">
+				<i class="fa-solid fa-lock"></i> 비밀번호 확인</form:label>
 			<form:password path="password2" class="form-control" />
 			<form:errors path="password2" cssClass="error" />
 		</div>
 		<div class="form-group">
-			<form:label path="email"><i class="fa-solid fa-envelope"></i> 이메일 주소</form:label>
+			<form:label path="email">
+				<i class="fa-solid fa-envelope"></i> 이메일 주소</form:label>
 			<form:input path="email" class="form-control" />
 			<form:errors path="email" cssClass="error" />
 		</div>
-		
+
 		<hr>
-		
+
 		<div class="button-container">
 			<button type="submit" class="btn btn-primary">
 				<i class="fas fa-check"> 가입</i>
@@ -45,13 +116,11 @@
 			<button type="reset" class="btn btn-warning">
 				<i class="fas fa-undo"></i> 재작성
 			</button>
-			<a href="javascript:history.back()" class="btn btn-danger">
-				<i class="fa-solid fa-ban"></i> 가입 취소
+			<a href="javascript:history.back()" class="btn btn-danger"> <i
+				class="fa-solid fa-ban"></i> 가입 취소
 			</a>
 		</div>
-			
 	</form:form>
 </div>
 
-
-<%@ include file="../layouts/footer.jsp"%>
+<%@ include file="../layouts/footer1.jsp"%>
