@@ -503,10 +503,54 @@ footer {
 	font-color: #545e6f;
 }
 
+#case1:checked + i {
+    color: #2c98ca; /* case1 체크됐을 때 아이콘 색상 변경 */
+}
+
+#case2:checked + i {
+    color: #f4b22f; /* case2 체크됐을 때 아이콘 색상 변경 */
+}
+
+#case3:checked + i {
+    color: #e14c55; /* case2 체크됐을 때 아이콘 색상 변경 */
+}
+
+#case4:checked + i {
+    color: #575757; /* case2 체크됐을 때 아이콘 색상 변경 */
+}
+
+/* 여행 경보 체크박스 스타일 */
+.map-check input[type="checkbox"] {
+    opacity: 0; /* 체크박스 화면에서 숨김 */
+    cursor: pointer;
+}
+
+/* 체크박스 레이블 스타일 */
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    margin: 0px Auto;
+/* margin-right: 20px;체크박스와 텍스트 사이 여백 */
+    cursor: pointer;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.checkbox-label:hover {
+    display: inline-block;
+    color: white;
+    background-color:rgba(0,50,150,0.5);
+    transition: 0.5s;
+    position: relative; /* 체크박스와 텍스트 사이 여백 */
+    cursor: pointer;
+
+}
+
 .map-check {
 	display: block;
-	width: 650px;
-	height: 40px;
+	width: 700px;
+	height: 50px;
 	margin: 0 auto;
 	margin-top: 30px;
 	position: relative;
