@@ -13,5 +13,97 @@
 
 <link rel="stylesheet" href="/resources/css/style.css" />
 
+<script>
+    $(document).ready(function () {
+        const colorsArray = ["#2C98CA", "#F7B430", "#E14C55", "#9f9f9f"];
 
+        // Loop through each path element
+        $("path.leaflet-interactive").each(function () {
+            let fillValue = $(this).attr("fill");
+
+            // Check if fillValue matches any color in colorsArray
+            for (let i = 0; i < colorsArray.length; i++) {
+                if (colorsArray[i] == fillValue) {
+                    $(this).attr("id", (i + 1).toString()); // Assign id based on index + 1
+                    break;
+                }
+            }
+        });
+
+        // Function to toggle fill color based on checkbox state
+        function toggleFill1() {
+            // Loop through each path element with id="1"
+            $("path#1.leaflet-interactive").each(function () {
+                // Get the checkbox state
+                const isChecked = $("input[value='case1']").prop("checked");
+
+                // Set fill color based on checkbox state
+                if (isChecked) {
+                    // If checkbox is checked, set fill color to colorsArray[0]
+                    $(this).attr("fill", colorsArray[0]);
+                } else {
+                    // If checkbox is unchecked, set fill color to #fff
+                    $(this).attr("fill", "#fff");
+                }
+            });
+        }
+        
+        function toggleFill2() {
+            // Loop through each path element with id="1"
+            $("path#2.leaflet-interactive").each(function () {
+                // Get the checkbox state
+                const isChecked = $("input[value='case2']").prop("checked");
+
+                // Set fill color based on checkbox state
+                if (isChecked) {
+                    // If checkbox is checked, set fill color to colorsArray[0]
+                    $(this).attr("fill", colorsArray[1]);
+                } else {
+                    // If checkbox is unchecked, set fill color to #fff
+                    $(this).attr("fill", "#fff");
+                }
+            });
+        }
+        
+        function toggleFill3() {
+            // Loop through each path element with id="1"
+            $("path#3.leaflet-interactive").each(function () {
+                // Get the checkbox state
+                const isChecked = $("input[value='case3']").prop("checked");
+
+                // Set fill color based on checkbox state
+                if (isChecked) {
+                    // If checkbox is checked, set fill color to colorsArray[0]
+                    $(this).attr("fill", colorsArray[2]);
+                } else {
+                    // If checkbox is unchecked, set fill color to #fff
+                    $(this).attr("fill", "#fff");
+                }
+            });
+        }
+        
+        function toggleFill4() {
+            // Loop through each path element with id="1"
+            $("path#4.leaflet-interactive").each(function () {
+                // Get the checkbox state
+                const isChecked = $("input[value='case4']").prop("checked");
+
+                // Set fill color based on checkbox state
+                if (isChecked) {
+                    // If checkbox is checked, set fill color to colorsArray[0]
+                    $(this).attr("fill", colorsArray[3]);
+                } else {
+                    // If checkbox is unchecked, set fill color to #fff
+                    $(this).attr("fill", "#fff");
+                }
+            });
+        }
+
+        // Attach the toggleFill function to the checkbox click event
+        $("input[value='case1']").on("click", toggleFill1);
+        $("input[value='case2']").on("click", toggleFill2);
+        $("input[value='case3']").on("click", toggleFill3);
+        $("input[value='case4']").on("click", toggleFill4);
+    });
+</script>
 <div id="map"></div>
