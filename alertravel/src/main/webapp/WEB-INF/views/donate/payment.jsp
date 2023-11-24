@@ -48,13 +48,6 @@ String donateMessage = request.getParameter("donateMessage");
 	<button class="rounded-button3" onclick="requestPay3()"></button>
 </div>
 
-<div class="text-center">
-	<button onclick="location.href='paysuccess'">결제 완료 페이지</button >
-</div>
-
-
-
-
 <style>
 	.rounded-button1 {
 		display: inline-block;
