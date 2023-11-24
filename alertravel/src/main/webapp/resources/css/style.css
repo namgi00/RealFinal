@@ -676,6 +676,137 @@ padding-right: 14rem;
 	justify-content: flex-end;
 }
 
+.changepassword-banner {
+	height: 360px;
+	background-size: cover;
+	background-image: url('/resources/images/passwordbanner.jpg');
+	background-position: center 40%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.change_password {
+	margin-top: 7rem;
+	margin-bottom: 10rem;
+}
+
+.changepassword-container {
+	display: flex;
+	justify-content: center;
+}
+
+.changepassword-image {
+	width: 200px;
+	height: 200px;
+}
+
+.changepassword-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	color: #008DD0;
+  	filter: opacity(0.5) drop-shadow(0 0 0 #008DD0);
+}
+
+.changepassword-text {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	margin: 2rem 0rem;
+	font-size: 28px;
+}
+
+.form-group label {
+	font-size: 20px;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+
+.form-group {
+	margin: 0 42rem;
+}
+
+.button-container {
+	margin: 0 42rem;	
+}
+
+.btn-kakao {
+	background-color: #FEE502;
+}
+
+.sign-banner {
+	height: 360px;
+	background-size: cover;
+	background-image: url("/resources/images/signupbanner.png");
+	background-position: center 70%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.signup {
+	margin-top: 7rem;
+	margin-bottom: 10rem;
+}
+
+.signup-container {
+	display: flex;
+	justify-content: center;
+}
+
+.signup-image {
+	width: 200px;
+	height: 200px;
+}
+
+.signup-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	color: #008DD0;
+  	filter: opacity(0.5) drop-shadow(0 0 0 #008DD0);
+}
+
+.signup-text {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	margin: 2rem 0rem;
+	font-size: 28px;
+}
+
+.form-group label {
+	font-size: 20px;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+
+.error {
+	color: red;
+	font-size: 0.9rem;
+}
+
+.alarmlvl-banner {
+	height: 360px;
+	background-image: url('/resources/images/AlarmListBanner.jpg');
+	background-size: cover;
+	background-position: center 50%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.infomation-banner {
+	height: 360px;
+	background-image: url('/resources/images/informationbanner.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
 @media only screen and (min-width: 1400px) {
 	.inner {
 		max-width: 1400px;

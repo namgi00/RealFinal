@@ -7,17 +7,6 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
-<style>
-.alarmlvl-banner {
-	height: 360px;
-	background-image: url('/resources/images/AlarmListBanner.jpg');
-	background-size: cover;
-	background-position: center 50%;
-	background-repeat: no-repeat;
-	z-index: 1;
-}
-</style>
-
 <section class="alarmlvl-banner">
 	<div class="main-container">
 		<div class="inner">

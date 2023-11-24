@@ -44,7 +44,7 @@ public class SecurityController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
-	final static String PASSWORD = "wlwhs1234";
+	private final static String PASSWORD = "wlwhs1234";
 
 	@GetMapping("/login")
 	public void login() {
@@ -84,25 +84,27 @@ public class SecurityController {
 	}
 
 	@GetMapping("/change_password")
-	public void getChangePassword(ChangePasswordVO vo) {
+	public void getChangePassword(@RequestParam("username") String username, @ModelAttribute("changePassword") ChangePasswordVO vo) {
 		log.info("=== change_passoword page 접속 중 ===");
 	}
 
 	@PostMapping("/change_password")
-	public String postChangePassword(@Valid ChangePasswordVO vo, Errors errors) {
-
+	public String postChangePassword(@Valid @ModelAttribute("changePassword") ChangePasswordVO vo, Errors errors) {
+		
 		// 비밀번호, 확인 일치 여부
 		if (!vo.getNewPassword().equals(vo.getNewPassword2())) {
+			log.info("=== 변경 비밀번호 확인 일치 여부 ===");
 			// 에러 추가
 			errors.rejectValue("newPassword2", "비밀번호가 일치하지 않습니다.", "비밀번호 확인이 일치하지 않습니다.");
 		}
 
 		if (!service.changePassword(vo)) {
+			log.info("=== 이전 비밀번호 확인 일치 여부 ===");
 			errors.rejectValue("orgPassword", "이전 비밀번호가 일치하지 않습니다.", "이전 비밀번호 확인이 일치하지 않습니다.");
 		}
 
 		if (errors.hasErrors()) {
-			return "security/signup";
+			return "security/change_password";
 		}
 
 		return "redirect:/security/profile";
