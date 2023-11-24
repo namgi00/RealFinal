@@ -9,19 +9,6 @@
 <%@ include file="../layouts/header1.jsp"%>
 
 
-
-
-<style>
-.infomation-banner {
-	height: 360px;
-	background-image: url('/resources/images/informationbanner.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	z-index: 1;
-}
-</style>
-
 <section class="infomation-banner">
 		<div class="main-container">
 			<div class="inner">

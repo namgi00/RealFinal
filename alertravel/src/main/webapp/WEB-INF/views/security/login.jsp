@@ -6,11 +6,7 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
-<style>
-.btn-kakao {
-	background-color: #FEE502;
-}
-</style>
+
 
 <section class="login-main">
   <div class="main-container">
@@ -67,7 +63,7 @@
 			<i class="fa-solid fa-right-to-bracket"></i> 로그인
 		</button>
 
-		<button type="submit" class="btn btn-info btn-block">
+		<button type="button" class="btn btn-info btn-block" onclick="location.href='/security/signup';">
 			<i class="fas fa-user-plus"></i> 회원가입
 		</button>
 	</form>

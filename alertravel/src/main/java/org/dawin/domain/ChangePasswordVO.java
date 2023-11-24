@@ -1,5 +1,7 @@
 package org.dawin.domain;
 
+
+import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,24 +10,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChangePasswordVO {
+
 	private String username;
 
-	public String setEncPassword(String encPassword) {
-		return null;
-	}
-
-	public String getNewPassword() {
-		return null;
-	}
+	@NotBlank(message="필수항목입니다.")
+	private String orgPassword;
 	
-	public String getNewPassword2() {
-		return null;
-	}
-
-	public String getOrgPassword() {
-		return null;
-	}
-
+	@NotBlank(message="필수항목입니다.")
+	private String newPassword;
+	
+	@NotBlank(message="필수항목입니다.")
+	private String newPassword2;
+	
+	private String encPassword;
 	
 	
 }
