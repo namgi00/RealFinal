@@ -39,9 +39,10 @@ a:hover {
 .card-banner {
 	width: 800px;
 	height: 100%;
-	margin: 0 auto;
+	margin: 4rem auto;
 	padding: 0rem 2rem;
 	overflow: hidden;
+	
 }
 
 header {
@@ -641,13 +642,6 @@ padding-right: 14rem;
 	background-color: rgb(47, 48, 49);
 }
 
-.card-banner {
-	width: 800px;
-	height: 100%;
-	margin: 0 auto;
-	padding: 0rem 2rem;
-	overflow: hidden;
-}
 .mypage-main {
 	height: 360px;
 	background-image: url('/resources/images/back.png');
