@@ -107,12 +107,12 @@
 				href="#" id="navbardrop" data-toggle="dropdown"> 해외안전정보 </a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="/alarm/list">단계별 여행 경보</a> <a
-						class="dropdown-item" href="#">공지사항</a>
+						class="dropdown-item" href="/notice">공지사항</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 소통마당 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">소통 게시판</a>
+					<a class="dropdown-item" href="/story">소통 게시판</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 편의기능 </a>
