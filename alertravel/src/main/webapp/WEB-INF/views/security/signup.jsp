@@ -6,6 +6,57 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
+<style>
+
+.sign-banner {
+	height: 360px;
+	background-size: cover;
+	background-image: url("/resources/images/signupbanner.png");
+	background-position: center 70%;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.signup {
+	margin-top: 7rem;
+	margin-bottom: 10rem;
+}
+
+.signup-container {
+	display: flex;
+	justify-content: center;
+}
+
+.signup-image {
+	width: 200px;
+	height: 200px;
+}
+
+.signup-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	color: #008DD0;
+  	filter: opacity(0.5) drop-shadow(0 0 0 #008DD0);
+}
+
+.signup-text {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	margin: 2rem 0rem;
+	font-size: 28px;
+}
+
+.form-group label {
+	font-size: 20px;
+	color: #3f464d;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+</style>
+
 <section class="sign-banner">
 	<div class="main-container">
 		<div class="inner">

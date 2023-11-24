@@ -6,7 +6,11 @@
 
 <%@ include file="../layouts/header1.jsp"%>
 
-
+<style>
+.btn-kakao {
+	background-color: #FEE502;
+}
+</style>
 
 <section class="login-main">
   <div class="main-container">
