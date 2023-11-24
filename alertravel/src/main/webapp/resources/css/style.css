@@ -676,6 +676,11 @@ padding-right: 14rem;
 .user-info-item{
 	
 }
+.update-item{
+	padding-top: 3rem;
+	display:flex;
+	justify-content: flex-end;
+}
 
 @media only screen and (min-width: 1400px) {
 	.inner {

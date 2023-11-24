@@ -94,7 +94,8 @@
 						<div class="class-title">개선문</div>
 						<div class="class-detail">개선문은 프랑스 역사를 대표하는 상징적 건축물이다.</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 			<li class="class-card"><img
 				src="../resources/images/vangoumeseum.png" class="class-image" />
 
@@ -109,7 +110,8 @@
 							암스테르담에 위치한 미술관으로서, 네덜란드를 대표하는 19세기 신인상파 화가 빈센트 반 고흐의 작품들을 주로 전시하고
 							있다.</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 			<li class="class-card"><img
 				src="../resources/images/tokyosky.png" class="class-image" />
 
@@ -123,7 +125,8 @@
 						<div class="class-detail">일본 도쿄도 스미다구에 있는 전파 송출용 탑이자 일본에서 가장
 							높은 구조물로, 도쿄의 랜드마크이다.</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 			<li class="class-card"><img
 				src="../resources/images/centralpark.png" class="class-image" />
 
@@ -137,7 +140,8 @@
 						<div class="class-detail">샌프란시스코의 골든 게이트 파크와 함께 미국 최대 규모의
 							공원으로 손꼽힌다.</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 			<li class="class-card"><img src="../resources/images/quoka.png"
 				class="class-image" />
 				<div class="class-container">
@@ -149,7 +153,9 @@
 						<div class="class-title">로트네스트 아일랜드</div>
 						<div class="class-detail">세상에서 가장 행복한 동물인 쿼카가 사는 서식지로 유명한
 							곳이다. 해당 섬의 이름은 쿼카를 보고 쥐가 많이 산다고 하여 쥐의 소굴 'Rats nest'에서 유래했다.</div>
-					</div></li>
+					</div>
+				</div>
+			</li>
 			<li class="class-card"><img
 				src="../resources/images/chiangmai.png" class="class-image" />
 				<div class="class-container">
@@ -162,7 +168,8 @@
 						<div class="class-detail">치앙마이는 태국 북부에서 가장 크고 문화적으로 중요한 도시이며
 							태국에서 두 번째로 큰 도시이자 치앙마이 주의 주도이다.</div>
 					</div>
-				</div></li>
+				</div>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -177,7 +184,7 @@
 
 			</c:when>
 			<c:otherwise>
-				<div class="item">
+				<div class="exchange-item">
 					<div class="image-caption">
 						<img src="resources/images/nation/${unit.cur_unit}.png" >
 					</div>
@@ -240,10 +247,25 @@
 	        },
 			loop : true,
 			margin : 20,
-			autoplay : false,
+			autoplay : true,
 			autoplayTimeout : 3000,
 			autoplayHoverPause : true,
 			mouseDrag : true
 		});
 	});
 </script>
+<script>
+    $(document).ready(function () {
+      $('.exchange-item').on('mousedown', function () {
+        // 클릭 시 cursor 속성 직접 변경
+        $(this).css('cursor', 'grabbing');
+
+        // 클릭 종료 시 cursor 속성 원래대로 변경
+        $(document).on('mouseup', function endGrabbing() {
+          $('.exchange-item').css('cursor', 'grab');
+          $(document).off('mouseup', endGrabbing);
+        });
+      });
+    });
+  </script>
+

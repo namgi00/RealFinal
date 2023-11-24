@@ -53,6 +53,11 @@
 				🛠️ 수정일:
 					<fmt:formatDate value="${member.updateDate}" pattern="yyyy-MM-dd HH:mm" />
 			</div>
+			<div class="update-item">
+				<button type="button" class="btn btn-primary" onclick="location.href='/security/update'">
+				<i class="fa-solid fa-user-pen"></i> 내 정보 수정
+				</button>
+			</div>
 		</div>
 </div>
 
@@ -68,13 +73,6 @@
 	그러기 위해서는 email이 null인지 확인해서 null이면 버튼을 비활성화 하면됩니다. 
   -->
 
-
-<div class="text-right">
-	<button type="button" class="btn btn-primary"
-		onclick="location.href='/security/update'">
-		<i class="fa-solid fa-user-pen"></i> 내 정보 수정
-	</button>
-</div>
 
 
 <%@ include file="../layouts/footer.jsp"%>
