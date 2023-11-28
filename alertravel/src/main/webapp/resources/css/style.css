@@ -46,10 +46,11 @@ a:hover {
 	width: 780px;
 	height: 100%;
 	overflow: hidden;	
+	padding-top: 3rem;
 }
 
  .card-banner-notice {
-    padding-top: 2rem;
+    padding-top: 5rem;
     padding-left: 1rem;
     width: 460px;
     height: 100%;
