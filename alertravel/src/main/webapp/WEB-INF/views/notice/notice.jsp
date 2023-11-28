@@ -29,28 +29,20 @@
 	 				</tr>
 	 			</thead>
 	 			<tbody>
-	 				<tr>
-	 					<td> 1 </td>
-	 					<td> 안녕하세요 </td>
-	 					<td> 홍길동 </td>
-	 					<td> 11.28 </td>
-					</tr>
+ 					<c:forEach var="unit" items="${noticeList}">
+ 						<tr>
+	 						<td >${unit.noticeNo}</td>
+	 						<td >${unit.noticeTitle}</td>
+	 						<td >${unit.noticeContent}</td>
+	 						<td >${unit.noticeDate}</td>
+						</tr>
+ 					</c:forEach>
 	 			</tbody>
 				</table>
 				<a href="/notice/noticewrite" class="btn btn-primary">글쓰기</a>
 			</div>
 		</div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <%@ include file="../layouts/footer1.jsp"%>
 
 <style>
