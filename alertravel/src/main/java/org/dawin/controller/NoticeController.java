@@ -2,6 +2,7 @@ package org.dawin.controller;
 
 import java.time.LocalDateTime;
 
+import org.dawin.common.Pagination;
 import org.dawin.domain.NoticeVO;
 import org.dawin.mapper.NoticeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,8 +24,15 @@ public class NoticeController {
 	NoticeMapper mapper;
 	
 	@GetMapping("/notice")
-	public String notice(Model model) {
-		model.addAttribute("noticeList", mapper.getNoticeList());
+	public String notice(Model model
+			,@RequestParam(required = false, defaultValue = "1") int page
+			,@RequestParam(required = false, defaultValue = "1") int range) {
+		
+		int listCnt = mapper.noticeCnt();
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		model.addAttribute("pagination", pagination);
+		model.addAttribute("noticeList", mapper.getNoticeList(pagination));
 		log.info("=== 공지사항notice 접속 중 ===");
 		return "/notice/notice";
 	}
@@ -41,7 +50,6 @@ public class NoticeController {
 		noticeboard.setNoticeContent(noticeVO.getNoticeContent());
 		noticeboard.setNoticeDate(LocalDateTime.now());
 		mapper.insert(noticeboard);
-		log.info(noticeboard);
 		log.info("=== 공지사항 글쓰기 접속 중 ===");
 		return "redirect:/notice/notice";
 	}
