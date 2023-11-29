@@ -109,18 +109,18 @@
         
         <div class="navigation-contents">
             <ul>
-                <li><a href="#">단계별 여행경보</a></li>
-                <li><a href="#">공지사항</a></li>
+                <li><a href="/alarm/list">단계별 여행경보</a></li>
+                <li><a href="/notice/notice">공지사항</a></li>
             </ul>
             <ul>
-                <li><a href="#">소통게시판</a></li>
+                <li><a href="/board/list">소통게시판</a></li>
             </ul>
             <ul>
-                <li><a href="#">여권분실시</a></li>
-                <li><a href="#">영사콜센터</a></li>
+                <li><a href="https://www.passport.go.kr/home/kor/main.do">여권분실시</a></li>
+                <li><a href="https://www.0404.go.kr/callcenter/callcenter_intro.jsp">영사콜센터</a></li>
             </ul>
             <ul>
-                <li><a href="#">따뜻한마음나누기</a></li>
+                <li><a href="/donate/donate">따뜻한마음나누기</a></li>
             </ul>
         </div>
     </nav>
