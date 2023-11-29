@@ -2,7 +2,7 @@ package org.dawin.controller;
 
 import java.time.LocalDateTime;
 
-import org.dawin.common.Pagination;
+import org.dawin.common.NoticePagination;
 import org.dawin.domain.NoticeVO;
 import org.dawin.mapper.NoticeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class NoticeController {
 			,@RequestParam(required = false, defaultValue = "1") int range) {
 		
 		int listCnt = mapper.noticeCnt();
-		Pagination pagination = new Pagination();
+		NoticePagination pagination = new NoticePagination();
 		pagination.pageInfo(page, range, listCnt);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("noticeList", mapper.getNoticeList(pagination));
