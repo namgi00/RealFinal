@@ -112,7 +112,7 @@
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 소통마당 </a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/board">소통 게시판</a>
+					<a class="dropdown-item" href="/board/list">소통 게시판</a>
 				</div></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-title"
 				href="#" id="navbardrop" data-toggle="dropdown"> 편의기능 </a>
