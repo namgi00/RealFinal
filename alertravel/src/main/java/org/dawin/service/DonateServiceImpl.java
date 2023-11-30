@@ -15,13 +15,14 @@ public class DonateServiceImpl implements DonateService {
 	DonateMapper mapper;
 
 	@Override
-	public List<DonateVO> getDonateSelectList() {
-		return mapper.getDonateSelectList();
+	public List<DonateVO> getDonateMyList(DonateVO donate) {
+	    return mapper.getDonateMyList(donate.getDonateName(), donate.getDonatePhoneNumber(), donate.getDonateBirthday());
 	}
 
+	
 	@Override
-	public List<DonateVO> getDonateMyList() {
-		return mapper.getDonateMyList();
+	public List<DonateVO> getDonateSelectList() {
+		return mapper.getDonateSelectList();
 	}
 
 	@Override
@@ -33,6 +34,20 @@ public class DonateServiceImpl implements DonateService {
 	public void donateRegister(DonateVO donate) throws IOException {
 		mapper.insertDonate(donate);
 	}
-	
-	
+
+	@Override
+	public int getDonateTotalMoney() {
+		return mapper.getDonateTotalMoney();
+	}
+
+	@Override
+	public int getDonateTotalPeople() {
+		return mapper.getDonateTotalPeople();
+	}
+
+	@Override
+	public List<DonateVO> getDonateOptionTotalList() {
+		return mapper.getDonateOptionTotalList();
+	}
+
 }

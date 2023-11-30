@@ -7,6 +7,8 @@
 
 	<resultMap id="donateMap" type="org.dawin.domain.DonateVO">
 		<id property="donateName" column="donate_name" />
+		<result property="donateDate" column="donate_date" />
+		<result property="donatePayment" column="donate_payment" />
 		<result property="donateName" column="donate_name" />
 		<result property="donateBirthday" column="donate_birthday" />
 		<result property="donatePhoneNumber" column="donate_phone_number" />
@@ -15,10 +17,10 @@
 		<result property="donateMoney" column="donate_money" />
 		<result property="donateMessage" column="donate_message" />
 	</resultMap>
-	
+
 	<select id="getDonateMyList" resultMap="donateMap">
-		select donate_name, donate_birthday, donate_phone_number, 
-			donate_email, donate_select, donate_money, donate_message
+		select donate_date, donate_payment, donate_name, donate_birthday, 
+			donate_phone_number, donate_email, donate_select, donate_money, donate_message
 		from tbl_donate_member
 		where donate_name = #{donateName} AND 
 			donate_phone_number = #{donatePhoneNumber} AND
@@ -36,9 +38,31 @@
 	</select>
 	
 	<insert id="insertDonate">
-		insert into tbl_donate_member(donate_name, donate_birthday, donate_phone_number, 
+		insert into tbl_donate_member(donate_payment, donate_name, donate_birthday, donate_phone_number, 
 			donate_email, donate_select, donate_money, donate_message)
-		values(#{donateName}, #{donateBirthday}, #{donatePhoneNumber}, #{donateEmail}, 
+		values(#{donatePayment}, #{donateName}, #{donateBirthday}, #{donatePhoneNumber}, #{donateEmail}, 
 			#{donateSelect}, #{donateMoney}, #{donateMessage})
 	</insert>
+	
+	<select id="getDonateTotalMoney" resultType="int">
+		select sum(donate_money) 
+		from tbl_donate_member
+	</select>
+	
+	<select id="getDonateTotalPeople" resultType="int">
+		select count(donate_number) 
+		from tbl_donate_member
+	</select>
+
+	<select id="getDonateOptionTotalList" resultMap="donateOptionTotalResultMap">
+	    SELECT donate_select, sum(donate_money) as sumDonateMoney
+	    FROM tbl_donate_member
+	    GROUP BY donate_select;
+	</select>
+	
+	<resultMap id="donateOptionTotalResultMap" type="DonateVO">
+	    <result property="donateSelect" column="donate_select"/>
+	    <result property="sumDonateMoney" column="sumDonateMoney"/>
+	</resultMap>
+	
 </mapper>
