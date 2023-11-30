@@ -40,7 +40,6 @@
 	 			</tbody>
 				</table>
 				
-				<div>${pagination}</div>
 				<a href="/notice/noticewrite" class="btn btn-primary">글쓰기</a>
 				<!-- pagination{s} -->	
 				<div id="paginationBox">
