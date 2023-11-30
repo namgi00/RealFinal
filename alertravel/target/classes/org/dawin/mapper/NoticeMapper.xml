@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="getNoticeList" resultType="NoticeVO">
 		select notice_no, notice_title, notice_date, notice_content
-		from notice_board order by notice_no
+		from notice_board order by notice_no DESC
 		LIMIT #{startList}, 10
 	</select>
 	
