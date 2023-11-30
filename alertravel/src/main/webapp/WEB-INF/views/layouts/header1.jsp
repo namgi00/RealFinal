@@ -101,10 +101,10 @@
 
 	    <nav class="navigation-bar">
         <ul>
-            <li><a href="#">해외안전정보</a></li>
-            <li><a href="#">소통마당</a></li>
-            <li><a href="#">편의기능</a></li>
-            <li><a href="#">후원하기</a></li>
+            <li><div class="navigation-bar-img1"><img src="../resources/images/icon01-off.png"><a href="#">&nbsp 해외안전정보</a></div></li>
+            <li><div class="navigation-bar-img2"><img src="../resources/images/icon02-off.png"><a href="#">&nbsp 소통마당</a></div></li>
+            <li><div class="navigation-bar-img3"><img src="../resources/images/icon03-off.png"><a href="#">&nbsp 편의기능</a></div></li>
+            <li><div class="navigation-bar-img4"><img src="../resources/images/icon04-off.png"><a href="#">&nbsp 후원하기</a></div></li>
         </ul>
         
         <div class="navigation-contents">

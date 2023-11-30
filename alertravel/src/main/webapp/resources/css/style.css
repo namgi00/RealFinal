@@ -25,7 +25,6 @@ a:active {
 
 a:hover {
 	text-decoration: none;
-	opacity: 0.6;
 }
 
 .inner {
@@ -364,6 +363,13 @@ footer {
 	margin: 1rem 0.5rem;
 }
 
+.footer-inner{
+	display: flex;
+	align-items: center;
+}
+.footer-text{
+	padding-left: 2rem;
+}
 .alarm-container {
 	width: 100%;
 	height: 100%;
@@ -709,11 +715,37 @@ footer {
 	background-repeat: no-repeat;
 	z-index: 1;
 }
+.navigation-bar-img1 img{
+	transition: transform 1s ease;
+}
+.navigation-bar-img1:hover img{
+	content: url('/resources/images/icon01-on.png');
+}
+
+.navigation-bar-img2 img{
+	transition: transform 1s ease;
+}
+.navigation-bar-img2:hover img{
+	content: url('/resources/images/icon02-on.png');
+}
+.navigation-bar-img3 img{
+	transition: transform 1s ease;
+}
+.navigation-bar-img3:hover img{
+	content: url('/resources/images/icon03-on.png');
+}
+.navigation-bar-img4 img{
+	transition: transform 1s ease;
+}
+.navigation-bar-img4:hover img{
+	content: url('/resources/images/icon04-on.png');
+}
+
 .navigation-bar {
    /* margin-top:60px; */
     width:100%;
-    height:50px;
-    background-color:#3ea8a8;
+    height:80px;
+    background-color:#086D64;
 }
 .navigation-bar > ul {
     display:flex;
@@ -738,12 +770,14 @@ footer {
 }
 .navigation-bar > ul li a{
     list-style : none;
+    color: #ffffff;
+    font-size: 22px;
+    
     /* font-weight: bold; */
     /* font-size:1.3em; */
 }
 .navigation-bar > ul li a:hover{
-    
-    color:#fff;
+    color:#ffff00;
 }
 .navigation-contents {
     font-weight: bold;
@@ -779,7 +813,7 @@ footer {
     color:#ffffff;
 }
 .navigation-contents > ul > li > a:hover{
-    color:#15bdb1;
+    color:#fef053;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -795,4 +829,9 @@ footer {
 	.roadmap-desc {
 		display: none;
 	}
+}
+
+.notice-container{
+	border: 1px solid black;
+	height: 4rem;
 }
