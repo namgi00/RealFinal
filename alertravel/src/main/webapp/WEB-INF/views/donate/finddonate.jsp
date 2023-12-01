@@ -53,6 +53,13 @@
 						</div>
 						
 						<br>
+												
+						<div class="form-group" id="emailInput">
+							<label for="donateBirthday">이메일</label>
+							<input type="email" name="donateEmail" class="form-control" placeholder="이메일을 입력하세요" required />
+						</div>
+						
+						<br>
 						
 						<button type="submit" class="btn btn-primary btn-block" style="background-color: #0e7886;">검색하기</button>
 					</form>
