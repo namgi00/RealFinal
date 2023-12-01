@@ -834,12 +834,11 @@ footer {
 }
 
 .notice-home{
-	border: 1px solid black;
-	padding: 1rem;
+	padding-top: 1rem;
 }
 .notice-main {
     height: 360px;
-    background-image: url('/resources/images/notice-image.jpg');
+    background-image: url('/resources/images/notice-alert.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -871,6 +870,7 @@ footer {
 	white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
   	overflow: hidden; /* 넘치는 부분을 숨김 */
   	text-overflow: ellipsis; /* 생략 부분을 (...)으로 표시 */
+  	padding: 1rem;
 }
 
 .noti-title{
@@ -887,4 +887,15 @@ footer {
 	white-space: pre-line;
 	padding-bottom: 4rem;
 	border-bottom: 1px solid #eeeeee;
+}
+
+.article{
+	width: 500px;
+	margin-top: 1rem;
+	border-top: 1px solid #eeeeee;
+	padding-top: 1rem;
+	
+	overflow: hidden; /* 넘치는 부분을 숨김 */
+  	text-overflow: ellipsis; /* 생략 부분을 (...)으로 표시 */
+	
 }

@@ -175,13 +175,39 @@
 				</ul>
 			</div>
 		</div>
-		<div> <!-- 공지사항 시작하기 -->
+				<div> <!-- 공지사항 시작하기 -->
 			<div class="card-banner-notice">
-				<div class="roadmap-title-container">
-					<div class="roadmap-title">공지사항
-					</div>
+				<div class="roadmap-title">공지사항</div>
+				<div class="notice-home">
+		        	<div class="notice-home-top">
+		            	<div>여행 경보 조정</div>
+		         	</div>
+		         	<div class="notice-home-bottom">
+		         		<div class="article">
+		         			<a href="/notice/noti-get?no=11" style="white-space: nowrap;">각국 안전여행 위험도에 따른 여행경보 단계 조정</a> <div> 2023-12-02</div>
+		         		</div>
+		         	</div>
+		         	<div class="notice-home-bottom">
+		         		<div class="article">
+		         			<a href="/notice/noti-get?no=10" style="white-space: nowrap;">[ 주의 ] 아이슬란드 그린다비크(Grindavik) 지역 화산 징후 관련 안전 공지</a> <div> 2023-12-01</div>
+		         		</div>
+		         	</div>
+		         	<div class="notice-home-bottom">
+		         		<div class="article">
+		         			<a href="/notice/noti-get?no=9" style="white-space: nowrap;">[ 주의 ] 그리스 대규모 시위(11.17.) 관련 신변안전 유의 당부</a> <div> 2023-12-01</div>
+		         		</div>
+		         	</div>
+		         	<div class="notice-home-bottom">
+		         		<div class="article">
+		         			<a href="/notice/noti-get?no=8" style="white-space: nowrap;">[ 주의 ] 필리핀 따가이따이 따알(TAAL) 화산 스모그 및 지진 활동 관련 안전공지</a> <div> 2023-12-01</div>
+		         		</div>
+		         	</div>
+		         	<div class="notice-home-bottom">
+		         		<div class="article">
+		         			<a href="/notice/noti-get?no=7" style="white-space: nowrap;">[ 주의 ] 가자지구발 대규모 로켓 공격과 침투 테러 공격 관련 긴급 안전 공지</a> <div> 2023-12-01</div>
+		         		</div>
+		         	</div>
 				</div>
-				<div class="notice-home"></div>
 			</div>
 		</div>
 	</div>
@@ -263,7 +289,7 @@
 	        },
 			loop : true,
 			margin : 20,
-			autoplay : false,
+			autoplay : true,
 			autoplayTimeout : 3000,
 			autoplayHoverPause : true,
 			mouseDrag : true
