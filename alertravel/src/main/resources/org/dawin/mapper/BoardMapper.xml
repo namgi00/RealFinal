@@ -64,21 +64,53 @@
 		values
 		(#{region}, #{title}, #{username}, #{content})
 	</insert>
+	
+	<insert id="insertSelectKey">
+		insert into tbl_board (region, title, content, username)
+		values (#{region}, #{title}, #{content}, #{username})
 
-	<update id="update">
-		update tbl_board
-		set
-		region = #{region},
-		title =
-		#{title},
-<!-- 		photo_img = #{photoImg}, -->
-		content = #{content},
-		where postid =
-		#{postid}
-	</update>
+		<selectKey resultType="Long" keyProperty="postid"
+			keyColumn="postid" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+<update id="update">
+    update tbl_board
+    set
+    region = #{region},
+    title = #{title},
+    content = #{content},
+    username = #{username},
+    update_date = now()
+    where postid = #{postid}
+</update>
 
 	<delete id="delete">
 		delete from tbl_board where postid = #{postid}
 	</delete> 
+	
+	
+	<!-- File Upload -->
+	<insert id="insertAttachment">
+		insert into tbl_board_attachment(filename, path, content_type, size, postid)
+		values(#{filename}, #{path}, #{contentType}, #{size}, #{postid})
+	</insert>
+	
+	<select id="getAttachmentList" resultType="BoardAttachmentVO">
+		select * from tbl_board_attachment
+		where postid = #{postid} <!-- join 처리로 목록을 얻지 않을 때 -->
+		order by filename
+	</select>
+	
+	<select id="getAttachment" resultType="BoardAttachmentVO">
+		select * from tbl_board_attachment
+		where postid = #{postid}
+	</select>
+	
+	<delete id="removeAttachment">
+		delete from tbl_board_attachment
+		where postid = #{postid}
+	</delete>
 
 </mapper>

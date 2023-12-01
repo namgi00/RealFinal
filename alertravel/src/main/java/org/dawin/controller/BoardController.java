@@ -2,10 +2,13 @@ package org.dawin.controller;
 
 import java.security.Principal;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.dawin.domain.BoardAttachmentVO;
 import org.dawin.domain.BoardVO;
 import org.dawin.domain.Criteria;
 import org.dawin.domain.PageDTO;
@@ -14,11 +17,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.log4j.Log4j;
@@ -68,26 +75,6 @@ public class BoardController {
 		model.addAttribute("board", service.get(postId));
 	}
 	
-
-	@PostMapping("/modify")
-	public String modify(
-			@Valid @ModelAttribute("board") BoardVO travel,
-			Errors errors,
-			@ModelAttribute("cri") Criteria cri,			
-			RedirectAttributes rttr) {
-
-		if(errors.hasErrors()) {
-			return "board/modify";
-		}
-		
-		service.modify(travel);
-
-		return "redirect:" + cri.getLink("/board/get") +
-				"&postid=" + travel.getPostid();
-		
-
-	}	
-	
 	@GetMapping("/register")
 	public void register(@ModelAttribute("board") BoardVO board) {	
 	}
@@ -96,16 +83,48 @@ public class BoardController {
 	public String register(
 			@Valid @ModelAttribute("board") BoardVO board,
 			Errors errors,			
-			RedirectAttributes rttr) {
-		
-		if(errors.hasErrors()) {		// 유효성 검사 실패하면 
-			return "board/register";	// view의 이름 리턴 - forwarding
+			List<MultipartFile> files,
+			RedirectAttributes rttr) throws Exception {
+
+		log.info("register: " + board);
+		if(errors.hasErrors()) {
+			return "board/register";
 		}
-		
-		service.register(board);
-		
+
+		service.register(board, files);
+
+		rttr.addFlashAttribute("result", board.getPostid());
+
 		return "redirect:/board/list";
 	}
+	
+
+	@PostMapping("/modify")
+	public String modify(
+			@Valid @ModelAttribute("board") BoardVO board,
+			Errors errors,
+			List<MultipartFile> files,
+			@ModelAttribute("cri") Criteria cri,			
+			RedirectAttributes rttr) throws Exception {
+		
+		log.info("modify:" + board);
+
+		if(errors.hasErrors()) {
+			return "board/modify";
+		}		
+		
+		
+		if (service.modify(board, files)) {
+			// Flash --> 1회성
+			rttr.addFlashAttribute("result", "success");
+
+		}
+//		return "redirect:/board/get";
+		return "redirect:" + cri.getLinkWithPostid("/board/get", board.getPostid());
+		
+		
+
+	}	
 	
 
 	@PostMapping("/remove")
@@ -114,9 +133,38 @@ public class BoardController {
 			@ModelAttribute("cri") Criteria cri,
 			RedirectAttributes rttr) {
 	
-		service.remove(postId);
+		log.info("remove..." + postId);
+		if (service.remove(postId)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+
 		return "redirect:/board/list" + cri.getLink();
 
 	}
+	
+	//파일 다운로드
+	@GetMapping("/download/{no}")
+	@ResponseBody // view를 사용하지 않고, 직접 내보냄
+	public void download(
+	@PathVariable("no") Long no, 
+	HttpServletResponse response) throws Exception {
+		
+	BoardAttachmentVO attach = service.getAttachment(no);
+	 if (attach != null) {
+	        attach.download(response);
+	    } else {
+	        // attach가 null인 경우에 대한 예외 처리
+	        // 예를 들어, 적절한 에러 메시지 출력 또는 처리 로직 추가
+	    }
+	}
+	
+	//파일 삭제
+	@DeleteMapping("/remove/attach/{no}")
+	@ResponseBody
+	public String removeAttach(@PathVariable("no") Long no) throws Exception {
+	service.removeAttachment(no);
+	return "OK";
+	}
+
 
 }

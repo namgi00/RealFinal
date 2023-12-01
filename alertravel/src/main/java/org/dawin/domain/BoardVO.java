@@ -29,7 +29,7 @@ public class BoardVO {
 	private Long viewCnt;
 
 
-	private List<String> additionalImages; // 추가 이미지 경로들을 담을 리스트
+	List<BoardAttachmentVO> attaches; // 추가 이미지 경로들을 담을 리스트
 		
 	public String getSummary() {
 		// 본문 내용 수정 시 summernote가 <p>태그로 자동 그룹핑하면 카드의 [0]이 적용 안 되는 문제

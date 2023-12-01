@@ -6,6 +6,12 @@
 
 <%@ include file="../../views/layouts/header1.jsp"%>
 
+<link rel="stylesheet"
+	href="/resources/css/summernote/summernote-lite.min.css">
+<script src="/resources/js/summernote/summernote-lite.min.js"></script>
+<script src="/resources/js/summernote/lang/summernote-ko-KR.min.js"></script>
+<script src="/resources/js/rest.js"></script>
+
 <script>
 $(document).ready(function() {
 	$('#content').summernote({
@@ -41,7 +47,8 @@ $(document).ready(function() {
 	<div class="panel-body">
 		<form:form modelAttribute="board" role="form"
 			action="?_csrf=${_csrf.token}" enctype="multipart/form-data">
-
+			<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<form:hidden path="postid"/> --%>
 			<form:hidden path="username" value="${username}" />
 
 			<div class="form-group">

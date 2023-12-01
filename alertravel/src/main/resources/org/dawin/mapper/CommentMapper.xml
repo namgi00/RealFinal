@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dawin.mapper.CommentMapper">
+
+	<resultMap id="CommentMap" type="CommentVO">
+		<id property="no" column="no" />
+		<result property="postid" column="postid" />
+		<result property="content" column="c_content" />
+		<result property="username" column="username" />
+		<result property="regDate" column="c_reg_date" />
+		<result property="updateDate" column="c_update_date" />
+
+<!-- collection의 자식태그로 정의 -->
+<!-- collection은 java에서 List이므로 JSON에서는 배열[]처리해야 한다. -->
+		<collection property="replyList" ofType="org.dawin.domain.ReplyVO">
+			<id property="no" column="r_no" />
+			<result property="cno" column ="cno"/>
+			<result property="content" column="r_content" />
+			<result property="username" column="r_username" />
+			<result property="regDate" column="r_reg_date" />
+			<result property="updateDate" column="r_update_date" />
+		</collection>
+	</resultMap>
+	
+	<insert id="create">
+		insert into tbl_comment (postid, username, content)
+		values(#{postid},
+		#{username}, #{content})
+		<!-- insert로 인해 property랑 column에 auto_increment 된 값이 무엇인지 확인용 -->
+		<selectKey resultType="Long" keyProperty="no" keyColumn="no"
+			order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	<update id="update">
+		update tbl_comment
+		set
+		
+		content = #{content},
+		update_date = now()
+		where no = #{no}
+	</update>
+	<delete id="delete">
+		delete from tbl_comment
+		where no = #{no}
+	</delete>
+	
+	<!-- SQL에서 select 조인문 가져오기 -->
+	<select id="readAll" resultMap="CommentMap">
+		select
+			c.no, c.postid, c.content c_content, c.username c_username, 
+			c.reg_date c_reg_date, c.update_date c_update_date,
+			r.no r_no, r.cno, r.content r_content, r.username r_username,
+			r.reg_date r_reg_date, r.update_date r_update_date
+		from tbl_comment c left join tbl_reply r
+			on c.no = r.cno
+		where postid = #{postid}
+	</select>
+	<select id="get" resultType="CommentVO">
+		select
+			c.no, c.postid, c.content c_content, c.username c_username,
+			c.reg_date c_reg_date, c.update_date c_update_date,
+			r.no r_no, r.cno, r.content r_content, r.username r_username,
+			r.reg_date r_reg_date, r.update_date r_update_date
+		from tbl_comment c left join tbl_reply r
+			on c.no = r.cno
+		where c.no = #{no}
+	</select>
+</mapper>
