@@ -99,28 +99,50 @@
 	</header>
 
 
-	    <nav class="navigation-bar">
+    <nav class="navigation-bar">
         <ul>
-            <li><div class="navigation-bar-img1"><img src="../resources/images/icon01-off.png"><a href="#">&nbsp 해외안전정보</a></div></li>
-            <li><div class="navigation-bar-img2"><img src="../resources/images/icon02-off.png"><a href="#">&nbsp 소통마당</a></div></li>
-            <li><div class="navigation-bar-img3"><img src="../resources/images/icon03-off.png"><a href="#">&nbsp 편의기능</a></div></li>
-            <li><div class="navigation-bar-img4"><img src="../resources/images/icon04-off.png"><a href="#">&nbsp 후원하기</a></div></li>
+            <li>
+            	<div class="navigation-img">
+            		<img src="../resources/images/icon01-off.png"><a href="#">&nbsp 해외안전정보</a>
+            	</div>
+      		</li>
+            <li><div class="navigation-img"><img src="../resources/images/icon02-off.png"><a href="#">&nbsp 소통마당</a></div></li>
+            <li><div class="navigation-img"><i class="fa-solid fa-signs-post" style="color: #ffffff; font-size: 1.9rem; vertical-align: bottom;"></i><a href="#">&nbsp 편의기능</a></div></li>
+            <li><div class="navigation-img"><img src="../resources/images/icon04-off.png"><a href="#">&nbsp 후원하기</a></div></li>
         </ul>
         
         <div class="navigation-contents">
-            <ul>
+            <ul class="alarm-post">
                 <li><a href="/alarm/list">단계별 여행경보</a></li>
                 <li><a href="/notice/notice">공지사항</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
-            <ul>
+            <ul class="community-post">
                 <li><a href="/board/list">소통게시판</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
-            <ul>
+            <ul class="convenient-post">
                 <li><a href="#" onClick="window.open('https://www.passport.go.kr/home/kor/main.do','_blank','width=1000px,height=800px')">여권분실시</a></li>
                 <li><a href="#" onClick="window.open('https://www.0404.go.kr/callcenter/callcenter_intro.jsp','_blank','width=1000px,height=800px')">영사콜센터</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
-            <ul>
+            <ul class="donate-post">
                 <li><a href="/donate/donate">따뜻한마음나누기</a></li>
+            	<li><a href="/donate/finddonate">후원 내역 검색</a></li>
+            	<li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
         </div>
     </nav>
