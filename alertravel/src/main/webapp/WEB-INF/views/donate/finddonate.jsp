@@ -12,7 +12,7 @@
 	<div class="main-container">
 		<div class="inner">
 			<div class="title-container">
-				<div class="title">내 후원 기록 검색하기</div>
+				<div class="title">후원 내역 검색</div>
 				<div class="message">당신의 후원이 더 아름다운 오늘을 만들었습니다.</div>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 			<div class="card border-0"> <!-- 외부 선 제거 -->
 				<div class="card-body">
 					<h3 class="card-title">
-						<b>후원자 정보</b>
+						<b>내가 얼마나 후원했는지 확인해보세요</b>
 					</h3>
 					<form action="finddonate" method="post" onsubmit="showResults();">
 						<input type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" />
@@ -68,18 +68,32 @@
 					 <!-- 여기에 결과를 표시할 부분 추가 -->
 					<c:choose>
 					    <c:when test="${empty donateMyList}">
-					        <p id="noRecordsMessage" style="display:none;">No donation records found.</p>
+					        <p id="noRecordsMessage" style="display:none;">후원 내역을 찾지 못했습니다.</p>
 					    </c:when>
 					    <c:otherwise>
-					        <p id="noRecordsMessage">No donation records found.</p>
-					        <c:forEach var="donate" items="${donateMyList}">
-					            <p class="donateResult">
-					                Donate Date: ${donate.donateDate}<br>
-					                Donate Payment: ${donate.donatePayment}<br>
-					                Donate Name: ${donate.donateName}<br>
-					                <!-- 다른 속성들도 필요에 따라 추가 -->
-					            </p>
-					        </c:forEach>
+					        <p id="noRecordsMessage">후원 내역을 찾지 못했습니다.</p>
+							<table>
+								<thead>
+									<tr>
+										<th>후원 날짜</th>
+										<th>결제 방법</th>
+										<th>후원 목적</th>
+										<th>후원 금액</th>
+										<th>응원메세지</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="donate" items="${donateMyList}">
+										<tr class="donateResult">
+											<td>${donate.donateDate}</td>
+											<td>${donate.donatePayment}</td>
+											<td>${donate.donateSelect}</td>
+											<td>${donate.donateMoney}</td>
+											<td>${donate.donateMessage}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
 					    </c:otherwise>
 					</c:choose>
 										

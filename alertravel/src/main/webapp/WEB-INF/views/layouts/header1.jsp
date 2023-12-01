@@ -137,8 +137,8 @@
                 <li><a href="#"></a></li>
             </ul>
             <ul class="donate-post">
-                <li><a href="/donate/donate">따뜻한마음나누기</a></li>
-            	<li><a href="/donate/finddonate">후원 내역 검색</a></li>
+                <li><a href="/donate/totaldonate">따뜻한 마음 나누기</a></li>
+            	<li><a href="/donate/finddonate">내 후원 내역 검색하기</a></li>
             	<li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
