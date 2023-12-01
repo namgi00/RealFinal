@@ -12,7 +12,7 @@
 	<div class="main-container">
 		<div class="inner">
 			<div class="title-container">
-				<div class="title">후원 내역 검색</div>
+				<div class="title">내 후원 내역 검색하기</div>
 				<div class="message">당신의 후원이 더 아름다운 오늘을 만들었습니다.</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 										<th>결제 방법</th>
 										<th>후원 목적</th>
 										<th>후원 금액</th>
-										<th>응원메세지</th>
+										<th>응원 메세지</th>
 									</tr>
 								</thead>
 								<tbody>
