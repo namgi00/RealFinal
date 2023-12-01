@@ -747,6 +747,7 @@ footer {
     list-style : none;
     color: #ffffff;
     font-size: 22px;
+    text-decoration: none;
 }
 
 .navigation-contents {
@@ -780,6 +781,7 @@ footer {
 .navigation-contents > ul > li > a{
     color:#ffffff;
 	display: block;
+	text-decoration: none;
 }
 
 .navigation-contents > ul > li > a:hover{
