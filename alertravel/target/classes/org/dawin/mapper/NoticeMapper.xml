@@ -29,4 +29,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(notice_no)
 		from notice_board 
 	</select>
+	
+	<select id="read" resultType="NoticeVO">
+		select *
+		from notice_board where notice_no=#{noticeNo}
+	</select>
 </mapper>

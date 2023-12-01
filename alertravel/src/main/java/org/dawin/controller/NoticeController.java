@@ -54,6 +54,11 @@ public class NoticeController {
 		return "redirect:/notice/notice";
 	}
 	
+	@GetMapping({ "/noti-get" })
+	public void get(
+			@RequestParam("no") int noticeNO,
+			Model model) {
 
-
+		model.addAttribute("noticeNo", mapper.read(noticeNO));
+	}
 }

@@ -11,7 +11,7 @@
   <div class="main-container">
     <div class="inner">
       <div class="title-container">
-        <div class="notice-title">공지 사항</div>
+        <div class="notice-title">글 작성</div>
       </div>
     </div>
   </div>
@@ -41,30 +41,4 @@
 		</div>
 </div>
 
-
-
-
-
-
-
-
-
-
 <%@ include file="../layouts/footer1.jsp"%>
-
-<style>
-  .notice-main {
-    height: 360px;
-    background-image: url('/resources/images/notice-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-  .notice-title{
-  font-size: 50px;
-	font-weight: bold;
-	color: #fff;
-	padding-top:3rem;
-  }
-</style>

@@ -181,7 +181,7 @@
 					<div class="roadmap-title">공지사항
 					</div>
 				</div>
-				<div class="notice-container"></div>
+				<div class="notice-home"></div>
 			</div>
 		</div>
 	</div>

@@ -14,6 +14,8 @@ public interface NoticeMapper {
 	public List<NoticeVO> getNoticeList(NoticePagination pagination);
 	
 	public int noticeCnt();
+	
+	public NoticeVO read(int noticeNo);
 
 
 }

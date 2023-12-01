@@ -19,54 +19,56 @@
 <div class="inner"><!--  테이블 구성하기 -->
 	<div class="notice-container">
 		<div class="notice-row">
-			<table class="table" style="text-align:center; border: 1px solid #dddddd">
+			<table class="notice-table">
 				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align:center;"> 번호 </th>
-						<th style="background-color: #eeeeee; text-align:center;"> 제목 </th>
-						<th style="background-color: #eeeeee; text-align:center;"> 작성자 </th>
-						<th style="background-color: #eeeeee; text-align:center;"> 작성일</th>
+					<tr class="notice-top">
+						<th> 번호 </th>
+						<th> 제목 </th>
+						<th> 내용 </th>
+						<th> 작성일</th>
 	 				</tr>
 	 			</thead>
 	 			<tbody>
  					<c:forEach var="unit" items="${noticeList}">
- 						<tr>
-	 						<td >${unit.noticeNo}</td>
-	 						<td >${unit.noticeTitle}</td>
-	 						<td >${unit.noticeContent}</td>
-	 						<td >${unit.noticeDate}</td>
+ 						<tr class="notice-center">
+	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 100px;">${unit.noticeNo}</a></td>
+	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 300px;">${unit.noticeTitle}</a></td>
+	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 750px;">${unit.noticeContent}</a></td>
+	 						<td style="width: 200px;">${unit.noticeDate}</td>
 						</tr>
  					</c:forEach>
 	 			</tbody>
 				</table>
-				
-				<a href="/notice/noticewrite" class="btn btn-primary">글쓰기</a>
-				<!-- pagination{s} -->	
-				<div id="paginationBox">
-					<ul class="pagination">			
-						<c:if test="${pagination.prev}">				
-							<li class="page-item">
-								<a class="page-link" href="#" onClick="fn_prev('${pagination.page}',
-								 '${pagination.range}',
-								  '${pagination.rangeSize}')">Previous</a>
-							</li>			
-					  	</c:if>							
-				  		<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-				  			<li class="page-item 
-				  				<c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
-				  					<a class="page-link" href="#" onClick="fn_pagination('${idx}',
-				  					 '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a>
-		  					 </li>			
-	  					 </c:forEach>
-	  					 	<c:if test="${pagination.next}">
-	  					 		<li class="page-item">
-	  					 			<a class="page-link" href="#" onClick="fn_next('${pagination.range}',
-	  					 			 '${pagination.range}', '${pagination.rangeSize}')" >Next</a>
-  					 			</li>	
-  					 		</c:if>
-				 	</ul>
+				<div style="margin-top: 2rem;">
+					<a href="/notice/noticewrite" class="btn btn-primary float-right" >글쓰기</a>
+					<!-- pagination{s} -->	
+					<div id="paginationBox">
+						<ul class="pagination">			
+							<c:if test="${pagination.prev}">				
+								<li class="page-item">
+									<a class="page-link" href="#" onClick="fn_prev('${pagination.page}',
+									 '${pagination.range}',
+									  '${pagination.rangeSize}')">Previous</a>
+								</li>			
+						  	</c:if>							
+					  		<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
+					  			<li class="page-item 
+					  				<c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
+					  					<a class="page-link" href="#" onClick="fn_pagination('${idx}',
+					  					 '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a>
+			  					 </li>			
+		  					 </c:forEach>
+		  					 	<c:if test="${pagination.next}">
+		  					 		<li class="page-item">
+		  					 			<a class="page-link" href="#" onClick="fn_next('${pagination.range}',
+		  					 			 '${pagination.range}', '${pagination.rangeSize}')" >Next</a>
+	  					 			</li>	
+	  					 		</c:if>
+					 	</ul>
+					</div>
+					<!-- pagination{e} -->	 
 				</div>
-				<!-- pagination{e} -->	 	
+					
 			</div>
 		</div>
 </div>
@@ -102,29 +104,4 @@
 	</script>
 
 
-
-
-
-
-
-
-
-
 <%@ include file="../layouts/footer1.jsp"%>
-
-<style>
-  .notice-main {
-    height: 360px;
-    background-image: url('/resources/images/notice-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
-  .notice-title{
-  font-size: 50px;
-	font-weight: bold;
-	color: #fff;
-	padding-top:3rem;
-  }
-</style>
