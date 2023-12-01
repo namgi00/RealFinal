@@ -18,13 +18,14 @@
 		<result property="donateMessage" column="donate_message" />
 	</resultMap>
 
-	<select id="getDonateMyList" resultMap="donateMap">
-		select donate_date, donate_payment, donate_name, donate_birthday, 
-			donate_phone_number, donate_email, donate_select, donate_money, donate_message
+	<select id="getDonateMyList" resultType="DonateVO">
+		select donate_date, donate_payment, donate_name, donate_birthday, donate_phone_number, 
+			donate_email, donate_select, donate_money, donate_message 
 		from tbl_donate_member
-		where donate_name = #{donateName} AND 
-			donate_phone_number = #{donatePhoneNumber} AND
-			donate_birthday = #{donateBirthday}
+		where donate_name = #{donateName}
+			and donate_birthday = #{donateBirthday}
+			and donate_email = #{donateEmail}
+			and donate_phone_number = #{donatePhoneNumber}
 	</select>
 	
 	<select id="getDonateSelectList" resultType="DonateVO">
