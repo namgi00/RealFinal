@@ -50,7 +50,6 @@ public class ExchangeServiceImpl implements ExchangeService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		lists.stream().forEach(e -> log.info(e.toString()));
 		return lists;
 	}
 	
