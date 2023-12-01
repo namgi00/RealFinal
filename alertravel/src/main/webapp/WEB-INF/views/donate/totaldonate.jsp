@@ -31,6 +31,19 @@
 			<div class="card border-0"> <!-- 외부 선 제거 -->
 				<div class="card-body">
 					
+					<div class="donatebutton" style="text-align: center; width: 260px; height: 130px; margin: 0 auto;">
+						<a href="donate"><img src="/resources/images/donatebutton.gif" alt="donatebutton"></a>
+					</div>
+					<div style="text-align: center; font-family: 'Spoqa Han Sans Neo', 'Sans-serif';">
+						<h3 style="color: #0e7886"><strong>↑ 바로 후원하러 가기 ↑</strong></h3>
+					</div>
+					
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					
 					<canvas id="bar-chart-horizontal" width="1000" height="500"></canvas>
 					
 					<br>
@@ -89,12 +102,10 @@
 					<br>
 					
 					<h2 style="text-align: center; color:#0e7886;"><strong>
-					    남을 돕는 것은 생각보다 어렵지 않습니다. <br><br>
+					    남을 돕는 것은 생각보다 어렵지 않습니다. <br><br><br>
 					    지금 바로 후원해보세요!
 					</strong></h2>
 					
-					<br>
-					<br>
 					<br>
 					<br>
 					<br>
@@ -137,7 +148,7 @@ new Chart(document.getElementById("bar-chart-horizontal"), {
         legend: { display: false },
         title: {
             display: true,
-            text: '총 후원 금액 통계(후원 안된 목적은 표기 안됨)',
+            text: '총 후원 금액 통계',
             fontSize: 24, // 원하는 크기로 조절
             fontColor: 'black', // 텍스트 색상 지정
             fontStyle: 'bold' // 볼드 처리
@@ -147,14 +158,23 @@ new Chart(document.getElementById("bar-chart-horizontal"), {
 </script>
 
 <style>
-  .totaldonate-main {
-    height: 360px;
-    background-image: url('/resources/images/children.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-  }
+	.totaldonate-main {
+		height: 360px;
+		background-image: url('/resources/images/children.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 1;
+	}
+  
+	.donatebutton img {
+		transition: transform 0.3s ease;
+		cursor: pointer;
+	}
+
+	.donatebutton:hover img {
+		transform: scale(1.2);
+	}
 </style>
 
 
