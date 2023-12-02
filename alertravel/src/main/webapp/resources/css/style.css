@@ -51,7 +51,7 @@ a:hover {
  .card-banner-notice {
     padding-top: 5rem;
     padding-left: 1rem;
-    width: 460px;
+    width: 555px;
     height: 100%;
     
 } 
@@ -888,14 +888,16 @@ footer {
 	padding-bottom: 4rem;
 	border-bottom: 1px solid #eeeeee;
 }
-
-.article{
-	width: 500px;
-	margin-top: 1rem;
-	border-top: 1px solid #eeeeee;
-	padding-top: 1rem;
-	
-	overflow: hidden; /* 넘치는 부분을 숨김 */
+.notice-home-banner{
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-size: 20px;
+	white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
+  	overflow: hidden; /* 넘치는 부분을 숨김 */
   	text-overflow: ellipsis; /* 생략 부분을 (...)으로 표시 */
-	
+  	padding : 18px;
+  	border-bottom: 1px solid #eeeeee;
+  	font-weight: bold;
+}
+.notice-home-banner:hover{
+	background-color: rgba(41,127,240, 0.3);
 }

@@ -1,6 +1,6 @@
 package org.dawin.controller;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import org.dawin.common.NoticePagination;
 import org.dawin.domain.NoticeVO;
@@ -48,7 +48,7 @@ public class NoticeController {
 		NoticeVO noticeboard = new NoticeVO();
 		noticeboard.setNoticeTitle(noticeVO.getNoticeTitle());
 		noticeboard.setNoticeContent(noticeVO.getNoticeContent());
-		noticeboard.setNoticeDate(LocalDateTime.now());
+		noticeboard.setNoticeDate(LocalDate.now());
 		mapper.insert(noticeboard);
 		log.info("=== 공지사항 글쓰기 접속 중 ===");
 		return "redirect:/notice/notice";

@@ -1,6 +1,6 @@
 package org.dawin.domain;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,6 @@ public class NoticeVO {
 	
 	private int noticeNo;
 	private String noticeTitle;
-	private LocalDateTime noticeDate;
+	private LocalDate noticeDate;
 	private String noticeContent;
 }
