@@ -40,18 +40,11 @@
 </div>
 
 <style>
-	body {
-		background-color: #D5E5F4;
-	}
-	
-	img {
+	.finddonatebutton img {
+		cursor: pointer;
 		display: block;
 		margin: auto;
 		margin-top: 50px;
-	}
-
-	.finddonatebutton img {
-		cursor: pointer;
 	}
 </style>
 
