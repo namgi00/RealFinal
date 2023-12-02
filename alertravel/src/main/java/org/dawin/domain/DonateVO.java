@@ -1,8 +1,6 @@
 package org.dawin.domain;
 
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -38,7 +36,6 @@ public class DonateVO {
 	private int donateMoney;
 	private String donateOption;
 	
-	@NotBlank(message = "응원 메세지는 필수항목입니다.")
 	private String donateMessage;
 	
 	private Date donateDate;
