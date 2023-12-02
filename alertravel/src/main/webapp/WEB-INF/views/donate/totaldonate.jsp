@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+<%@ page import="java.text.NumberFormat" %>
 
 <%@ include file="../layouts/header1.jsp"%>
 
@@ -62,10 +61,15 @@
 						<br>
 						<div style="position: relative; display: inline-block;">
 							<img src="/resources/images/love.gif" alt="love" style="display: block; margin: 0 auto; width: 60%;">
-					
+
+							<!-- 숫자에 자동으로 콤마 주입 -->
+ 							<c:set var="formattedTotalPeople" value="${donateTotalPeople}" />
+							<fmt:formatNumber value="${formattedTotalPeople}" pattern="#,##0" var="formattedNumber" />
 							<span class="font-weight-bold" style="font-size: 2em;color: #FDD835;position: absolute;top: 150px;left: 50%;transform: translate(-50%, -50%);">
-								${donateTotalPeople}명
+							    ${formattedNumber}명
 							</span>
+							
+							
 						</div>
 					</div>
 					
@@ -85,10 +89,15 @@
 						<br>
 						<div style="position: relative; display: inline-block; text-align: center;">
 					    	<img src="/resources/images/fillingheart.gif" alt="love" style="width: 150%; max-width: 100%; height: auto; margin: 0 auto;">
-					
+
+							<!-- 숫자에 자동으로 콤마 주입 -->
+							<c:set var="formattedTotalMoney" value="${donateTotalMoney}" />
+							<fmt:formatNumber value="${formattedTotalMoney}" pattern="#,##0" var="formattedMoney" />
 							<span class="font-weight-bold" style="font-size: 2em; color: #FDD835; position: absolute; top: 90px; left: 50%; transform: translate(-50%, -50%); width: 300px;">
-								${donateTotalMoney}원
+							    ${formattedMoney}원
 							</span>
+							
+							
 						</div>
 					</div>
 
@@ -106,7 +115,6 @@
 					    지금 바로 후원해보세요!
 					</strong></h2>
 					
-					<br>
 					<br>
 					<br>
 					<br>
