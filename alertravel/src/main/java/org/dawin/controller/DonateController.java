@@ -57,14 +57,15 @@ public class DonateController {
 	public String findDonations(@Valid @ModelAttribute("donateVO") DonateVO donate, Errors errors, Model model) {
 		
 		log.info("=== finddonate page PostMapping 접속 중 ===");
-	    if (errors.hasErrors()) {
-	        // 유효성 검사에서 오류가 있을 경우 처리
-	    	log.info("=== 에러 발생 ===");
-	        return "finddonate";
-	    }
+		
+		 if (errors.hasErrors()) { // 유효성 검사에서 오류가 있을 경우 처리 log.info("=== 에러 발생 ===");
+			 log.info(errors.toString());
+		 return "/donate/finddonate"; }
+		
 
 	    model.addAttribute("donateMyList", service.getDonateMyList(donate));
-	    return "finddonate";
+	    log.info("후원목록" + service.getDonateMyList(donate));
+	    return "/donate/finddonate";
 	}
 	
 	@GetMapping("/donate")

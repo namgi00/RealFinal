@@ -46,7 +46,7 @@
 	</insert>
 	
 	<select id="getDonateTotalMoney" resultType="int">
-		select sum(donate_money) 
+		select coalesce(sum(donate_money), 0) as totalMoney
 		from tbl_donate_member
 	</select>
 	

@@ -35,7 +35,12 @@ include file="../layouts/header1.jsp"%>
 							</h3>
 							
 							<br>
-							<hr color="15bdb1" />
+							<hr color="#0e7886" />
+							<br>
+							<h4 style="color:red;">
+								작성하신 '성명', '생년월일', '휴대폰 번호', '이메일'은 <br>
+								후원 내역 검색에 필요하므로 꼭 기억하시길 바랍니다. 
+							</h4>
 							<br>
 							
 							<!-- 후원자 개인 정보 입력 -->
@@ -43,26 +48,20 @@ include file="../layouts/header1.jsp"%>
 								<label for="donateName">성명</label> 
 								<input type="text" name="donateName" class="form-control" placeholder="성명을 입력하세요" required />
 							</div>
-
 							<br />
-
 							<div class="form-group" id="birthdayInput">
 								<label for="donateBirthday">생년월일</label> <input type="text"
 									name="donateBirthday" class="form-control"
 									placeholder="생년월일 6자리를 입력하세요" required />
 								<pre>※만 14세 미만의 경우, 후원이 불가능합니다.※</pre>
 							</div>
-
 							<br />
-
 							<div class="form-group" id="phoneInput">
 								<label for="donatePhoneNumber">휴대폰 번호</label> <input type="text"
 									name="donatePhoneNumber" class="form-control"
 									placeholder="휴대폰 번호를 입력하세요 ('-' 제외)" required />
 							</div>
-
 							<br />
-
 							<div class="form-group" id="emailInput">
 								<label for="donateEmail">이메일</label> <input type="text"
 									name="donateEmail" class="form-control" placeholder="이메일 주소를 입력하세요"
@@ -70,7 +69,7 @@ include file="../layouts/header1.jsp"%>
 							</div>
 
 							<br />
-							<hr color="15bdb1" />
+							<hr color="#0e7886" />
 							<br />
 
 							<!-- 후원 목적 선택창 -->
@@ -93,9 +92,7 @@ include file="../layouts/header1.jsp"%>
 								</c:forEach>
 							</select>
 						</div>
-
 						<br>
-
 						<div class="form-group">
 							<label for="donateMessage"><h5>
 									<b>응원 메시지</b>
@@ -105,7 +102,7 @@ include file="../layouts/header1.jsp"%>
 						</div>
 
 						<br />
-						<hr color="#15bdb1" />
+						<hr color="#0e7886" />
 						<br />
 
 						<!-- 후원 요약 정보를 보여줄 컨테이너 -->
@@ -119,11 +116,11 @@ include file="../layouts/header1.jsp"%>
 						<!-- <button type="submit" class="btn btn-block">후원하기</button> -->
 
 					    <div class="form-group" id="donatePayment">
-					        <button type="submit" id="cardButton" name="donatePayment" value="카드" class="btn btn-primary">카드, 휴대폰 결제하기</button>
+					        <button type="submit" id="cardButton" name="donatePayment" value="카드" class="btn btn-primary">카드 결제하기</button>
 					    </div>
 					
 					    <div class="form-group" id="donatePayment">
-					        <button type="submit" id="cashButton" name="donatePayment" value="현금" class="btn btn-primary">간편, 현금 결제하기</button>
+					        <button type="submit" id="cashButton" name="donatePayment" value="현금" class="btn btn-primary">현금 결제하기</button>
 					    </div>
 
 					</form>
@@ -221,8 +218,8 @@ document.getElementById("cashButton").addEventListener("click", function() {
 
 <style>
 .btn {
-	background-color: #15bdb1;
-	border-color: #15bdb1;
+	background-color: #0e7886;
+	border-color: #0e7886;
 	color: white;
 }
 </style>
