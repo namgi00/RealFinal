@@ -3,6 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 
 <%@ include file="../layouts/header1.jsp"%>
 
@@ -40,7 +42,14 @@
 	 			</tbody>
 				</table>
 				<div style="margin-top: 2rem;">
-					<a href="/notice/noticewrite" class="btn btn-primary float-right" >글쓰기</a>
+					<sec:authorize access="isAuthenticated()">
+	    					<sec:authentication property="principal.authorities" var="authorities" />
+	    						<c:forEach items="${authorities}" var="authority">
+	        						<c:if test="${authority.authority eq 'ROLE_ADMIN'}">
+	            						<a href="/notice/noticewrite" class="btn btn-primary float-right">글쓰기</a>
+	        						</c:if>
+	    						</c:forEach>
+						</sec:authorize>
 					<!-- pagination{s} -->	
 					<div id="paginationBox">
 						<ul class="pagination">			

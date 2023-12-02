@@ -26,6 +26,11 @@
 		where m.username = #{username}
 	</select>
 	
+	<select id="authRead" resultType="authVO">
+		select username, auth
+		from tbl_member_auth
+	</select>
+	
 	<insert id="insert">
 		insert into tbl_member(username, password, email)
 		values(#{username}, #{password}, #{email})

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.dawin.common.NoticePagination;
 import org.dawin.domain.NoticeVO;
+import org.dawin.mapper.MemberMapper;
 import org.dawin.mapper.NoticeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ import lombok.extern.log4j.Log4j;
 @Controller
 public class NoticeController {
 	
+	@Autowired
+	MemberMapper membermapper;
 	
 	@Autowired
 	NoticeMapper mapper;
@@ -33,6 +36,7 @@ public class NoticeController {
 		pagination.pageInfo(page, range, listCnt);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("noticeList", mapper.getNoticeList(pagination));
+		model.addAttribute("user-auth",membermapper.authRead());
 		log.info("=== 공지사항notice 접속 중 ===");
 		return "/notice/notice";
 	}
