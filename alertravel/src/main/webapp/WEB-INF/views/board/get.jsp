@@ -101,16 +101,13 @@ $(document).ready(async function() {
 	<div class="post-zone">
 		<div class="region-container">${board.region}</div>
 
-		<h1 class="page-header">
-			<i class="far fa-file-alt"></i> ${board.title}
-		</h1>
+		<h1 class="page-header">${board.title}</h1>
 
-		<div class="d-flex justify-content-between">
+		<div class="writer-area">
 			<div class="writer-zone">
 				<i class="fas fa-user"></i> ${board.username}
 			</div>
-			<div>
-				<i class="fas fa-clock"></i>
+			<div class="date-zone">
 				<fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}" />
 			</div>
 		</div>
@@ -148,7 +145,7 @@ $(document).ready(async function() {
 					<textarea class="form-control new-comment-content" rows="3"
 						${username == null ? 'disabled' : '' }></textarea>
 					<div class="text-right">
-						<button class="btn btn-primary btn-sm my-2 comment-add-btn"
+						<button class="btn btn-travel btn-sm my-2 comment-add-btn"
 							${username == null ? 'disabled' : '' }>
 							<i class="fa-regular fa-comment"></i> 확인
 						</button>
@@ -158,6 +155,23 @@ $(document).ready(async function() {
 		</c:if>
 
 
+	<div class="mt-4">
+		<div class="btn-zone">
+			<a href="${cri.getLink('list')}" class="btn btn-travel list"> <i
+				class="fas fa-list"></i> 목록
+			</a>
+
+			<c:if test="${username == board.username}">
+				<a href="${cri.getLinkWithPostid('modify', board.postid) }"
+					class="btn btn-travel modify"> <i class="far fa-edit"></i> 수정
+				</a>
+				<a href="#" class="btn btn-travel remove"> <i
+					class="fas fa-trash-alt"></i> 삭제
+				</a>
+			</c:if>
+		</div>
+	</div>
+
 		<div class="my-5">
 			<i class="fa-regular fa-comments"></i> 댓글 목록
 			<hr>
@@ -165,21 +179,6 @@ $(document).ready(async function() {
 		</div>
 	</div>
 
-
-	<div class="mt-4">
-		<a href="${cri.getLink('list')}" class="btn btn-primary list"> <i
-			class="fas fa-list"></i> 목록
-		</a>
-
-		<c:if test="${username == board.username}">
-			<a href="${cri.getLinkWithPostid('modify', board.postid) }"
-				class="btn btn-primary modify"> <i class="far fa-edit"></i> 수정
-			</a>
-			<a href="#" class="btn btn-danger remove"> <i
-				class="fas fa-trash-alt"></i> 삭제
-			</a>
-		</c:if>
-	</div>
 
 </div>
 
@@ -207,7 +206,7 @@ $(document).ready(async function() {
 	margin-top: 80px;
 }
 
-.content-zone{
+.content-zone {
 	position: relative;
 	font-family: font-family : 'Spoqa Han Sans Neo', 'Sans-serif';
 	margin-top: 20px;
@@ -218,9 +217,31 @@ $(document).ready(async function() {
 	margin-top: 20px;
 }
 
+.writer-area {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
 .writer-zone {
 	position: relative;
+	align-items: center;
 	font-family: font-family : 'Spoqa Han Sans Neo', 'Sans-serif';
-	margin-top: 20px;
+}
+
+.btn-zone {
+	display: flex;
+	justify-content: flex-end; /* 버튼을 우측으로 정렬 */
+	margin-top: 20px; /* 버튼과 다른 내용 간의 간격 조정 */
+	gap: 10px; /* 버튼 간격 설정 */
+}
+
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+	background-color: #0a7d7a;
 }
 </style>

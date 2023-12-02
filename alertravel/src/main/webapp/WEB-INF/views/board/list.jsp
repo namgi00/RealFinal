@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="text-right">
-		<a href="register" class="btn btn-primary"> <i class="far fa-edit"></i>
+		<a href="register" class="btn btn-travel"> <i class="far fa-edit"></i>
 			글쓰기
 		</a>
 	</div>
@@ -144,6 +144,16 @@
 
 .pagination li a:hover {
     background-color: #f0f0f0;
+}
+
+.btn-travel{
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+    background-color: #0a7d7a;
+    
 }
 
 </style>
