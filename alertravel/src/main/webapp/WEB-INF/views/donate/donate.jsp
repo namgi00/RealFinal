@@ -119,11 +119,11 @@ include file="../layouts/header1.jsp"%>
 						<!-- <button type="submit" class="btn btn-block">후원하기</button> -->
 
 					    <div class="form-group" id="donatePayment">
-					        <button type="submit" id="cardButton" name="donatePayment" value="카드" class="btn btn-primary">카드 결제하기</button>
+					        <button type="submit" id="cardButton" name="donatePayment" value="카드" class="btn btn-primary">카드, 휴대폰 결제하기</button>
 					    </div>
 					
 					    <div class="form-group" id="donatePayment">
-					        <button type="submit" id="cashButton" name="donatePayment" value="현금" class="btn btn-primary">현금 결제하기</button>
+					        <button type="submit" id="cashButton" name="donatePayment" value="현금" class="btn btn-primary">간편, 현금 결제하기</button>
 					    </div>
 
 					</form>
