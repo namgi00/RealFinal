@@ -130,7 +130,9 @@ public class MemberServiceImpl implements MemberService {
 			JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
 			JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 			String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+			String profileImage = properties.getAsJsonObject().get("profile_image").getAsString();
 			userInfo.put("nickname", nickname);
+			userInfo.put("profile_image", profileImage);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

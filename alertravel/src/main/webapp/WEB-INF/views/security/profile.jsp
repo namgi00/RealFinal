@@ -25,7 +25,7 @@
 <sec:authentication property="principal.member" var="member" />
 
 <div class="profile-item">
-	<img src="/resources/images/basic-profile.png" class="profileImage" />
+	<img src="${profileImage }" class="profileImage" />
 		<div class="user-info-item">
 		<br/>
 			<div>
