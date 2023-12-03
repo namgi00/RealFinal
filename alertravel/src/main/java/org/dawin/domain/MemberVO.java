@@ -35,6 +35,8 @@ public class MemberVO {
 	
 	private List<AuthVO> authList;
 	
+	private String profileImage;
+	
 	public Collection<SimpleGrantedAuthority> getAuthorities() {
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		

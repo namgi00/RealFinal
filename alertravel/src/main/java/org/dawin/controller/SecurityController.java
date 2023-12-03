@@ -2,8 +2,8 @@ package org.dawin.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Random;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.dawin.domain.ChangePasswordVO;
@@ -17,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.log4j.Log4j;
-import retrofit2.http.HTTP;
 
 @Log4j
 @RequestMapping("/security")
@@ -79,8 +79,11 @@ public class SecurityController {
 	}
 
 	@GetMapping("/profile")
-	public void profile() {
-
+	public void profile(Model model, HttpSession session) {
+		log.info("=== 마이 페이지 접속중 ===");
+		model.addAttribute("profileImage", session.getAttribute("profileImage"));
+		
+		log.info("이미지를 얻기 " + session.getAttribute("profileImage"));
 	}
 
 	@GetMapping("/change_password")
@@ -111,7 +114,7 @@ public class SecurityController {
 	}
 
 	@GetMapping("/kakao")
-	public String kakaoLogin(@RequestParam("code") String code) throws IOException {
+	public String kakaoLogin(@RequestParam("code") String code, HttpSession session) throws IOException {
 
 		log.info("#####" + code);
 
@@ -121,22 +124,21 @@ public class SecurityController {
 		HashMap<String, Object> userInfo = service.getUserInfo(access_Token);
 		log.info("###access_Token#### : " + access_Token);
 		log.info("###nickname#### : " + userInfo.get("nickname"));
-
+		log.info("###profile_image#### : " + userInfo.get("profile_image"));
 		// 카카오에서 받아온 nickname을 username으로 저장한다.
 
 		MemberVO member = new MemberVO();
 
 		member.setUsername((String) userInfo.get("nickname"));
 		member.setPassword(PASSWORD);
+		member.setProfileImage((String) userInfo.get("profile_image"));
+		session.setAttribute("profileImage", member.getProfileImage());
 		String username = member.getUsername();
 
 		if (service.hasUsername(username) != 1) {
 			
 			service.register(member);
-			log.info("등록 중입니다 (if문 안에).");
 		}
-
-		log.info("등록 중입니다 (if문 바깥에)" + member.getUsername() + PASSWORD);
 
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 				member.getUsername(), PASSWORD);
