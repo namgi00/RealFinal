@@ -1,5 +1,12 @@
 package org.dawin.common;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
 public class NoticePagination {
 	private int listSize = 10; // 초기값으로 목록개수를 10으로 셋팅
 	private int rangeSize = 10; // 초기값으로 페이지범위를 10으로 셋팅
@@ -12,78 +19,15 @@ public class NoticePagination {
 	private int endPage; // 페이지 범위 끝 번호
 	private boolean prev; // 이전페이지 여부
 	private boolean next; // 다음페이지 여부
+	private String type;
+	private String keyword;
 
-	public int getRangeSize() {
-		return rangeSize;
-	}
-
-	public int getPage() {
-		return page;
-	}
-
-	public void setPage(int page) {
-		this.page = page;
-	}
-
-	public int getRange() {
-		return range;
-	}
-
-	public void setRange(int range) {
-		this.range = range;
-	}
-
-	public int getStartPage() {
-		return startPage;
-	}
-
-	public void setStartPage(int startPage) {
-		this.startPage = startPage;
-	}
-
-	public int getEndPage() {
-		return endPage;
-	}
-
-	public void setEndPage(int endPage) {
-		this.endPage = endPage;
-	}
-
-	public boolean isPrev() {
-		return prev;
-	}
-
-	public void setPrev(boolean prev) {
-		this.prev = prev;
-	}
-
-	public boolean isNext() {
-		return next;
-	}
-
-	public void setNext(boolean next) {
-		this.next = next;
-	}
-
-	public int getListSize() {
-		return listSize;
-	}
-
-	public void setListSize(int listSize) {
-		this.listSize = listSize;
-	}
-
-	public int getListCnt() {
-		return listCnt;
-	}
-
-	public void setListCnt(int listCnt) {
-		this.listCnt = listCnt;
-	}
-
-	public int getStartList() {
-		return startList;
-	}
+	public String[] getTypeArr() {
+		return type == null ? 
+						new String[] {} : 	// 빈 배열 리턴
+						type.split("");		// 한글자 단위로 분리된 배열 리턴
+	
+   }
 
 	public void pageInfo(int page, int range, int listCnt) {
 		this.page = page;

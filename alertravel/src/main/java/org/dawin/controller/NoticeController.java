@@ -1,6 +1,8 @@
 package org.dawin.controller;
 
 import java.time.LocalDate;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.dawin.common.NoticePagination;
 import org.dawin.domain.NoticeVO;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -64,5 +67,13 @@ public class NoticeController {
 			Model model) {
 
 		model.addAttribute("noticeNo", mapper.read(noticeNO));
+	}
+	
+	@ModelAttribute("searchTypes")
+	public Map<String, String> searchTypes() {
+		Map<String, String> map = new LinkedHashMap<String, String>();
+		map.put("T", "제목");
+
+		return map;
 	}
 }

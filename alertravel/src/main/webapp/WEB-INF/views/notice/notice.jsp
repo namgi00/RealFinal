@@ -21,6 +21,7 @@
 <div class="inner"><!--  테이블 구성하기 -->
 	<div class="notice-container">
 		<div class="notice-row">
+			<%@ include file="../notice/search_notice.jsp"%>
 			<table class="notice-table">
 				<thead>
 					<tr class="notice-top">
