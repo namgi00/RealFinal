@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class NoticeVO {
 	
-	private int noticeNo;
+	private Long noticeNo;
 	private String noticeTitle;
 	private LocalDate noticeDate;
 	private String noticeContent;
