@@ -106,7 +106,7 @@
             		<img src="../resources/images/icon01-off.png"><a href="#">&nbsp 해외안전정보</a>
             	</div>
       		</li>
-            <li><div class="navigation-img"><img src="../resources/images/icon02-off.png"><a href="/board/list">&nbsp 소통마당</a></div></li>
+            <li><div class="navigation-img"><img src="../resources/images/icon02-off.png"><a href="#">&nbsp 커뮤니티</a></div></li>
             <li><div class="navigation-img"><i class="fa-solid fa-signs-post" style="color: #ffffff; font-size: 1.9rem; vertical-align: bottom;"></i><a href="#">&nbsp 편의기능</a></div></li>
             <li><div class="navigation-img"><img src="../resources/images/icon04-off.png"><a href="#">&nbsp 후원하기</a></div></li>
         </ul>
@@ -121,13 +121,7 @@
                 <li><a href="#"></a></li>
             </ul>
             <ul class="community-post">
-                <li><a href="/board/africa">아프리카</a></li>
-                <li><a href="/board/asia"></a>아시아</li>
-                <li><a href="/board/europe"></a>유럽</li>
-                <li><a href="/board/middle_east"></a>중동</li>
-                <li><a href="/board/north_america"></a>북미</li>
-                <li><a href="/board/south_america"></a>남미</li>
-                <li><a href="/board/oceania"></a>오세아니아</li>
+                <li><a href="/board/list">여행후기</a></li>
                 
             </ul>
             <ul class="convenient-post">
