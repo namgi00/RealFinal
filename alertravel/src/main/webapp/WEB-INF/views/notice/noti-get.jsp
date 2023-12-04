@@ -26,7 +26,8 @@
 	<div class="noti-content">
 		${noticeNo.noticeContent}
 	</div>
-	
+
+
 		<a href="/notice/notice" class="btn btn-primary list" style="margin-top: 1rem;"> <i
 			class="fas fa-list"></i> 목록
 		</a>

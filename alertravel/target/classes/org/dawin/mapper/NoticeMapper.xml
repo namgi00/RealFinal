@@ -4,6 +4,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.dawin.mapper.NoticeMapper">
 
+
+<sql id="criteria">
+		<trim prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							notice_title like CONCAT('%',#{keyword},'%')
+						</when>
+						<when test="type == 'C'.toString()">
+							notice_content like CONCAT('%',#{keyword},'%')
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
 	<resultMap id="noticeMap" type="org.dawin.domain.NoticeVO">
 		<id property="noticeNo" column="notice_no" />
 		<result property="noticeNo" column="notice_no" />
@@ -18,20 +36,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into notice_board (notice_title, notice_content, notice_date)
 		values (#{noticeTitle}, #{noticeContent}, #{noticeDate})
 	</insert>
+	
+	<insert id="insertSelectKey">
+		insert into notice_board (notice_title, notice_content, notice_date)
+		values (#{noticeTitle}, #{noticeContent}, #{noticeDate})
 
-	<select id="getNoticeList" resultType="NoticeVO">
+		<selectKey resultType="Long" keyProperty="noticeNo"
+			keyColumn="noticeNo" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<update id="update">
+    update notice_board
+    set
+    notice_title = #{noticeTitle},
+    notice_content = #{noticeContent},
+    notice_date = now()
+    where notice_no = #{noticeNo}
+</update>
+
+<delete id="delete">
+		delete from notice_board where notice_no = #{noticeNo}
+	</delete> 
+
+	<select id="getList" resultType="NoticeVO">
 		select notice_no, notice_title, notice_date, notice_content
 		from notice_board 
 		<where>
-			<if test="type == 'T'.toString()">
-				(notice_title like CONCAT('%',#{keyword},'%')) 
-			</if>
+			<include refid="criteria"></include>
 		</where>
 		order by notice_no DESC
-		LIMIT #{startList}, 10
+		LIMIT #{offset} , #{amount}
 	</select>
 	
-	<select id="noticeCnt" resultType="int">
+	<select id="getListWithPaging" resultType="NoticeVO">
+		select * from notice_board
+		<where>
+			<include refid="criteria"></include>
+		</where>
+
+		order by notice_no desc
+		LIMIT #{offset} , #{amount}
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
 		select count(notice_no)
 		from notice_board 
 	</select>

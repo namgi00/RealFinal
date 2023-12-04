@@ -7,8 +7,6 @@
 	prefix="sec"%>
 
 <%@ include file="../layouts/header1.jsp"%>
-
-
 <section class="notice-main">
   <div class="main-container">
     <div class="inner">
@@ -19,9 +17,9 @@
   </div>
 </section>
 <div class="inner"><!--  테이블 구성하기 -->
+	<%@ include file="../common/search_bar.jsp"%>
 	<div class="notice-container">
 		<div class="notice-row">
-			<%@ include file="../notice/search_notice.jsp"%>
 			<table class="notice-table">
 				<thead>
 					<tr class="notice-top">
@@ -32,7 +30,7 @@
 	 				</tr>
 	 			</thead>
 	 			<tbody>
- 					<c:forEach var="unit" items="${noticeList}">
+ 					<c:forEach var="unit" items="${list}">
  						<tr class="notice-center">
 	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 100px;">${unit.noticeNo}</a></td>
 	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 300px;">${unit.noticeTitle}</a></td>
@@ -51,67 +49,11 @@
 	        						</c:if>
 	    						</c:forEach>
 						</sec:authorize>
-					<!-- pagination{s} -->	
-					<div id="paginationBox">
-						<ul class="pagination">			
-							<c:if test="${pagination.prev}">				
-								<li class="page-item">
-									<a class="page-link" href="#" onClick="fn_prev('${pagination.page}',
-									 '${pagination.range}',
-									  '${pagination.rangeSize}')">Previous</a>
-								</li>			
-						  	</c:if>							
-					  		<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-					  			<li class="page-item 
-					  				<c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
-					  					<a class="page-link" href="#" onClick="fn_pagination('${idx}',
-					  					 '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a>
-			  					 </li>			
-		  					 </c:forEach>
-		  					 	<c:if test="${pagination.next}">
-		  					 		<li class="page-item">
-		  					 			<a class="page-link" href="#" onClick="fn_next('${pagination.range}',
-		  					 			 '${pagination.range}', '${pagination.rangeSize}')" >Next</a>
-	  					 			</li>	
-	  					 		</c:if>
-					 	</ul>
-					</div>
-					<!-- pagination{e} -->	 
 				</div>
 					
 			</div>
 		</div>
 </div>
 
-<script>
-	//이전 버튼 이벤트
-	function fn_prev(page, range, rangeSize) {	
-		var page = ((range - 2) * rangeSize) + 1;
-		var range = range - 1;
-		var url = "${pageContext.request.contextPath}/notice/notice"; 
-		url = url + "?page=" + page;
-		url = url + "&range=" + range;
-		location.href = url;
-		}
-	
-	  //페이지 번호 클릭
-	function fn_pagination(page, range, rangeSize, searchType, keyword) {
-		var url = "${pageContext.request.contextPath}/notice/notice";
-		url = url + "?page=" + page;
-		url = url + "&range=" + range;
-		location.href = url;
-		}
-	
-	//다음 버튼 이벤트
-	function fn_next(page, range, rangeSize) {
-		var page = parseInt((range * rangeSize)) + 1;
-		var range = parseInt(range) + 1;
-		var url = "${pageContext.request.contextPath}/notice/notice";
-		url = url + "?page=" + page;
-		url = url + "&range=" + range;
-		location.href = url;
-		}
-	</script>
-
-
+<%@include file="../common/pagination.jsp"%>
 <%@ include file="../layouts/footer1.jsp"%>
