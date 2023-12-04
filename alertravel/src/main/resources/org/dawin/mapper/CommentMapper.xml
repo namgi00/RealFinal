@@ -8,7 +8,7 @@
 		<id property="no" column="no" />
 		<result property="postid" column="postid" />
 		<result property="content" column="c_content" />
-		<result property="username" column="username" />
+		<result property="username" column="c_username" />
 		<result property="regDate" column="c_reg_date" />
 		<result property="updateDate" column="c_update_date" />
 

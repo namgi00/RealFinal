@@ -6,16 +6,13 @@
 
 <%@ include file="../../views/layouts/header1.jsp"%>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="/resources/js/comment.js"></script>
 <script src="/resources/js/rest.js"></script>
+<script src="/resources/js/reply.js"></script>
 
 <script>
-window.addEventListener('load', function() {
-    // 이미지 로드 후 실행될 코드
-    var imageHeight = document.querySelector('.post-zone img').clientHeight; // 이미지의 높이 가져오기
 
-    var replyZone = document.querySelector('.reply-zone');
-    replyZone.style.marginTop = imageHeight + 'px'; // 댓글 영역의 margin-top을 이미지 높이만큼 조절하여 위치 조정
-});
 
 //댓글, 답글 기본 URL 상수 - 전역 상수
 const COMMENT_URL = '/api/board/${param.postid}/comment/';
@@ -25,6 +22,7 @@ const REPLY_URL = '/api/board/${param.postid}/reply/';
 $(document).ready(async function() {
 
 	$('.remove').click(function(){
+		
 		if(!confirm('정말 삭제할까요?')) return;		
 		document.forms.removeForm.submit();
 	});	
@@ -112,7 +110,7 @@ $(document).ready(async function() {
 			</div>
 		</div>
 
-		<div class="text-right">
+<%-- 		<div class="text-right">
 			<c:forEach var="file" items="${board.attaches}">
 				<div class="attach-file-item">
 					<a href="/board/download/${file.no}" class="file-link"> <i
@@ -121,7 +119,7 @@ $(document).ready(async function() {
 					</a>
 				</div>
 			</c:forEach>
-		</div>
+		</div> --%>
 
 
 		<%-- 	<div class="image-panel float-left mr-3">
@@ -178,6 +176,8 @@ $(document).ready(async function() {
 			<div class="comment-list"></div>
 		</div>
 	</div>
+
+
 
 
 </div>
