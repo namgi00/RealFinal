@@ -16,44 +16,42 @@
     </div>
   </div>
 </section>
-<div class="inner"><!--  테이블 구성하기 -->
+
+<div class="inner" style="margin-top:4rem; margin-bottom: 4rem;"><!--  테이블 구성하기 -->
 	<%@ include file="../common/search_bar.jsp"%>
-	<div class="notice-container">
-		<div class="notice-row">
-			<table class="notice-table">
-				<thead>
-					<tr class="notice-top">
-						<th> 번호 </th>
-						<th> 제목 </th>
-						<th> 내용 </th>
-						<th> 작성일</th>
-	 				</tr>
-	 			</thead>
-	 			<tbody>
- 					<c:forEach var="unit" items="${list}">
- 						<tr class="notice-center">
-	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 100px;">${unit.noticeNo}</a></td>
-	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 300px;">${unit.noticeTitle}</a></td>
-	 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 750px;">${unit.noticeContent}</a></td>
-	 						<td style="width: 200px;">${unit.noticeDate}</td>
-						</tr>
- 					</c:forEach>
-	 			</tbody>
-				</table>
-				<div style="margin-top: 2rem;">
-					<sec:authorize access="isAuthenticated()">
-	    					<sec:authentication property="principal.authorities" var="authorities" />
-	    						<c:forEach items="${authorities}" var="authority">
-	        						<c:if test="${authority.authority eq 'ROLE_ADMIN'}">
-	            						<a href="/notice/noticewrite" class="btn btn-primary float-right">글쓰기</a>
-	        						</c:if>
-	    						</c:forEach>
-						</sec:authorize>
-				</div>
-					
+	<div class="notice-row">
+		<table class="notice-table">
+			<thead>
+				<tr class="notice-top">
+					<th> 번호 </th>
+					<th> 제목 </th>
+					<th> 내용 </th>
+					<th> 작성일</th>
+ 				</tr>
+ 			</thead>
+ 			<tbody>
+					<c:forEach var="unit" items="${list}">
+						<tr class="notice-center">
+ 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 100px;">${unit.noticeNo}</a></td>
+ 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 300px;">${unit.noticeTitle}</a></td>
+ 						<td ><a href="/notice/noti-get?no=${unit.noticeNo}" style="width: 750px;">${unit.noticeContent}</a></td>
+ 						<td style="width: 200px;">${unit.noticeDate}</td>
+					</tr>
+					</c:forEach>
+ 			</tbody>
+			</table>
+			<div style="margin-top: 2rem;">
+				<sec:authorize access="isAuthenticated()">
+    					<sec:authentication property="principal.authorities" var="authorities" />
+    						<c:forEach items="${authorities}" var="authority">
+        						<c:if test="${authority.authority eq 'ROLE_ADMIN'}">
+            						<a href="/notice/noticewrite" class="btn btn-primary float-right">글쓰기</a>
+        						</c:if>
+    						</c:forEach>
+					</sec:authorize>
 			</div>
-		</div>
+	</div>
+	<%@include file="../common/pagination.jsp"%>
 </div>
 
-<%@include file="../common/pagination.jsp"%>
 <%@ include file="../layouts/footer1.jsp"%>

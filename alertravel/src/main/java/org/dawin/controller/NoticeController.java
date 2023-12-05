@@ -1,9 +1,8 @@
 package org.dawin.controller;
 
+import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import javax.validation.Valid;
 
 import org.dawin.domain.Criteria;
 import org.dawin.domain.NoticeVO;
@@ -12,7 +11,6 @@ import org.dawin.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,20 +52,24 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/noticewrite")
-	public void noticewrite(@ModelAttribute("notice") NoticeVO notice) {	
+	public void noticewrite(@ModelAttribute("notice") NoticeVO notice) {
+		// 현재시간 값을 받는 변수를 생성해서
+		// 그걸 이제 모델에 담아서 noticewrite.jsp에 보낸다.
+		LocalDateTime date = LocalDateTime.now();
+		notice.setNoticeDate(date.toString());
+		log.info("시간확인" + notice.getNoticeDate());
+		
 	}
 
 	@PostMapping("/noticewrite")
 	public String noticewrite(
-			@Valid @ModelAttribute("notice") NoticeVO notice,
-			Errors errors,			
+			@ModelAttribute("notice") NoticeVO notice,
 			RedirectAttributes rttr) throws Exception {
-
-		log.info("register: " + notice);
-		if(errors.hasErrors()) {
-			return "notice/noticewrite";
-		}
-
+		
+		log.info("타이틀 " + notice.getNoticeTitle());
+		log.info("타이틀 " + notice.getNoticeContent());
+		log.info("타이틀 " + notice.getNoticeDate());
+		
 		service.register(notice);
 
 		rttr.addFlashAttribute("result", notice.getNoticeNo());
@@ -76,12 +78,45 @@ public class NoticeController {
 	}
 	
 	
-	@GetMapping({ "/noti-get" })
+	@GetMapping({ "/noti-get","/noti-modify" })
 	public void get(
-			@RequestParam("no") Long noticeNo,
+			@RequestParam("no") Long noticeNo, @ModelAttribute("cri") Criteria cri,
 			Model model) {
 
-		model.addAttribute("noticeNo", service.get(noticeNo));
+		model.addAttribute("notice", service.get(noticeNo));
 	}
+	
+	@PostMapping("/noti-modify")
+	public String modify(@ModelAttribute("notice") NoticeVO notice,
+			@ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) throws Exception {
+		
+		log.info("noti-modify:" + notice);
+
+		if (service.modify(notice)) {
+			// Flash --> 1회성
+			rttr.addFlashAttribute("result", "success");
+//			rttr.addAttribute("bno", board.getBno());
+//			rttr.addAttribute("pageNum", cri.getPageNum());
+//			rttr.addAttribute("amount", cri.getAmount());
+//			rttr.addAttribute("type", cri.getType());
+//			rttr.addAttribute("keyword", cri.getKeyword());
+		}
+		
+		return "redirect:" + cri.getLinkWithNoticeid("/notice/noti-get", notice.getNoticeNo());
+		
+	}
+	
+	@PostMapping("/remove")
+	public String remove(@RequestParam("noticeNo") Long noticeNo, RedirectAttributes rttr, @ModelAttribute("cri") Criteria cri) {
+		log.info("remove..." + noticeNo);
+		if (service.remove(noticeNo)) {
+			rttr.addFlashAttribute("result", "success");
+			rttr.addAttribute("pageNum", cri.getPageNum());
+			rttr.addAttribute("amount", cri.getAmount());
+		}
+		return "redirect:" + cri.getLink("/notice/notice");
+	}
+	
+	
 	
 }

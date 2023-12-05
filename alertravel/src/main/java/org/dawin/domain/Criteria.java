@@ -70,4 +70,7 @@ public class Criteria {
 	public String getLinkWithPostid(String base, Long postid) {
 		return getLink(base, pageNum) + "&postid=" + postid;
 	}
+	public String getLinkWithNoticeid(String base, Long noticeNo) {
+		return getLink(base, pageNum) + "&no=" + noticeNo;
+	}
 }
