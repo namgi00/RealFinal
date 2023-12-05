@@ -51,9 +51,39 @@
 				<i class="fa-solid fa-circle-info"></i>&nbsp;기본정보
 			</h1>
 			<div class="basic-container">${basic.basic}</div>
+			<div class="alarm-lvl-tip">
+				<div class="tip1">
+					<button type="button"
+						onclick="location.href='/alarm/listLvl?alarmLvl=1'"
+						class="tip1-btn">여행유의</button>
+					- 1단계 : 신변안전 위험 요인 숙지·대비
+				</div>
+				<br>
+				<div class="tip2">
+					<button type="button"
+						onclick="location.href='/alarm/listLvl?alarmLvl=2'"
+						class="tip2-btn">여행자제</button>
+					- 2단계 : 불필요한 여행 자제
+				</div>
+				<br>
+				<div class="tip3">
+					<button type="button"
+						onclick="location.href='/alarm/listLvl?alarmLvl=3'"
+						class="tip3-btn">출국권고</button>
+					- 3단계 : 여행 취소·연기
+				</div>
+				<br>
+				<div class="tip4">
+					<button type="button"
+						onclick="location.href='/alarm/listLvl?alarmLvl=4'"
+						class="tip4-btn">여행금지</button>
+					- 4단계 : (여행예정자) 여행금지 준수<br><br>
+					💡&nbsp;버튼 클릭 시, 여행경보 단계별 국가목록 페이지로 이동합니다.<br>
+				</div>
+			</div>
 		</div>
 	</div>
-		
+
 
 
 	<h1 id="contact-title">🚨&nbsp;현지연락처</h1>
