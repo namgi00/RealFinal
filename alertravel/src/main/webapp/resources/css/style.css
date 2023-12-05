@@ -545,25 +545,27 @@ footer {
 }
 
 /* 체크박스 레이블 스타일 */
-.checkbox-label {
+
+.checkbox-label1, .checkbox-label2, .checkbox-label3, .checkbox-label4 {
     display: inline-block;
     position: relative;
     margin: 0px Auto;
-/* margin-right: 20px;체크박스와 텍스트 사이 여백 */
+    color: white;
+    background-color:rgba(0,50,150,0.5);
+	/* margin-right: 20px;체크박스와 텍스트 사이 여백 */
     cursor: pointer;
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
+	font-weight: 500;
+} 
 
-.checkbox-label:hover {
+.checkbox-label1:hover, .checkbox-label2:hover, .checkbox-label3:hover, .checkbox-label4:hover {
     display: inline-block;
-    color: white;
     background-color:rgba(0,50,150,0.5);
     transition: 0.5s;
     position: relative; /* 체크박스와 텍스트 사이 여백 */
     cursor: pointer;
-
 }
 
 .map-check {
@@ -679,10 +681,6 @@ footer {
 	color: #3f464d;
 	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 	margin: 6rem 0rem;
-}
-
-.user-info-item{
-	
 }
 
 .update-item{

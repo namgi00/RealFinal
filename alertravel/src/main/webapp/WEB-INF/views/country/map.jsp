@@ -104,6 +104,61 @@
         $("input[value='case2']").on("click", toggleFill2);
         $("input[value='case3']").on("click", toggleFill3);
         $("input[value='case4']").on("click", toggleFill4);
+        
+        $('#case1').change(function() {
+            // checkbox가 체크된 상태이면
+            if ($(this).is(':checked')) {
+              // 배경 색을 blue로 변경
+              $('.checkbox-label1').css('background-color', 'rgba(0,50,150,0.5)');
+              $('.checkbox-label1').css('color', 'white');
+            } else {
+              // 체크 해제된 경우 배경 색 제거
+              $('.checkbox-label1').css('background-color', '#fff');
+              $('.checkbox-label1').css('color', 'black');
+            }
+          });
+        
+        $('#case2').change(function() {
+            // checkbox가 체크된 상태이면
+            if ($(this).is(':checked')) {
+              // 배경 색을 blue로 변경
+              $('.checkbox-label2').css('background-color', 'rgba(0,50,150,0.5)');
+              $('.checkbox-label2').css('color', 'white');
+            } else {
+              // 체크 해제된 경우 배경 색 제거
+              $('.checkbox-label2').css('background-color', '#fff');
+              $('.checkbox-label2').css('color', 'black');
+            }
+          });
+        
+        $('#case3').change(function() {
+            // checkbox가 체크된 상태이면
+            if ($(this).is(':checked')) {
+              // 배경 색을 blue로 변경
+              $('.checkbox-label3').css('background-color', 'rgba(0,50,150,0.5)');
+              $('.checkbox-label3').css('color', 'white');
+            } else {
+              // 체크 해제된 경우 배경 색 제거
+              $('.checkbox-label3').css('background-color', '#fff');
+              $('.checkbox-label3').css('color', 'black');
+            }
+          });
+        
+        $('#case4').change(function() {
+        	
+            // checkbox가 체크된 상태이면
+            if ($(this).is(':checked')) {
+              // 배경 색을 blue로 변경
+              $('.checkbox-label4').css('background-color', 'rgba(0,50,150,0.5)');
+              $('.checkbox-label4').css('color', 'white');
+            } else {
+              // 체크 해제된 경우 배경 색 제거
+              $('.checkbox-label4').css('background-color', '#fff');
+              $('.checkbox-label4').css('color', 'black');
+            }
+          });
+        
+        
     });
 </script>
 <div id="map"></div>

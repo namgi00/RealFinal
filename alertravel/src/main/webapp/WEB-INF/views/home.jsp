@@ -43,25 +43,25 @@
 <div class="inner">
 	<div class="map-check">
 		<p class="level-title" style="text-align: center;">여행경보 세계지도</p>
-		    <label for="case1" class="checkbox-label">
+		    <label for="case1" class="checkbox-label1">
 	        <i class="fa-solid fa-circle" style="color: #2c98ca;"></i>
 	        1단계(여행유의)
-	        <input type="checkbox" id="case1" name="alarm" value="case1" onclick='checkSelectAll()'>
+	        <input type="checkbox" id="case1" name="alarm" value="case1" checked>
 	    </label>
-	    <label for="case2" class="checkbox-label">
+	    <label for="case2" class="checkbox-label2">
 	        <i class="fa-solid fa-circle" style="color: #f4b22f;"></i>
 	        2단계(여행자제)
-	        <input type="checkbox" id="case2" name="alarm" value="case2" onclick='checkSelectAll()'>
+	        <input type="checkbox" id="case2" name="alarm" value="case2" checked>
 	    </label>
-	    <label for="case3" class="checkbox-label">
+	    <label for="case3" class="checkbox-label3">
 	        <i class="fa-solid fa-circle" style="color: #e14c55;"></i>
 	        3단계(출국권고)
-	        <input type="checkbox" id="case3" name="alarm" value="case3" onclick='checkSelectAll()'>
+	        <input type="checkbox" id="case3" name="alarm" value="case3" checked>
 	    </label>
-	    <label for="case4" class="checkbox-label">
+	    <label for="case4" class="checkbox-label4">
 	        <i class="fa-solid fa-circle" style="color: #575757;"></i>
 	        4단계(여행금지)
-	        <input type="checkbox" id="case4" name="alarm" value="case4" onclick='checkSelectAll()'>
+	        <input type="checkbox" id="case4" name="alarm" value="case4" checked>
 	    </label>
 	</div>
 	
