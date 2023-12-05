@@ -1,6 +1,6 @@
 package org.dawin.controller;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -55,7 +55,7 @@ public class NoticeController {
 	public void noticewrite(@ModelAttribute("notice") NoticeVO notice) {
 		// 현재시간 값을 받는 변수를 생성해서
 		// 그걸 이제 모델에 담아서 noticewrite.jsp에 보낸다.
-		LocalDateTime date = LocalDateTime.now();
+		LocalDate date = LocalDate.now();
 		notice.setNoticeDate(date.toString());
 		log.info("시간확인" + notice.getNoticeDate());
 		

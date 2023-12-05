@@ -31,20 +31,20 @@
 
 
 
-				<div class="form-group">
+				<div class="form-group" style=" font-weight: bold; font-size: 30px; margin-top: 4rem;">
 					<form:label path="noticeTitle">제목</form:label>
-					<form:input path="noticeTitle" cssClass="form-control" />
+					<form:input path="noticeTitle" cssClass="form-control" style="height: 50px;"/>
 					<form:errors path="noticeTitle" cssClass="error" />
 				</div>
 
 
 
-				<div class="form-group">
+				<div class="form-group" style="font-weight: bold; font-size: 30px; margin-top:2rem;">
 					<form:label path="noticeContent">내용</form:label>
-					<form:textarea path="noticeContent" class="form-control"></form:textarea>
+					<form:textarea path="noticeContent" class="form-control" style="height: 500px;"></form:textarea>
 					<form:errors path="noticeContent" cssClass="error" />
 				</div>
-
+				<div style="margin-bottom: 4rem;">
 				<button type="submit" class="btn btn-primary">
 					<i class="fas fa-check"></i> 확인
 				</button>
@@ -55,40 +55,10 @@
 					class="btn btn-primary get"> <i class="fas fa-file-alt"></i>
 					돌아가기
 				</a>
+				</div>
 			</form:form>
 		</div>
 	</div>
-
-	<%-- <div class="notice-writer">
-		<div class="notice-row"> 
-			<form method="post" >
-			<input type="hidden" name="no" value="${notice.noticeNo}">
-			<input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
-				<table class="table" style="text-align:center; border: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align:center;">글 작성하기 </th>
-	 				</tr>
-	 			</thead>
-	 			<tbody>
-	 				<tr>
-	 					<td> <input type="text" class="form-control" value="${notice.noticeTitle}" name="noticeTitle" maxlength="50"></td>
- 					</tr>
- 					<tr>
-	 					<td> <textarea class="form-control" name="noticeContent" style="height: 350px;"> ${notice.noticeContent} </textarea></td>
-					</tr>
-	 			</tbody> 
-				</table>
-
-				<button type="submit" class="btn btn-primary"> <i class="fas fa-check"></i> 확인</button>
-				<button type="reset" class="btn btn-primary"> <i class="fas fa-undo"></i> 취소</button>
-				<a href="notice/notice" class="btn btn-primary"> <i class="fas fa-list"></i> 돌아가기</a>
-				
-			</form>
-			
-			</div>
-		</div> --%>
 </div>
 
 <%@ include file="../layouts/footer1.jsp"%>

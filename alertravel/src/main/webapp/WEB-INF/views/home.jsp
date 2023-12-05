@@ -178,7 +178,7 @@
 		<div> 
 		<!-- 공지사항 시작하기 -->
 			<div class="card-banner-notice">
-				<div class="roadmap-title">공지사항</div>
+				<div class="roadmap-title"><a href="/notice/notice">공지사항</a></div>
 				<div class="notice-home">
 					<c:forEach var="unit" items="${noticeList}" begin="0" end="5" step="1">
 						<div class="notice-home-banner">

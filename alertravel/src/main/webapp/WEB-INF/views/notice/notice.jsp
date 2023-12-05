@@ -19,7 +19,7 @@
 
 <div class="inner" style="margin-top:4rem; margin-bottom: 4rem;"><!--  테이블 구성하기 -->
 	<%@ include file="../common/search_bar.jsp"%>
-	<div class="notice-row">
+	<div >
 		<table class="notice-table">
 			<thead>
 				<tr class="notice-top">
@@ -49,6 +49,7 @@
         						</c:if>
     						</c:forEach>
 					</sec:authorize>
+					<a href="/notice/notice" class="btn btn-primary float-right" style="margin-right: 10px;">전체목록</a>
 			</div>
 	</div>
 	<%@include file="../common/pagination.jsp"%>

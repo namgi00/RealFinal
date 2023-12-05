@@ -26,7 +26,7 @@
 					value="${_csrf.token}" />
 					<input type="hidden" name="noticeDate" value="${notice.noticeDate}" />
 				<table class="table"
-					style="text-align: center; border: 1px solid #dddddd">
+					style="text-align: center; border: 1px solid #dddddd; margin: 4rem 0rem;">
 					<thead>
 						<tr>
 							<th colspan="2"
@@ -53,7 +53,7 @@
 				<button type="reset" class="btn btn-primary">
 					<i class="fas fa-undo"></i> 취소
 				</button>
-				<a href="notice/notice" class="btn btn-primary"> <i
+				<a href="/notice/notice" class="btn btn-primary"> <i
 					class="fas fa-list"></i> 돌아가기
 				</a>
 

@@ -862,6 +862,8 @@ footer {
 .notice-top{
 	background-color: #eeeeee;
 	text-align:center;
+	font-size: 18px;
+	padding-top: 50px;
 }
 .notice-center{
 	border-bottom: 1px solid #eeeeee;
