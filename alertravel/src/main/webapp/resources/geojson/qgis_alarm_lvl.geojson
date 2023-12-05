@@ -7185,7 +7185,7 @@
         "latitude": 6.989681,
         "wikidataid": "Q929",
         "name_en": "Central African Republic",
-        "country_nm": "중앙아프리카 공화국",
+        "country_nm": "중앙아프리카",
         "alarm_lvl": 3
       },
       "geometry": {
@@ -7269,7 +7269,7 @@
         "latitude": 0.142331,
         "wikidataid": "Q971",
         "name_en": "Republic of the Congo",
-        "country_nm": "콩고 공화국",
+        "country_nm": "콩고 민주 공화국",
         "alarm_lvl": 2
       },
       "geometry": {
