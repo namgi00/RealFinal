@@ -39,6 +39,7 @@ public class AlarmController {
 		log.info("/get");
 		model.addAttribute("alarm", service.get(countryNm));
 		model.addAttribute("basic", service.getBasic(countryNm));
+		model.addAttribute("contactRemark", service.getContactRemark(countryNm));
 		
 		log.info("컨트롤러" + service.getBasic(countryNm));
 		

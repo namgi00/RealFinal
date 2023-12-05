@@ -45,4 +45,10 @@ public class AlarmServiceImpl implements AlarmService {
 		return mapper.getBasic(countryNm);
 	}
 
+	@Override
+	public AlarmVO getContactRemark(String countryNm) {
+		
+		return mapper.getContactRemark(countryNm);
+	}
+
 }

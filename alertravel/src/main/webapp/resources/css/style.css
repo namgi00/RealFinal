@@ -453,29 +453,6 @@ footer {
 	color: #fff;
 }
 
-.flag-container {
-	display: flex;
-	justify-content: space-start;
-	margin: 5rem 0;
-}
-
-.flag-info {
-	font-weight: bold;
-	font-size: 2rem;
-	margin-top: 2rem;
-	margin-left: 2rem
-}
-
-.flag-image {
-	width: 298px;
-	height: 198px;
-}
-
-.country-image {
-	height: 31.5rem;
-	width: 61rem;
-}
-
 .alarm-td {
 	width: 20%;
 }
@@ -601,12 +578,91 @@ footer {
     text-decoration: underline; /* 호버 상태에서 밑줄 추가 */
 }
 
+/* 국가별 기본정보 */
+.continent {
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-weight: 500;
+	font-size: 2rem;
+	text-align: left;
+	margin: 4rem 0 2rem 0;
+}
+
+.flag-container {
+	display: flex;
+	background: linear-gradient(90deg, white 30%, #DDEBF1, #DDEBF1);
+	/* background: linear-gradient(90deg, white 15%, #94BEE3, #94BEE3); */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 500;
+	text-align: left;
+	justify-content: flex-start; 
+	align-items: center; /* 세로 가운데 정렬 */
+    margin-top: 2rem;
+    box-shadow
+}
+
+.flag-info1 {
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-size: 2rem;
+	
+	
+}
+.flag-info2 {
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-size: 1rem;
+	color: #026ABF;
+	
+}
+
+.flag-image {
+	width: 170px;
+	height: 100px;
+	object-fit: contain;
+	margin-right: 2rem;
+}
+
+.country-image {
+	height: 31.5rem;
+	width: 61rem;
+}
+
+.withbasic {
+	display: block;
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+}
+
+.country-container{
+	display: inline-block;
+}
+
+.basic-zone {
+	display: inline-block;
+	vertical-align: top;
+	width: 600px;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
 #basic-title {
+	font-size: 35px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	color: #121111;
+}
+
+.basic-container {
+    background-color: #DDEBF1;
+    position: relative;
+    border-radius: 15px;
+    padding: 20px; 
+}
+
+#contact-title {
 	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
 	margin-top: 30px;
 }
 
-.basic-container {
+.contact-container {
     font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
     background-color: #DDEBF1;
     margin-top: 30px;

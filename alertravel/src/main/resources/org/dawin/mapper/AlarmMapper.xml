@@ -30,5 +30,11 @@
 		where country_nm = #{countryNm}
 	</select>
 	
+	<select id="getContactRemark" resultType="AlarmVO">
+		select contact_remark
+		from LocalContactList
+		where country_nm = #{countryNm}
+	</select>
+	
 	
 </mapper>

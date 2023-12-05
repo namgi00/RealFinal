@@ -1,6 +1,5 @@
 package org.dawin.domain;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,10 +21,13 @@ public class AlarmVO {
 	   private String mapDownloadUrl;
 	   private String regionTy;
 	   private String remark;
-	   private Date writtenDt;
+	   private String writtenDt;
 	   
 	   //countryInfo
 	   
 	   private String basic;
+	   
+	   //LocalContactList
+	   private String contactRemark;
 	
 }

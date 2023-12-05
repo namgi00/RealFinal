@@ -16,4 +16,6 @@ public interface AlarmMapper {
 	
 	public AlarmVO getBasic(String countryNm);
 	
+	public AlarmVO getContactRemark(String countryNm);
+	
 }

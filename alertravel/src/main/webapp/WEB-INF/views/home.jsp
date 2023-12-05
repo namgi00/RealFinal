@@ -68,6 +68,11 @@
 	<div id="map">
 		<%@ include file="country/map.jsp"%>
 	</div>
+	<div class="map-remark-message" 
+	style="text-align: right;
+			font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+			margin-top: 5px;
+	">💡외교부에서 여행경보단계 정보를 제공하지 않는 국가 및 대한민국은 흰색으로 표시됩니다. ‖ 경보단계는 같은 국가내에서도 지역에 따라 다를 수 있습니다. </div>
 </div>
 <div class="inner">
 	<div class="inner2"> <!-- 여기다가 수평 정렬로 추천여행지랑 공지사항 넣기 -->
