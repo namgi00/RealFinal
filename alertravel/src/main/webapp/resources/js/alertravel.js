@@ -27,8 +27,7 @@ if (typeof console === "object" && console.log && typeof console.log === "functi
             color.pink,color.green,
             color.pink,color.green,
             color.pink,color.green,
-            color.pink,color.green,
-			
+            color.pink,color.green
         );
     } else {
 console.log(
