@@ -26,6 +26,9 @@
 <!-- Map Check box JS -->
 <script src="resources/js/mapcheck.js"></script>
 
+<!-- 이스터에그 -->
+<script src="resources/js/alertravel.js"></script>
+
 
 <section class="main" id="introImgContainer">
 	<div class="main-container">
