@@ -7,6 +7,7 @@
 <%@ include file="../../views/layouts/header1.jsp"%>
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
     var writeButton = document.querySelector('.btn-travel-anonymous'); // 글쓰기 버튼 선택
 
@@ -18,12 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (isAnonymous) {
             // 로그인이 필요한 서비스임을 알리는 팝업 창을 띄웁니다.
+            //alert("로그인이 필요한 서비스입니다.");
+
              var confirmPopup = confirm("로그인이 필요한 서비스입니다. 로그인 페이지로 이동하시겠습니까?");
              if (confirmPopup) {
                  window.location.href = "/security/login"; // 로그인 페이지 URL로 이동
-             }
+            }
         } else {
-
+            // 로그인된 상태에서는 글쓰기 기능을 수행하도록 코드를 추가하세요.
+            // 여기에 글쓰기 버튼 클릭 시 동작하는 내용을 추가하세요.
+            // ...
         }
     });
 
@@ -36,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return isAnonymous;
     }
 });
+
+
+	
 </script>
 
 <section class="board-main">
@@ -68,15 +76,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				<div class="post">
 					<div class="thumbnail_username">
-						<img src="../../resources/images/board/profile_plant.png"
+
+						<img
+							src="https://api.dicebear.com/7.x/notionists/svg?body=variant04"
 							width="30" height="30">
 					</div>
 					<div class="info_userprofile">
 						<em class="name_username">${board.username}</em>
 					</div>
 					<div class="content">
-						<span>${board.region}</span><strong class="title_post"> <a
-							class="move" href="${cri.getLinkWithPostid('get', board.postid)}">
+						<c:choose>
+							<c:when test="${board.region == '유럽'}">
+								<span class="europe">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '아프리카'}">
+								<span class="africa">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '중동'}">
+								<span class="mid-east">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '아시아'}">
+								<span class="asia">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '북미'}">
+								<span class="n-america">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '남미'}">
+								<span class="s-america">${board.region}</span>
+							</c:when>
+							<c:when test="${board.region == '오세아니아'}">
+								<span class="oceania">${board.region}</span>
+							</c:when>
+							<c:otherwise>
+								<span>${board.region}</span>
+							</c:otherwise>
+						</c:choose>
+						<strong class="title_post"> <a class="move"
+							href="${cri.getLinkWithPostid('get', board.postid)}">
 								${board.title}</a></strong>
 					</div>
 					<div class="time">
@@ -96,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			</a>
 		</sec:authorize>
 		<sec:authorize access="isAnonymous()">
-			<a href="/security/login" class="btn btn-travel-anonymous"> <i class="far fa-edit"></i>
-				글쓰기
+			<a href="/security/login" class="btn btn-travel-anonymous"> <i
+				class="far fa-edit"></i> 글쓰기
 			</a>
 		</sec:authorize>
 	</div>
@@ -110,6 +146,53 @@ document.addEventListener('DOMContentLoaded', function() {
 <%@ include file="../../views/layouts/footer1.jsp"%>
 
 <style>
+
+.europe, .africa, .mid-east, .asia, .n-america, .s-america, .oceania{
+	font-family:font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-weight: 600;
+	display: inline-block;
+	margin-top: 5px;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border-radius: 3px;
+}
+
+.europe {
+    color: white;
+    background: #3095E9;
+}
+
+.africa {
+    color: white;
+    background: #299E8D;
+}
+
+.mid-east {
+    color: white;
+    background: #F3A361;
+}
+
+.asia {
+    color: white;
+    background: #8D94E9;
+}
+
+.n-america {
+    color: white;
+    background: #F78384;
+}
+.s-america {
+    color: white;
+    background: #8BD292;
+}
+
+.oceania {
+    color: white;
+    background: #023048;
+}
+
 .board-main {
 	height: 360px;
 	background-image: url('/resources/images/boardhead.jpg');

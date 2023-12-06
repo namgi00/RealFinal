@@ -46,10 +46,10 @@ public class BoardController {
 		map.put("T", "제목");
 		map.put("C", "내용");
 		map.put("U", "작성자");
-		map.put("R", "대륙");
+		map.put("R", "지역");
 		map.put("TC", "제목+내용");
-		map.put("TR", "제목+대륙");
-		map.put("TCR", "제목+내용+대륙");
+		map.put("TR", "제목+지역");
+		map.put("TCR", "제목+내용+지역");
 		
 		return map;
 	}
