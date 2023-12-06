@@ -25,6 +25,16 @@
 <!-- 이스터에그 -->
 <script src="resources/js/alertravel.js"></script>
 
+<style>
+    #introImgContainer {
+      width: 100%;
+      height: 400px; /* 조절 필요 */
+      background-size: cover;
+      transition: opacity 2s ease-in-out; /* 트랜지션 설정 */
+      background-image: url("../resources/images/newmain.jpg");
+      opacity: 1; /* 초기 투명도 */
+    }
+ </style>
 
 <section class="main" id="introImgContainer">
     <div class="main-container">
