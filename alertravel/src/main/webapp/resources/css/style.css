@@ -1019,3 +1019,11 @@ footer {
 .notice-home-banner:hover{
 	background-color: rgba(41,127,240, 0.3);
 }
+
+.reply-area {
+	background: #F7F9FA;
+	margin-top: 10px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	padding-top: 5px;
+}

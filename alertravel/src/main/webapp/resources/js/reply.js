@@ -13,7 +13,7 @@ const replyUpdatable = `
 //답글 생성
 function createReplyTemplate(reply, username) {
 	return `
-		<div class="reply my-3" 
+		<div class="reply-area" 
 		data-no="${reply.no}" 
 		data-username="${reply.username}">
 			<div class="reply-title my-2 d-flex justify-content-between">

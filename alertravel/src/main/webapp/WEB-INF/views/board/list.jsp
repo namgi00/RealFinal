@@ -11,9 +11,9 @@
 	<div class="main-container">
 		<div class="inner">
 			<div class="title-container">
-				<div class="title">소통 게시판</div>
+				<div class="title"> 여행후기 </div>
 				<div class="message">
-					소중한 여러분의 경험을 공유하여<br /> 다른 사람들과 소통하세요
+					소중한 여러분의 여행 경험을 공유하여<br /> 다른 사람들과 소통하세요
 				</div>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 
 	<%@ include file="../common/search_bar.jsp"%>
 
-	<h1 class="page-header" style="margin-top: 20px;">🖥️게시글 목록</h1>
+	<h1 class="page-header">🧭우리의 여행기</h1>
 <!-- 	<div class="navigator_boardlist">
 		<span style="width: 60px">No</span> <span>제목</span> <span
 			style="width: 100px">작성자</span> <span style="width: 130px">등록일</span>
@@ -80,6 +80,15 @@
 
 .boardlist {
     border-top: 1px solid #ccc;
+}
+
+.page-header{
+	font-family: 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-weight: 500;
+	font-size: 35px;
+	color: #2F3438;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .post {

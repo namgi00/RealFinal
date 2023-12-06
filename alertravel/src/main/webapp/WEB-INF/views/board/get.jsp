@@ -6,7 +6,8 @@
 
 <%@ include file="../../views/layouts/header1.jsp"%>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script src="/resources/js/comment.js"></script>
 <script src="/resources/js/rest.js"></script>
 <script src="/resources/js/reply.js"></script>
@@ -90,6 +91,26 @@ $(document).ready(async function() {
 
 });
 
+//댓글 수 가져오기
+function getCommentCount(postId) {
+    // AJAX 또는 fetch를 사용하여 댓글 수를 가져온다
+    // 예시로 AJAX 사용하는 방법
+    $.ajax({
+        url: `/api/board/${postId}/comment/count`, // 댓글 수를 가져올 API 엔드포인트
+        method: 'GET',
+        success: function (data) {
+            // 가져온 댓글 수를 출력할 영역에 표시
+            $('.comment-count').text(data.count); // 예시로 count 필드에 댓글 수가 있다고 가정
+        },
+        error: function (error) {
+            console.error('댓글 수를 가져오는 중 오류 발생:', error);
+        }
+    });
+}
+
+// 댓글 수 가져오기 함수 호출
+getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터로 전달되었다고 가정
+
 </script>
 
 <h1 class="post-header">${board.title}</h1>
@@ -97,20 +118,21 @@ $(document).ready(async function() {
 <div class="inner">
 
 	<div class="post-zone">
-		<div class="region-container">${board.region}</div>
+		<div class="region-container">🌏${board.region}</div>
 
-		<h1 class="page-header">${board.title}</h1>
+		<h1 class="post-header">${board.title}</h1>
 
 		<div class="writer-area">
 			<div class="writer-zone">
-				<i class="fas fa-user"></i> ${board.username}
+				&nbsp;<i class="fas fa-user"></i>&nbsp; ${board.username}
 			</div>
 			<div class="date-zone">
 				<fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}" />
 			</div>
 		</div>
+		<hr color="#F8F9FA">
 
-<%-- 		<div class="text-right">
+		<%-- 		<div class="text-right">
 			<c:forEach var="file" items="${board.attaches}">
 				<div class="attach-file-item">
 					<a href="/board/download/${file.no}" class="file-link"> <i
@@ -129,12 +151,13 @@ $(document).ready(async function() {
 			<img src="${image}" alt="추가 이미지">
 		</c:forEach>
 	</div> --%>
+	
 
 		<div class="content-zone">${board.content}</div>
 
 	</div>
 
-	<div class="reply-zone">
+	<div class="create_comment">
 		<!-- 새 댓글 작성 (작성자 아니어야 가능)-->
 		<c:if test="${username != board.username}">
 			<div class="bg-light p-2 rounded my-5">
@@ -153,25 +176,25 @@ $(document).ready(async function() {
 		</c:if>
 
 
-	<div class="mt-4">
-		<div class="btn-zone">
-			<a href="${cri.getLink('list')}" class="btn btn-travel list"> <i
-				class="fas fa-list"></i> 목록
-			</a>
+		<div class="get_btn">
+			<div class="btn-zone">
+				<a href="${cri.getLink('list')}" class="btn btn-travel list"> <i
+					class="fas fa-list"></i> 목록
+				</a>
 
-			<c:if test="${username == board.username}">
-				<a href="${cri.getLinkWithPostid('modify', board.postid) }"
-					class="btn btn-travel modify"> <i class="far fa-edit"></i> 수정
-				</a>
-				<a href="#" class="btn btn-travel remove"> <i
-					class="fas fa-trash-alt"></i> 삭제
-				</a>
-			</c:if>
+				<c:if test="${username == board.username}">
+					<a href="${cri.getLinkWithPostid('modify', board.postid) }"
+						class="btn btn-travel modify"> <i class="far fa-edit"></i> 수정
+					</a>
+					<a href="#" class="btn btn-travel remove"> <i
+						class="fas fa-trash-alt"></i> 삭제
+					</a>
+				</c:if>
+			</div>
 		</div>
-	</div>
 
-		<div class="my-5">
-			<i class="fa-regular fa-comments"></i> 댓글 목록
+		<div class="comment-zone">
+			<i class="fa-regular fa-comments"></i> 댓글
 			<hr>
 			<div class="comment-list"></div>
 		</div>
@@ -197,8 +220,17 @@ $(document).ready(async function() {
 <%@ include file="../../views/layouts/footer1.jsp"%>
 
 <style>
+.region-container {
+	font-size: 20px;
+	font-weight: 600;
+	color: #2F3438;
+	margin-bottom: 20px;
+}
+
 .post-header {
-	font-family: font-family : 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-size: 30px;
+	font-weight: bolder;
+	color: #2F3438;
 }
 
 .post-zone {
@@ -208,11 +240,10 @@ $(document).ready(async function() {
 
 .content-zone {
 	position: relative;
-	font-family: font-family : 'Spoqa Han Sans Neo', 'Sans-serif';
 	margin-top: 20px;
 }
 
-.reply-zone {
+.create_comment {
 	position: relative;
 	margin-top: 20px;
 }
@@ -226,7 +257,8 @@ $(document).ready(async function() {
 .writer-zone {
 	position: relative;
 	align-items: center;
-	font-family: font-family : 'Spoqa Han Sans Neo', 'Sans-serif';
+	font-weight: 600;
+	color: #2F3438;
 }
 
 .btn-zone {
@@ -244,4 +276,5 @@ $(document).ready(async function() {
 .btn-travel:hover {
 	background-color: #0a7d7a;
 }
+
 </style>
