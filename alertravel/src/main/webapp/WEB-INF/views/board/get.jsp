@@ -91,25 +91,6 @@ $(document).ready(async function() {
 
 });
 
-//댓글 수 가져오기
-function getCommentCount(postId) {
-    // AJAX 또는 fetch를 사용하여 댓글 수를 가져온다
-    // 예시로 AJAX 사용하는 방법
-    $.ajax({
-        url: `/api/board/${postId}/comment/count`, // 댓글 수를 가져올 API 엔드포인트
-        method: 'GET',
-        success: function (data) {
-            // 가져온 댓글 수를 출력할 영역에 표시
-            $('.comment-count').text(data.count); // 예시로 count 필드에 댓글 수가 있다고 가정
-        },
-        error: function (error) {
-            console.error('댓글 수를 가져오는 중 오류 발생:', error);
-        }
-    });
-}
-
-// 댓글 수 가져오기 함수 호출
-getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터로 전달되었다고 가정
 
 </script>
 
@@ -144,13 +125,13 @@ getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터�
 		</div>
 
 
-		<div class="image-panel float-left mr-3">
-			<%-- <img src="${board.photoImg}" alt="게시글 이미지"> --%>
+<%-- 		<div class="image-panel float-left mr-3">
+			<img src="${board.photoImg}" alt="게시글 이미지">
 
 			<c:forEach var="image" items="${board.attaches}">
 				<img src="${image}" alt="사진">
 			</c:forEach>
-		</div>
+		</div> --%>
 
 
 		<div class="content-zone">${board.content}</div>
@@ -159,7 +140,7 @@ getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터�
 
 	<div class="create_comment">
 		<!-- 새 댓글 작성 (작성자 아니어야 가능)-->
-		<c:if test="${username != board.username}">
+		<c:if test="${username == board.username}">
 			<div class="bg-light p-2 rounded my-5">
 				<div>${username == null ? '댓글을 작성하려면 먼저 로그인하세요' : '댓글 작성' }</div>
 				<div>
