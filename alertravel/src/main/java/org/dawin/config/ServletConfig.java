@@ -47,7 +47,7 @@ public class ServletConfig implements WebMvcConfigurer {
 		
 		resolver.setMaxInMemorySize(1024*1024); // 1MB보다 큰 놈은 디렉토리 폴더에 임시보관하겠다
 		
-		resolver.setUploadTempDir(new FileSystemResource("C:\\Da-win\\WebContent\\uploads\\temp"));
+		resolver.setUploadTempDir(new FileSystemResource("/home/Da-win/WebContent/uploads/temp"));
 		resolver.setDefaultEncoding("UTF-8");
 		
 		return resolver;

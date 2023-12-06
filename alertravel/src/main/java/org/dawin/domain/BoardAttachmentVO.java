@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardAttachmentVO { // c:/upload/board
-	public static final String UPLOAD_PATH = "c:/Da-win/WebContent/uploads/board";
+	public static final String UPLOAD_PATH = "/home/Da-win/WebContent/uploads/board";
 	private Long no;
 	private String filename;
 	private String path;

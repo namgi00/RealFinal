@@ -132,7 +132,7 @@ getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터�
 		</div>
 		<hr color="#F8F9FA">
 
-		<%-- 		<div class="text-right">
+		<div class="text-right">
 			<c:forEach var="file" items="${board.attaches}">
 				<div class="attach-file-item">
 					<a href="/board/download/${file.no}" class="file-link"> <i
@@ -141,17 +141,17 @@ getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터�
 					</a>
 				</div>
 			</c:forEach>
-		</div> --%>
+		</div>
 
 
-		<%-- 	<div class="image-panel float-left mr-3">
-		<img src="${board.photoImg}" alt="게시글 이미지">
+		<div class="image-panel float-left mr-3">
+			<%-- <img src="${board.photoImg}" alt="게시글 이미지"> --%>
 
-		<c:forEach var="image" items="${board.attaches}">
-			<img src="${image}" alt="추가 이미지">
-		</c:forEach>
-	</div> --%>
-	
+			<c:forEach var="image" items="${board.attaches}">
+				<img src="${image}" alt="사진">
+			</c:forEach>
+		</div>
+
 
 		<div class="content-zone">${board.content}</div>
 
@@ -276,5 +276,4 @@ getCommentCount(${param.postid}); // postId는 JSP 페이지에서 파라미터�
 .btn-travel:hover {
 	background-color: #0a7d7a;
 }
-
 </style>
