@@ -125,8 +125,8 @@
                 
             </ul>
             <ul class="convenient-post">
-                <li><a href="#" onClick="window.open('https://www.passport.go.kr/home/kor/main.do','_blank','width=1000px,height=800px')">여권분실시</a></li>
-                <li><a href="#" onClick="window.open('https://www.0404.go.kr/callcenter/callcenter_intro.jsp','_blank','width=1000px,height=800px')">영사콜센터</a></li>
+                <li><a href="#" onClick="window.open('https://www.passport.go.kr/home/kor/main.do','_blank','width=1000px,height=800px')">여권분실시&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a href="#" onClick="window.open('https://www.0404.go.kr/callcenter/callcenter_intro.jsp','_blank','width=1000px,height=800px')">영사콜센터&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
