@@ -17,10 +17,19 @@
 	    		cssClass="form-select rounded-0 ml-1" />
 	    	<div class="input-group">
 		        <form:input path="keyword" cssClass="form-control rounded-0"/>         
-		        <button type="submit" class="btn btn-success  rounded-0" >
+		        <button type="submit" class="btn btn-travel  rounded-0" >
 		          <i class="fa-solid fa-magnifying-glass"></i>
 		          검색</button>
 		    </div>
 	    </form:form>
 	</div>
 </div>
+
+<style>
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+
+</style>

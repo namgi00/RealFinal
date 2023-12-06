@@ -45,14 +45,14 @@
 					<form:errors path="noticeContent" cssClass="error" />
 				</div>
 				<div style="margin-bottom: 4rem;">
-				<button type="submit" class="btn btn-primary">
+				<button type="submit" class="btn btn-travel">
 					<i class="fas fa-check"></i> 확인
 				</button>
-				<button type="reset" class="btn btn-primary">
+				<button type="reset" class="btn btn-travel">
 					<i class="fas fa-undo"></i> 취소
 				</button>
 				<a href="/notice/notice"
-					class="btn btn-primary get"> <i class="fas fa-file-alt"></i>
+					class="btn btn-travel get"> <i class="fas fa-file-alt"></i>
 					돌아가기
 				</a>
 				</div>
@@ -62,3 +62,14 @@
 </div>
 
 <%@ include file="../layouts/footer1.jsp"%>
+
+<style>
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+	background-color: #0a7d7a;
+}
+</style>

@@ -45,14 +45,25 @@
     					<sec:authentication property="principal.authorities" var="authorities" />
     						<c:forEach items="${authorities}" var="authority">
         						<c:if test="${authority.authority eq 'ROLE_ADMIN'}">
-            						<a href="/notice/noticewrite" class="btn btn-primary float-right">글쓰기</a>
+            						<a href="/notice/noticewrite" class="btn btn-travel float-right">글쓰기</a>
         						</c:if>
     						</c:forEach>
 					</sec:authorize>
-					<a href="/notice/notice" class="btn btn-primary float-right" style="margin-right: 10px;">전체목록</a>
+					<a href="/notice/notice" class="btn btn-travel float-right" style="margin-right: 10px;">전체목록</a>
 			</div>
 	</div>
 	<%@include file="../common/pagination.jsp"%>
 </div>
 
 <%@ include file="../layouts/footer1.jsp"%>
+
+<style>
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+	background-color: #0a7d7a;
+}
+</style>

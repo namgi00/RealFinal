@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	</div>
 
 
-	<%@include file="../common/pagination.jsp"%>
+	<br><%@include file="../common/pagination.jsp"%>
 
 </div>
 

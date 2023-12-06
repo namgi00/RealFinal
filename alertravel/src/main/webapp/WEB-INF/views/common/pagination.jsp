@@ -44,4 +44,33 @@
 	</c:if>	 
 </ul> 
 
+<style>
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    font-weight: 600;
+    background-color: #15BDB1;
+    border-radius: 5px;
+    border-color: #fff;
+}
+
+.pagination li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #fff !important;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #15BDB1;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+</style>
+
 

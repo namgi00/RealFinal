@@ -48,7 +48,7 @@
 	<div class="noti-content">
 		${notice.noticeContent}
 	</div>
-		<a href="/notice/notice" class="btn btn-primary list" style="margin-top: 1rem;"> <i
+		<a href="/notice/notice" class="btn btn-travel list" style="margin-top: 1rem;"> <i
 			class="fas fa-list"></i> 목록
 		</a>
 		<div>
@@ -56,9 +56,9 @@
 				<sec:authentication property="principal.authorities" var="authorities" />
 				<c:forEach items="${authorities}" var="authority">
 					<c:if test="${authority.authority eq 'ROLE_ADMIN'}">
-   						<a href="${cri.getLinkWithNoticeid('noti-modify', notice.noticeNo)}" class="btn btn-primary modify" style="margin-top: 1rem;">
+   						<a href="${cri.getLinkWithNoticeid('noti-modify', notice.noticeNo)}" class="btn btn-travel modify" style="margin-top: 1rem;">
 							<i class="far fa-edit"></i> 수정</a>
-						<a href="#" class="btn btn-primary remove" style="margin-top: 1rem;"> <i class="fas fa-trash-alt"></i> 삭제</a>
+						<a href="#" class="btn btn-travel remove" style="margin-top: 1rem;"> <i class="fas fa-trash-alt"></i> 삭제</a>
 					</c:if>
 				</c:forEach>
 			</sec:authorize>
@@ -75,4 +75,15 @@
 </form>
 
 <%@ include file="../layouts/footer1.jsp"%>
+
+<style>
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+	background-color: #0a7d7a;
+}
+</style>
 

@@ -47,13 +47,13 @@
 				</table>
 				
 
-				<button type="submit" class="btn btn-primary">
+				<button type="submit" class="btn btn-travel">
 					<i class="fas fa-check"></i> 확인
 				</button>
-				<button type="reset" class="btn btn-primary">
+				<button type="reset" class="btn btn-travel">
 					<i class="fas fa-undo"></i> 취소
 				</button>
-				<a href="/notice/notice" class="btn btn-primary"> <i
+				<a href="/notice/notice" class="btn btn-travel"> <i
 					class="fas fa-list"></i> 돌아가기
 				</a>
 
@@ -64,3 +64,14 @@
 </div>
 
 <%@ include file="../layouts/footer1.jsp"%>
+
+<style>
+.btn-travel {
+	background-color: #15BDB1;
+	color: white !important;
+}
+
+.btn-travel:hover {
+	background-color: #0a7d7a;
+}
+</style>
