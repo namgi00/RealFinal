@@ -6,6 +6,8 @@
 <script type="text/javascript" 	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <!-- axios -->
 <script type="text/javascript" 	src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- 이스터에그 -->
+<script src="../resources/js/alertravel.js"></script>
 
 <%
 // 폼에서 전달된 파라미터 받기
