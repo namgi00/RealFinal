@@ -140,7 +140,7 @@ $(document).ready(async function() {
 
 	<div class="create_comment">
 		<!-- 새 댓글 작성 (작성자 아니어야 가능)-->
-		<c:if test="${username == board.username}">
+		<c:if test="${username != board.username}">
 			<div class="bg-light p-2 rounded my-5">
 				<div>${username == null ? '댓글을 작성하려면 먼저 로그인하세요' : '댓글 작성' }</div>
 				<div>
