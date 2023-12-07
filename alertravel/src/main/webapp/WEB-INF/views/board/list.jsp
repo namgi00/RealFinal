@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	<div class="main-container">
 		<div class="inner">
 			<div class="title-container">
-				<div class="title">여행후기</div>
+				<div class="title">알트톡</div>
 				<div class="message">
 					소중한 여러분의 여행 경험을 공유하여<br /> 다른 사람들과 소통하세요
 				</div>
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	<%@ include file="../common/search_bar.jsp"%>
 
-	<h1 class="page-header">🧭우리의 여행기</h1>
+	<h1 class="page-header">🧭알트톡</h1>
 	<!-- 	<div class="navigator_boardlist">
 		<span style="width: 60px">No</span> <span>제목</span> <span
 			style="width: 100px">작성자</span> <span style="width: 130px">등록일</span>

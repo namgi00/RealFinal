@@ -53,9 +53,9 @@ function confirmNavigate(action) {
 
 		<div class="register-header">
 			<h1 class="page-header">
-				<!-- <i class="far fa-edit"></i> --> 🍃&nbsp; 여행기 작성 &nbsp;🍃
+				<!-- <i class="far fa-edit"></i> --> 🍃&nbsp; 알트톡 &nbsp;🍃
 			</h1>
-			<h5 class="sub-register-header"> 생생한 여행 후기를 작성하여 공유해 주세요!
+			<h5 class="sub-register-header"> 여행에 대한 다양한 의견을 공유해 주세요!
 			</h5>
 		</div>
 
@@ -72,7 +72,7 @@ function confirmNavigate(action) {
 						<div class="form-group">
 							<label for="region" style="display: inline-block; width: 80px;">지역</label>
 							<select id="region" name="region" class="form-control-register">
-								<option value="">--대륙을 선택하세요--</option>
+								<option value="">--지역을 선택하세요--</option>
 								<option value="아프리카">아프리카</option>
 								<option value="아시아">아시아</option>
 								<option value="유럽">유럽</option>
@@ -102,7 +102,7 @@ function confirmNavigate(action) {
 
 					<div class="form-group">
 						<form:label path="username">작성자</form:label>
-						${username}
+						&nbsp;${username}
 						<form:errors path="username" cssClass="error" />
 					</div>
 
@@ -141,6 +141,7 @@ function confirmNavigate(action) {
     align-items: center; /* 요소들을 수직으로 가운데 정렬 */
     height: 100vh; /* 화면 높이에 맞게 설정 */
     flex-direction: column; /* 내부 요소들을 수직으로 배치 */
+    margin-top: 50px;
 }
 
 .register-header {

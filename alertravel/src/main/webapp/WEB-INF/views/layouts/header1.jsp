@@ -121,7 +121,7 @@
                 <li><a href="#"></a></li>
             </ul>
             <ul class="community-post">
-                <li><a href="/board/list">여행후기</a></li>
+                <li><a href="/board/list"> 알트톡 </a></li>
                 
             </ul>
             <ul class="convenient-post">
