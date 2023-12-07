@@ -240,27 +240,9 @@
 <hr>
 <br>
 <%@ include file="../views/layouts/footer1.jsp"%>
-<!-- <script>
-    var imgArray = [
-    "../resources/images/newmain.jpg",
-    "../resources/images/newmain1.png",
-    "../resources/images/newmain2.png",
-    "../resources/images/newmain3.png"
-  ];
-  function showImage() {
-    var imgNum = Math.floor(Math.random() * imgArray.length);
-    var imageUrl = imgArray[imgNum];
-    // Set the background image of the main container
-    var mainContainer = document.getElementById("introImgContainer");
-    mainContainer.style.backgroundImage = 'url("' + imageUrl + '")';
-  }
-  // Call the showImage function to display a random image initially
-  showImage();
-</script> -->
 
 <script>
   var imgArray = [
-    "../resources/images/newmain.jpg",
     "../resources/images/newmain1.png",
     "../resources/images/newmain2.png",
     "../resources/images/newmain3.png"
